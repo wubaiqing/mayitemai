@@ -24,6 +24,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'mongoid', '4.0.2'
+gem 'mongoid_auto_increment_id', '0.6.4'
+gem 'mongoid_rails_migrations', '1.0.0'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 

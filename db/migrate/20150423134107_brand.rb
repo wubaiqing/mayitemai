@@ -13,3 +13,4 @@ class Brand < ActiveRecord::Migration
     end
   end
 end
+

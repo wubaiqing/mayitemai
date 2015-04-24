@@ -4,19 +4,17 @@
 
 <table class="table table-striped table-bordered table-condensed table-hover">
 
-
-
+  <% if @brand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
+      <ul>
+        <% @brand.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
   <%= form_for(@brand, html: {class: "form-horizontal"}) do |f| %>
-    <% if @brand.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@brand.errors.count, "error") %> prohibited this brand from being saved:</h2>
-        <ul>
-          <% @brand.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
 
     <tr>
       <td width="15%">
@@ -27,6 +25,7 @@
       </td>
       <td colspan="3">
         <div class="col-sm-4">
+          <%= f.text_field :name%>
           <input type="text" class="form-control">
         </div>
       </td>
@@ -87,18 +86,10 @@
         </div>
       </td>
     </tr>
-
-
-
-
-    <td colspan="4">
-      <%= f.submit %>
-    </td>
   </tr>
 
-</div>
-  <% end %>
 </table>
 <div class="form-actions">
   <button class="btn btn-primary" id="yw0" type="submit" name="yt0">创建</button></div>
 <tr>
+<% end %>
