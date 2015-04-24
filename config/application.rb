@@ -39,4 +39,4 @@ module Mayitemai
 end
 
 I18n.config.enforce_available_locales = false
-I18n.locale = 'zh-CN'
+I18n.locale = "zh-CN"

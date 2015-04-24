@@ -70,6 +70,6 @@ class BrandsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def brand_params
-      params[:brand]
+      params[:brand].permit(:name, :wangwang, :banner_picutre, :recommend_picture, :publish)
     end
 end

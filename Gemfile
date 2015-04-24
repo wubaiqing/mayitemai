@@ -29,6 +29,9 @@ gem 'mongoid_rails_migrations', '1.0.0'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 
+# 七牛云存储
+gem 'qiniu', '~> 6.2.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
