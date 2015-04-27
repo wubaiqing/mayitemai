@@ -1,4 +1,26 @@
 zh-CN:
+
+  format: "%{attribute} %{message}"
+
   errors:
     messages:
       blank: "不能为空"
+
+  mongoid:
+    attributes:
+      brand:
+        name: "商家名称"
+        wangwang: "店铺旺旺"
+        banner_picture: "头部图片"
+        recommend_picture: "相关推荐"
+        state: "状态"
+
+  helpers:
+    submit:
+      create: "创建"
+      update: "更新"
+
+  buttons:
+    upload: "上传"
+
+

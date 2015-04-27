@@ -32,6 +32,12 @@ gem 'bootstrap-sass', '~> 3.3.4'
 # 七牛云存储
 gem 'qiniu', '~> 6.2.1'
 
+# jQuery上传
+gem "jquery-fileupload-rails"
+
+# 国际化
+gem 'rails-i18n'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

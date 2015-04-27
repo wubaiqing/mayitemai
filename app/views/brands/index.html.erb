@@ -12,9 +12,6 @@
   <tbody>
     <% @brands.each do |brand| %>
       <tr>
-        <td><%= link_to 'Show', brand %></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +19,3 @@
 
 <br>
 
-<%= link_to 'New Brand', new_brand_path %>

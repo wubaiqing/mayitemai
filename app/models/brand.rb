@@ -11,6 +11,10 @@ class Brand
   field :recommend_picture
   field :state, type: Integer, default: 0
 
+  def attributes
+    { 'name' => @name }
+  end
+
   STATE = {
     # 软删除
     deleted: -1,

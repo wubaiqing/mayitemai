@@ -1,4 +1,12 @@
-<ul class="breadcrumb"><li><a href="/site/welcome">首页</a></li><li><a href="/myContract/list">我的合同</a></li><li class="active">创建合同</li></ul>
+<ul class="breadcrumb">
+  <li>
+    <a href="/">首页</a>
+  </li>
+  <li>
+    <a href="<%= brands_path %>">专题管理</a>
+  </li>
+  <li class="active">创建专题</li>
+</ul>
 
 <div class="alert alert-warning">提示：标注 <span class="required">*</span> 为必添项</div>
 
@@ -8,86 +16,92 @@
 
     <% if @brand.errors.any? %>
       <div class="alert alert-danger" role="alert">
-      <ul>
-        <% @brand.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <tr>
-    <td width="15%">
-      <label class="required">
-        <%= t('brand.name') %>
-        <span class="required">*</span>
-      </label>
-    </td>
-    <td colspan="3">
-      <div class="col-sm-4">
-        <%= f.text_field :name, class: "form-control" %>
+        <ul>
+          <% @brand.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
       </div>
-    </td>
-  </tr>
+    <% end %>
 
-  <tr>
-    <td width="15%">
-      <label class="required">
-        <%= t('brand.wangwang') %>
-        <span class="required">*</span>
-      </label>
-    </td>
-    <td colspan="3">
-      <div class="col-sm-4">
-        <input type="text" class="form-control">
-      </div>
-    </td>
-  </tr>
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.name') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
 
-  <tr>
-    <td width="15%">
-      <label class="required">
-        <%= t('brand.top-pircture') %>
-        <span class="required">*</span>
-      </label>
-    </td>
-    <td colspan="3">
-      <div class="col-sm-4">
-        <input type="text" class="form-control">
-      </div>
-    </td>
-  </tr>
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.wangwang') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :wangwang, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
 
-  <tr>
-    <td width="15%">
-      <label class="required">
-        <%= t('brand.recommend') %>
-        <span class="required">*</span>
-      </label>
-    </td>
-    <td colspan="3">
-      <div class="col-sm-4">
-        <input type="text" class="form-control">
-      </div>
-    </td>
-  </tr>
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.banner_picture') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-sm-2">
+          <%= link_to(t("buttons.upload"), "#", id: "banner_picture_add_image")%>
+        </div>
+      </td>
+    </tr>
 
-  <tr>
-    <td width="15%">
-      <label class="required">
-        <%= t('brand.status') %>
-        <span class="required">*</span>
-      </label>
-    </td>
-    <td colspan="3">
-      <div class="col-sm-4">
-        <input type="text" class="form-control">
-      </div>
-    </td>
-  </tr>
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.recommend_picture') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <input type="text" class="form-control">
+        </div>
+        <div class="col-sm-2">
+          <%= link_to(t("buttons.upload"), "#", id: "recommend_picture_add_image")%>
+        </div>
+      </td>
+    </tr>
 
-</table>
-<div class="form-actions">
-  <%= f.submit nil, class: "btn btn-primary" %>
-</div>
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.state') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.check_box :state, checked: true %>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+  <div class="form-actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
 <% end %>
