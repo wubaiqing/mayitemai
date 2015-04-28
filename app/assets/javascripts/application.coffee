@@ -3,3 +3,4 @@
 #= require turbolinks
 #= require bootstrap-sprockets
 #= require jquery.html5-fileupload
+#= require brands
