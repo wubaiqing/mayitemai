@@ -11,4 +11,12 @@ class Brand
   field :recommend_picture
   field :state, type: Integer, default: 1
 
+  STATE = {
+    # 正常
+    normal: 1,
+    # 屏蔽
+    blocked: 0
+  }
+  
+
 end

@@ -5,3 +5,5 @@ zh-CN:
     banner_picture: "头部图片"
     recommend_picture: "相关推荐小图"
     state: "上线"
+    normal: "上线"
+    blocked: "下线"
