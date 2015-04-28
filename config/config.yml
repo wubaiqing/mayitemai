@@ -1,0 +1,14 @@
+defaults: &defaults
+  app_name: "蚂蚁特卖 - 管理"
+  domain: "127.0.0.1:3000"
+  upload_url: "http://7xioz9.com2.z0.glb.qiniucdn.com"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+

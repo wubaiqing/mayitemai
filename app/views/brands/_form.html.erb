@@ -61,11 +61,15 @@
       </td>
       <td colspan="3">
         <div class="col-sm-4">
-          <input type="text" class="form-control">
+          <%= f.text_field :banner_picture, class: "form-control" %>
         </div>
-        <div class="col-sm-2">
-          <input type="file" id="banner-picture-upload">
-          <%= link_to(t("buttons.upload"), "#", id: "banner_picture_add_image")%>
+        <div class="col-sm-1">
+          <div class="d-hidden">
+            <input type="file" id="banner-picture-upload">
+          </div>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "banner_picture_add_image")%>
+        </div>
+        <div class="col-sm-2" id="banner-upload-hint">
         </div>
       </td>
     </tr>
@@ -79,10 +83,15 @@
       </td>
       <td colspan="3">
         <div class="col-sm-4">
-          <input type="text" class="form-control">
+          <%= f.text_field :recommend_picture, class: "form-control" %>
         </div>
         <div class="col-sm-2">
-          <%= link_to(t("buttons.upload"), "#", id: "recommend_picture_add_image")%>
+          <div class="d-hidden">
+            <input type="file" id="recommend-picture-upload">
+          </div>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "recommend_picture_add_image")%>
+        </div>
+        <div class="col-sm-2" id="banner-upload-hint">
         </div>
       </td>
     </tr>

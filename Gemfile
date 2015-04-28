@@ -23,10 +23,12 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# mongoid
 gem 'mongoid', '4.0.2'
 gem 'mongoid_auto_increment_id', '0.6.4'
 gem 'mongoid_rails_migrations', '1.0.0'
 
+# boostrap
 gem 'bootstrap-sass', '~> 3.3.4'
 
 # 七牛云存储
@@ -37,6 +39,9 @@ gem "jquery-fileupload-rails"
 
 # 国际化
 gem 'rails-i18n'
+
+# Setting
+gem 'settingslogic', '~> 2.0.9'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

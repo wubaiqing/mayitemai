@@ -4,20 +4,33 @@
 
 $(document).ready ()->
 
-  opts =
+  # 头部图片
+  $("#banner-picture-upload").fileUpload
     url : "/photos"
     type : "POST"
     beforeSend : () ->
-      alert '123'
-    success : (result, status, xhr) ->
-      alert '444'
-    error : (result, status, errorThrown) ->
-      self.restoreUploaderStatus()
-      alert(errorThrown)
+      $('#banner-upload-hint').html('上传中...');
+    success : (result) ->
+      $('#brand_banner_picture').val result
+      $('#banner-upload-hint').html(null);
 
-  $("#banner-picture-upload").fileUpload opts
+
+  # 推荐相关
+  $("#recommend-picture-upload").fileUpload
+    url : "/photos"
+    type : "POST"
+    beforeSend : () ->
+      $('#recommend-upload-hint').html('上传中...');
+    success : (result) ->
+      $('#brand_recommend_picture').val result
+      $('#recommend-upload-hint').html(null);
+
 
   # 头部图片上传
-  $('#banner_picture_add_image').click ()->
-    $('#banner-picture-upload').click()
+  $("#banner_picture_add_image").click ()->
+    $("#banner-picture-upload").click()
 
+
+  # 头部图片上传
+  $("#recommend_picture_add_image").click ()->
+    $("#recommend-picture-upload").click()
