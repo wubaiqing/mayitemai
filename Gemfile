@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # mongoid
 gem 'mongoid', '4.0.2'
+gem 'mongoid-rails'
 gem 'mongoid_auto_increment_id', '0.6.4'
 gem 'mongoid_rails_migrations', '1.0.0'
 
@@ -42,6 +43,9 @@ gem 'rails-i18n'
 
 # Setting
 gem 'settingslogic', '~> 2.0.9'
+
+# 分页
+gem 'will_paginate', '3.0.7'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

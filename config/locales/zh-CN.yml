@@ -9,10 +9,10 @@ zh-CN:
   mongoid:
     attributes:
       brand:
-        name: "商家名称"
+        name: "专题名称"
         wangwang: "店铺旺旺"
         banner_picture: "头部图片"
-        recommend_picture: "相关推荐"
+        recommend_picture: "相关推荐小图"
         state: "状态"
 
   helpers:
@@ -22,5 +22,8 @@ zh-CN:
 
   buttons:
     upload: "上传"
+    action: "操作"
+    update: "修改"
+    delete: "删除"
 
 

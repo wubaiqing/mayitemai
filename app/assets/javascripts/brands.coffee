@@ -11,8 +11,10 @@ $(document).ready ()->
     beforeSend : () ->
       $('#banner-upload-hint').html('上传中...');
     success : (result) ->
+      $('#banner-picture-upload').val null
       $('#brand_banner_picture').val result
       $('#banner-upload-hint').html(null);
+
 
 
   # 推荐相关
@@ -22,6 +24,7 @@ $(document).ready ()->
     beforeSend : () ->
       $('#recommend-upload-hint').html('上传中...');
     success : (result) ->
+      $('#recommend-picture-upload').val null
       $('#brand_recommend_picture').val result
       $('#recommend-upload-hint').html(null);
 
