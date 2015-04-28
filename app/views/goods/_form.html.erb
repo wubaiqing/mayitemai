@@ -1,17 +1,50 @@
-<%= form_for(@good) do |f| %>
-  <% if @good.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@good.errors.count, "error") %> prohibited this good from being saved:</h2>
+<ul class="breadcrumb">
+  <li>
+    <a href="/">首页</a>
+  </li>
+  <li>
+    <a href="<%= goods_path %>">商品管理</a>
+  </li>
+  <li class="active">
+    创建商品
+  </li>
+</ul>
 
-      <ul>
-      <% @good.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="alert alert-warning">
+  提示：标注
+  <span class="required">*</span>
+  为必添项
+</div>
 
-  <div class="actions">
-    <%= f.submit %>
+<%= form_for(@good, html: {class: "form-horizontal"}) do |f| %>
+<table class="table table-striped table-bordered table-condensed table-hover">
+    <% if @good.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% @brand.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.name') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%# <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
+
+
+  </table>
+  <div class="form-actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
   </div>
 <% end %>
