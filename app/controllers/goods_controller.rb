@@ -1,28 +1,21 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: [:show, :edit, :update, :destroy]
 
-  # GET /goods
-  # GET /goods.json
+  # 管理
   def index
     @goods = Good.all
   end
 
-  # GET /goods/1
-  # GET /goods/1.json
-  def show
-  end
-
-  # GET /goods/new
+  # 新增
   def new
     @good = Good.new
   end
 
-  # GET /goods/1/edit
+  # 编辑
   def edit
   end
 
-  # POST /goods
-  # POST /goods.json
+  # 创建
   def create
     @good = Good.new(good_params)
 
@@ -37,8 +30,7 @@ class GoodsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /goods/1
-  # PATCH/PUT /goods/1.json
+  # 修改
   def update
     respond_to do |format|
       if @good.update(good_params)
@@ -51,16 +43,6 @@ class GoodsController < ApplicationController
     end
   end
 
-  # DELETE /goods/1
-  # DELETE /goods/1.json
-  def destroy
-    @good.destroy
-    respond_to do |format|
-      format.html { redirect_to goods_url, notice: 'Good was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_good
@@ -69,6 +51,6 @@ class GoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def good_params
-      params[:good]
+      params[:good].permit(:taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id)
     end
 end

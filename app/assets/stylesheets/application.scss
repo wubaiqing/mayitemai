@@ -1,5 +1,12 @@
+@import "bootstrap-variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "nprogress";
+
+.navbar-inverse {
+  // background-color: #EB5424;
+
+}
 
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
@@ -108,7 +115,7 @@ body {
 .placeholder img {
   display: inline-block;
   border-radius: 50%;
-} 
+}
 
 
 .form-actions {

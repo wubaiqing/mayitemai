@@ -7,6 +7,35 @@
   </li>
 </ul>
 
+
+<div>
+  <%= form_for :brand do |f| %>
+  <div class="tabbable swp_tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a>搜索</a></li>
+    </ul>
+  </div>
+
+  <table class="table table-striped table-bordered table-hover">
+    <tbody>
+      <tr>
+        <td width="15%">店铺旺旺:</td>
+        <td>
+          <div class="col-sm-4">
+            <%= f.text_field :wangwang, class: "form-control col-sm-2" %>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="form-actions">
+    <button class="btn btn-default" id="searchCustomer" type="submit" name="yt0">搜索</button>
+  </div>
+  <% end %>
+</div>
+
+
 <table class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
@@ -30,27 +59,27 @@
 
   <tbody>
     <% @brands.each do |brand| %>
-      <tr class="<%= brand.state == 0 ? "warning" : "" %>">
-        <td>
-          <%= brand.id %>
-        </td>
-        <td>
-          <%= brand.name %>
-        </td>
-        <td>
-          <%= brand.wangwang %>
-        </td>
-        <td>
-          <% if brand.state == Brand::STATE[:normal]%>
-            <%= t("brands.normal") %>
-          <% else %>
-            <%= t("brands.blocked") %>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to(t("buttons.update"), edit_brand_path(brand) ) %>
-        </td>
-      </tr>
+    <tr class="<%= brand.state == 0 ? "warning" : "" %>">
+      <td>
+        <%= brand.id %>
+      </td>
+      <td>
+        <%= brand.name %>
+      </td>
+      <td>
+        <%= brand.wangwang %>
+      </td>
+      <td>
+        <% if brand.state == Brand::STATE[:normal]%>
+        <%= t("brands.normal") %>
+        <% else %>
+        <%= t("brands.blocked") %>
+        <% end %>
+      </td>
+      <td>
+        <%= link_to(t("buttons.update"), edit_brand_path(brand) ) %>
+      </td>
+    </tr>
     <% end %>
   </tbody>
 </table>
