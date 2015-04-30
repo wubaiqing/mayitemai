@@ -4,7 +4,13 @@ class BrandsController < ApplicationController
 
   # 管理
   def index
-    @brands = Brand.all.paginate(:page => params[:page], :per_page => 10)
+    @brands = Brand.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
+
+    keywords = params[:q] || ''
+    if !keywords.blank?
+      @brands = Brand.find_by_wangwang(keywords)
+       .desc(:id).paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   # 新建

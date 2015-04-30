@@ -9,7 +9,7 @@
 
 
 <div>
-  <%= form_for :brand do |f| %>
+  <%= form_for :brand, method: :get do |f| %>
   <div class="tabbable swp_tabbable">
     <ul class="nav nav-tabs">
       <li class="active"><a>搜索</a></li>
@@ -22,7 +22,7 @@
         <td width="15%">店铺旺旺:</td>
         <td>
           <div class="col-sm-4">
-            <%= f.text_field :wangwang, class: "form-control col-sm-2" %>
+            <%= f.text_field :wangwang, class: "form-control col-sm-2", name: "q", value: params[:q] %>
           </div>
         </td>
       </tr>
