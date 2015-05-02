@@ -3,12 +3,21 @@ class GoodsController < ApplicationController
 
   # 管理
   def index
-    @goods = Good.all
+    @goods = Good.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
+
+    taobao_id = params[:taobao_id] || ''
+    wangwang = params[:wangwang] || ''
+
+    if !taobao_id.blank? or !wangwang.blank?
+      @brands = Good.find_by_wangwang(wangwang).find_by_taobao_id(taobao_id)
+       .desc(:id).paginate(:page => params[:page], :per_page => 10)
+    end
   end
 
   # 新增
   def new
     @good = Good.new
+    @brands = Brand.find_by_publish.all
   end
 
   # 编辑
@@ -18,6 +27,7 @@ class GoodsController < ApplicationController
   # 创建
   def create
     @good = Good.new(good_params)
+    @brands = Brand.find_by_publish.all
 
     if @good.save
       redirect_to goods_url

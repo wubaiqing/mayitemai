@@ -10,3 +10,6 @@
 
 Turbolinks.enableProgressBar();
 
+$(document).on 'page:change',  ->
+  $('ul.nav-sidebar > li').click ->
+    $(this).addClass 'active'

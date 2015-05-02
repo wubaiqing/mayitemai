@@ -15,6 +15,7 @@ class Good
   field :picture_url
   field :sort, type: Integer, default: 0
   field :brand_id, type: Integer
+  field :state, type: Integer, default: 1
 
   def self.fetch_taobao_repositories(taobao_id)
 

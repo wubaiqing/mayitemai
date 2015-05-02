@@ -37,4 +37,12 @@ zh-CN:
     delete: "删除"
     fetch:  "获取"
 
+  menus:
+    home: "首页"
+    new_brand: "创建专题"
+    brands: "专题管理"
+    new_good: "添加商品"
+    goods: "商品管理"
+
+
 

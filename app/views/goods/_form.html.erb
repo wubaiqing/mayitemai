@@ -40,7 +40,13 @@
       <div class="col-sm-4">
           <%= f.text_field :taobao_id, class: "form-control" %>
       </div>
-      <%= link_to(t("buttons.fetch"), "javascript:void(0);", id: "fetch_taobao_repositories")%>
+      <div class="col-sm-1">
+        <%= link_to(t("buttons.fetch"), "javascript:void(0);", id: "fetch_taobao_repositories")%>
+      </div>
+      <div class="col-sm-4" id="fetch-taobao-repositories-hint">
+
+
+      </div>
     </td>
   </tr>
 
@@ -137,7 +143,7 @@
     </td>
     <td colspan="3">
       <div class="col-sm-4">
-        <%= f.text_field :brand_id, class: "form-control" %>
+        <%= f.collection_select :brand_id, @brands, :id, :name, {prompt: true}, {class: "form-control"} %>
       </div>
     </td>
   </tr>

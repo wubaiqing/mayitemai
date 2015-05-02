@@ -25,5 +25,9 @@ class Brand
     where(wangwang: /#{wangwang}/)
   end
 
+  def self.find_by_publish
+    where(state: 1)
+  end
+
 
 end
