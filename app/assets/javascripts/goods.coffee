@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 $(document).on 'page:change',  ->
   $('#fetch_taobao_repositories').click ->
 
@@ -17,7 +18,7 @@ $(document).on 'page:change',  ->
       return alert '请填写淘宝ID'
 
     # 请求成功
-    $.getJSON('/goods/fetch_taobao_repositories', {taobao_id: taobao_id}, (jsonData)->
+    $.getJSON('/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
       if jsonData is null
         return alert '数据返回为空'
       else
