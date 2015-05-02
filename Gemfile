@@ -47,6 +47,7 @@ gem 'settingslogic', '~> 2.0.9'
 # 分页
 gem 'will_paginate', '3.0.7'
 
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

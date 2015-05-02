@@ -19,28 +19,25 @@ class GoodsController < ApplicationController
   def create
     @good = Good.new(good_params)
 
-    respond_to do |format|
-      if @good.save
-        format.html { redirect_to @good, notice: 'Good was successfully created.' }
-        format.json { render :show, status: :created, location: @good }
-      else
-        format.html { render :new }
-        format.json { render json: @good.errors, status: :unprocessable_entity }
-      end
+    if @good.save
+      redirect_to goods_url
+    else
+      render :new
     end
   end
 
   # 修改
   def update
-    respond_to do |format|
-      if @good.update(good_params)
-        format.html { redirect_to @good, notice: 'Good was successfully updated.' }
-        format.json { render :show, status: :ok, location: @good }
-      else
-        format.html { render :edit }
-        format.json { render json: @good.errors, status: :unprocessable_entity }
-      end
+    if @good.save
+      redirect_to goods_url
+    else
+      render :new
     end
+  end
+
+  def get_goods
+    taobao_id = params[:taobao_id] || '38834041029'
+    puts Good.fetch_taobao_repositories(taobao_id)
   end
 
   private

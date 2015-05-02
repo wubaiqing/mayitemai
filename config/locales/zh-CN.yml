@@ -15,6 +15,15 @@ zh-CN:
         banner_picture: "头部图片"
         recommend_picture: "相关推荐小图"
         state: "状态"
+      good:
+        taobao_id: "宝贝ID"
+        taobao_url: "宝贝链接"
+        title: "宝贝标题"
+        original_price: "宝贝原价"
+        price: "宝贝活动价"
+        picture_url: "宝贝图片"
+        sort: "排序值"
+        brand_id: "所属专题"
 
   helpers:
     submit:
@@ -26,5 +35,6 @@ zh-CN:
     action: "操作"
     update: "修改"
     delete: "删除"
+    fetch:  "获取"
 
 
