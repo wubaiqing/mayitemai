@@ -38,9 +38,5 @@ $(document).on 'page:change',  ->
     $("#recommend-picture-upload").click()
 
 
-$(document).on 'page:before-unload', ->
-  NProgress.start()
 
-$(document).on 'page:load', ->
-  NProgress.done()
 

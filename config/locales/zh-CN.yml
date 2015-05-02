@@ -6,6 +6,7 @@ zh-CN:
     messages:
       blank: "不能为空"
 
+
   mongoid:
     attributes:
       brand:
