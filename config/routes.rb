@@ -1,19 +1,20 @@
 Rails.application.routes.draw do
 
-
-  resources :brands, :goods, :homes
-
-  resources :photos do
+  # 获取淘宝商品
+  resources :goods do
     collection do
-      get 'search'
+      get 'fetch_taobao_repositories'
     end
   end
 
+  # 协议搜索
   resources :brands do
     collection do
       get 'search'
     end
   end
+
+  resources :brands, :goods, :homes, :photos
 
   root 'homes#index'
 

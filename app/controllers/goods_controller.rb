@@ -35,9 +35,13 @@ class GoodsController < ApplicationController
     end
   end
 
-  def get_goods
+  def fetch_taobao_repositories
     taobao_id = params[:taobao_id] || '38834041029'
-    puts Good.fetch_taobao_repositories(taobao_id)
+
+    item = Good.fetch_taobao_repositories(taobao_id)
+
+    # 七牛图片地址
+    render json: item
   end
 
   private

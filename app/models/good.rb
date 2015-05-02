@@ -21,7 +21,7 @@ class Good
     url = "http://admin.jtzdm.com/index.php?r=goods/getgoods&taobaoId=#{taobao_id}"
     begin
       json = Timeout::timeout(5) do
-        puts open(url).read
+        open(url).read
       end
     rescue => e
       Rails.logger.error("Taobao Repositories fetch Error: #{e}")

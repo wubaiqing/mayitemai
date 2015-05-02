@@ -6,6 +6,7 @@
 #= require jquery.html5-fileupload
 #= require nprogress
 #= require brands
+#= require goods
 
 Turbolinks.enableProgressBar();
 
