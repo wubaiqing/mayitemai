@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
   # 获取淘宝商品
   resources :goods do
     collection do
