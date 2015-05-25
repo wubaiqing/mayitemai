@@ -9,18 +9,17 @@ $(document).on 'page:change',  ->
     url : "/photos"
     type : "POST"
     beforeSend : ->
-      $('#logo-picture-hint').html '上传中...';
+      $('#logo-picture-hint').html '上传中...'
     success : (result) ->
       $('#brand_logo_picture').val result
       $('#logo-picture-hint').html null
-
 
   # 首页图片
   $("#desc-picture-upload").fileUpload
     url : "/photos"
     type : "POST"
     beforeSend : ->
-      $('#desc-picture-hint').html '上传中...';
+      $('#desc-picture-hint').html '上传中...'
     success : (result) ->
       $('#brand_desc_picture').val result
       $('#desc-picture-hint').html null
@@ -40,7 +39,6 @@ $(document).on 'page:change',  ->
   $("#logo_picture_add_image").click ->
     $("#logo-picture-upload").click()
 
-
   # 首页
   $("#desc_picture_add_image").click ->
     $("#desc-picture-upload").click()
@@ -48,7 +46,3 @@ $(document).on 'page:change',  ->
   # 专题页顶部
   $("#banner_picture_add_image").click ->
     $("#banner-picture-upload").click()
-
-
-
-
