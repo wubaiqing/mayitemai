@@ -2,8 +2,11 @@ zh-CN:
   brands:
     name: "专题名称"
     wangwang: "店铺旺旺"
-    banner_picture: "头部图片"
-    recommend_picture: "相关推荐小图"
+    logo_picture: "品牌Logo"
+    desc_picture: "首页图片"
+    banner_picture: "专题页头部图片"
+    sale: "折扣数"
+    sort: "排序值"
     state: "上线"
     normal: "上线"
     blocked: "下线"

@@ -4,38 +4,50 @@
 
 $(document).on 'page:change',  ->
 
-  # 头部图片
+  # Logo图片
+  $("#logo-picture-upload").fileUpload
+    url : "/photos"
+    type : "POST"
+    beforeSend : ->
+      $('#logo-picture-hint').html '上传中...';
+    success : (result) ->
+      $('#brand_logo_picture').val result
+      $('#logo-picture-hint').html null
+
+
+  # 首页图片
+  $("#desc-picture-upload").fileUpload
+    url : "/photos"
+    type : "POST"
+    beforeSend : ->
+      $('#desc-picture-hint').html '上传中...';
+    success : (result) ->
+      $('#brand_desc_picture').val result
+      $('#desc-picture-hint').html null
+
+  # 专题顶部图片
   $("#banner-picture-upload").fileUpload
     url : "/photos"
     type : "POST"
     beforeSend : ->
-      $('#banner-upload-hint').html('上传中...');
+      $('#banner-picture-hint').html '上传中...'
     success : (result) ->
-      $('#banner-picture-upload').val null
       $('#brand_banner_picture').val result
-      $('#banner-upload-hint').html(null);
+      $('#banner-picture-hint').html null;
 
 
-  # 推荐相关
-  $("#recommend-picture-upload").fileUpload
-    url : "/photos"
-    type : "POST"
-    beforeSend : ->
-      $('#recommend-upload-hint').html('上传中...');
-    success : (result) ->
-      $('#recommend-picture-upload').val null
-      $('#brand_recommend_picture').val result
-      $('#recommend-upload-hint').html(null);
+  # 品牌Logo
+  $("#logo_picture_add_image").click ->
+    $("#logo-picture-upload").click()
 
 
-  # 头部图片上传
+  # 首页
+  $("#desc_picture_add_image").click ->
+    $("#desc-picture-upload").click()
+
+  # 专题页顶部
   $("#banner_picture_add_image").click ->
     $("#banner-picture-upload").click()
-
-
-  # 头部图片上传
-  $("#recommend_picture_add_image").click ->
-    $("#recommend-picture-upload").click()
 
 
 

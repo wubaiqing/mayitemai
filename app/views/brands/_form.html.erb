@@ -59,6 +59,50 @@
     <tr>
       <td width="15%">
         <label class="required">
+          <%= t('brands.logo_picture') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :logo_picture, class: "form-control" %>
+        </div>
+        <div class="col-sm-1">
+          <div class="d-hidden">
+            <input type="file" id="logo-picture-upload">
+          </div>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "logo_picture_add_image")%>
+        </div>
+        <div class="col-sm-2" id="logo-picture-hint">
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.desc_picture') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :desc_picture, class: "form-control" %>
+        </div>
+        <div class="col-sm-2">
+          <div class="d-hidden">
+            <input type="file" id="desc-picture-upload">
+          </div>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "desc_picture_add_image") %>
+        </div>
+        <div class="col-sm-2" id="desc-picture-hint">
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
           <%= t('brands.banner_picture') %>
           <span class="required">*</span>
         </label>
@@ -67,13 +111,13 @@
         <div class="col-sm-4">
           <%= f.text_field :banner_picture, class: "form-control" %>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <div class="d-hidden">
             <input type="file" id="banner-picture-upload">
           </div>
-          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "banner_picture_add_image")%>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "banner_picture_add_image") %>
         </div>
-        <div class="col-sm-2" id="banner-upload-hint">
+        <div class="col-sm-2" id="banner-picture-hint">
         </div>
       </td>
     </tr>
@@ -81,21 +125,30 @@
     <tr>
       <td width="15%">
         <label class="required">
-          <%= t('brands.recommend_picture') %>
+          <%= t('brands.sale') %>
           <span class="required">*</span>
         </label>
       </td>
       <td colspan="3">
         <div class="col-sm-4">
-          <%= f.text_field :recommend_picture, class: "form-control" %>
+          <%= f.text_field :sale, class: "form-control" %>
         </div>
-        <div class="col-sm-2">
-          <div class="d-hidden">
-            <input type="file" id="recommend-picture-upload">
-          </div>
-          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "recommend_picture_add_image") %>
+        <div class="col-sm-1">
+          折起
         </div>
-        <div class="col-sm-2" id="recommend-upload-hint">
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('brands.sort') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :sort, class: "form-control" %>
         </div>
       </td>
     </tr>

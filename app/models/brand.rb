@@ -7,7 +7,11 @@ class Brand
 
   field :name
   field :wangwang
+  field :logo_picture
+  field :desc_picture
   field :banner_picture
+  field :sale
+  field :sort, type: Integer, default: 0
   field :recommend_picture
   field :state, type: Integer, default: 1
 
