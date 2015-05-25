@@ -39,7 +39,7 @@ class GoodsController < ApplicationController
 
   # 修改
   def update
-    if @good.save
+    if Good.update(good_params)
       redirect_to goods_url
     else
       render :new

@@ -2,11 +2,8 @@
   <li>
     <a href="/">首页</a>
   </li>
-  <li>
-    <a href="<%= goods_path %>">商品管理</a>
-  </li>
   <li class="active">
-    创建商品
+    商品管理
   </li>
 </ul>
 
@@ -23,13 +20,13 @@
         <td width="15%"><%= t('goods.taobao_id') %>:</td>
         <td>
           <div class="col-sm-10">
-            <%= f.text_field :wangwang, class: "form-control col-sm-2", name: "taobao_id", value: params[:q] %>
+            <%= f.text_field :taobao_id, class: "form-control col-sm-2", name: "taobao_id", value: params[:taobao_id] %>
           </div>
         </td>
         <td width="15%"><%= t('brands.wangwang') %>:</td>
         <td>
           <div class="col-sm-10">
-            <%= f.text_field :wangwang, class: "form-control col-sm-2", name: "wangwang", value: params[:q] %>
+            <%= f.text_field :wangwang, class: "form-control col-sm-2", name: "wangwang", value: params[:taobao_id] %>
           </div>
         </td>
       </tr>
@@ -51,7 +48,13 @@
         <%= t('goods.title') %>
       </th>
       <th>
+        <%= t('goods.taobao_id') %>
+      </th>
+      <th>
         <%= t('brands.wangwang') %>
+      </th>
+      <th>
+        <%= t('buttons.action') %>
       </th>
     </tr>
   </thead>
@@ -60,7 +63,16 @@
     <% @goods.each do |goods| %>
     <tr class="<%= goods.state == 0 ? "warning" : "" %>">
       <td>
+        <%= goods.id %>
+      </td>
+      <td>
         <%= goods.title %>
+      </td>
+      <td>
+        <%= goods.taobao_id %>
+      </td>
+      <td>
+        <%= goods.brand_id %>
       </td>
       <td>
         <%= link_to(t("buttons.update"), edit_good_path(goods) ) %>
