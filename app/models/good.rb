@@ -20,8 +20,9 @@ class Good
   def self.fetch_taobao_repositories(taobao_id)
 
     url = "http://admin.jtzdm.com/index.php?r=goods/getgoods&taobaoId=#{taobao_id}"
+    puts url
     begin
-      json = Timeout::timeout(5) do
+      json = Timeout::timeout(10) do
         open(url).read
       end
     rescue => e

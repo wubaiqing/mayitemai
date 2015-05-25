@@ -48,6 +48,6 @@ class BrandsController < ApplicationController
   end
 
   def brand_params
-    params[:brand].permit(:name, :wangwang, :banner_picture, :recommend_picture, :state)
+    params[:brand].permit(:name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort)
   end
 end

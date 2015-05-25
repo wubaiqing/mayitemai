@@ -22,6 +22,7 @@ class GoodsController < ApplicationController
 
   # 编辑
   def edit
+    @brands = Brand.find_by_publish.all
   end
 
   # 创建

@@ -3,7 +3,7 @@ class Brand
   include Mongoid::Timestamps
   include Mongoid::BaseModel
 
-  validates :name, :wangwang, :banner_picture, :recommend_picture, presence: true
+  validates :name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort, presence: true
 
   field :name
   field :wangwang
@@ -12,7 +12,6 @@ class Brand
   field :banner_picture
   field :sale
   field :sort, type: Integer, default: 0
-  field :recommend_picture
   field :state, type: Integer, default: 1
 
   index({ wangwang: 1 }, { unique: true, name: "ssn_index" })

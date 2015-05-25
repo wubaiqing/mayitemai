@@ -12,8 +12,11 @@ zh-CN:
       brand:
         name: "专题名称"
         wangwang: "店铺旺旺"
-        banner_picture: "头部图片"
-        recommend_picture: "相关推荐小图"
+        logo_picture: "品牌Logo"
+        desc_picture: "首页图片"
+        banner_picture: "专题页头部图片"
+        sale: "折扣数"
+        sort: "排序值"
         state: "状态"
       good:
         taobao_id: "宝贝ID"
@@ -36,6 +39,7 @@ zh-CN:
     update: "修改"
     delete: "删除"
     fetch:  "获取"
+    review: "预览"
 
   menus:
     home: "首页"

@@ -46,3 +46,24 @@ $(document).on 'page:change',  ->
   # 专题页顶部
   $("#banner_picture_add_image").click ->
     $("#banner-picture-upload").click()
+
+
+
+  # 品牌预览
+  $('#logo_picture_review').click ->
+    url = $('#brand_logo_picture').val()
+    if url isnt ''
+      window.open url
+
+  # 首页预览
+  $('#desc_picture_review').click ->
+    url = $('#brand_desc_picture').val()
+    if url isnt ''
+      window.open url
+
+  # 专题页顶部预览
+  $('#banner_picture_review').click ->
+    url = $('#brand_banner_picture').val()
+    if url isnt ''
+      window.open url
+

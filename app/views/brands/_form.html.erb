@@ -67,11 +67,12 @@
         <div class="col-sm-4">
           <%= f.text_field :logo_picture, class: "form-control" %>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
           <div class="d-hidden">
             <input type="file" id="logo-picture-upload">
           </div>
           <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "logo_picture_add_image")%>
+          <%= link_to(t("buttons.review"), "javascript:void(0);", id: "logo_picture_review")%>
         </div>
         <div class="col-sm-2" id="logo-picture-hint">
         </div>
@@ -94,6 +95,7 @@
             <input type="file" id="desc-picture-upload">
           </div>
           <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "desc_picture_add_image") %>
+          <%= link_to(t("buttons.review"), "javascript:void(0);", id: "desc_picture_review")%>
         </div>
         <div class="col-sm-2" id="desc-picture-hint">
         </div>
@@ -116,6 +118,7 @@
             <input type="file" id="banner-picture-upload">
           </div>
           <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "banner_picture_add_image") %>
+          <%= link_to(t("buttons.review"), "javascript:void(0);", id: "banner_picture_review")%>
         </div>
         <div class="col-sm-2" id="banner-picture-hint">
         </div>
