@@ -4,10 +4,9 @@
 
 
 $(document).on 'page:change',  ->
+
+  # 获取淘宝商品
   $('#fetch_taobao_repositories').click ->
-
-    $('#fetch-taobao-repositories-hint').html('正在获取...');
-
 
     # 淘宝ID
     taobao_id = $('#good_taobao_id').val()
@@ -20,6 +19,9 @@ $(document).on 'page:change',  ->
       $('#good_picture_url').val null
       return alert '请填写淘宝ID'
 
+    # 提示
+    $('#fetch-taobao-repositories-hint').html('正在获取...');
+
     # 请求成功
     $.getJSON '/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
 
@@ -31,3 +33,23 @@ $(document).on 'page:change',  ->
       $('#good_title').val jsonData.title
       $('#good_original_price').val jsonData.price
       $('#good_picture_url').val jsonData.pic_url
+
+  # 商品图片
+  $("#goods-picture-upload").fileUpload
+    url : "/photos"
+    type : "POST"
+    beforeSend : ->
+      $('#goods-picture-hint').html '上传中...'
+    success : (result) ->
+      $('#good_picture_url').val result
+      $('#goods-picture-hint').html null;
+
+  # 商品图片上传事件
+  $("#goods_picture_add_image").click ->
+    $("#goods-picture-upload").click()
+
+  # 商品图片预览
+  $('#goods_picture_review').click ->
+    url = $('#good_picture_url').val()
+    if url isnt ''
+      window.open url

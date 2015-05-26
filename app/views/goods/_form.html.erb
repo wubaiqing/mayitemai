@@ -117,6 +117,16 @@
       <div class="col-sm-4">
         <%= f.text_field :picture_url, class: "form-control" %>
       </div>
+      <div class="col-sm-2">
+        <div class="d-hidden">
+          <input type="file" id="goods-picture-upload">
+        </div>
+        <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "goods_picture_add_image") %>
+        <%= link_to(t("buttons.review"), "javascript:void(0);", id: "goods_picture_review")%>
+      </div>
+      <div class="col-sm-2" id="goods-picture-hint">
+
+      </div>
     </td>
   </tr>
 

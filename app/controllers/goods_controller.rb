@@ -8,10 +8,16 @@ class GoodsController < ApplicationController
     taobao_id = params[:taobao_id] || ''
     wangwang = params[:wangwang] || ''
 
-    if !taobao_id.blank? or !wangwang.blank?
-      @brands = Good.find_by_wangwang(wangwang).find_by_taobao_id(taobao_id)
+    if !taobao_id.blank?
+      @goods = Good.find_by_taobao_id(taobao_id)
        .desc(:id).paginate(:page => params[:page], :per_page => 10)
     end
+
+    if !wangwang.blank?
+      @goods = Good.find_by_wangwang(wangwang)
+       .desc(:id).paginate(:page => params[:page], :per_page => 10)
+    end
+
   end
 
   # 新增
@@ -39,7 +45,8 @@ class GoodsController < ApplicationController
 
   # 修改
   def update
-    if Good.update(good_params)
+    @brands = Brand.find_by_publish.all
+    if @good.update(good_params)
       redirect_to goods_url
     else
       render :new

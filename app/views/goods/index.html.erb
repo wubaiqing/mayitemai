@@ -26,7 +26,7 @@
         <td width="15%"><%= t('brands.wangwang') %>:</td>
         <td>
           <div class="col-sm-10">
-            <%= f.text_field :wangwang, class: "form-control col-sm-2", name: "wangwang", value: params[:taobao_id] %>
+            <%= f.text_field :wangwang, class: "form-control col-sm-2", name: "wangwang", value: params[:wangwang] %>
           </div>
         </td>
       </tr>
@@ -72,7 +72,7 @@
         <%= goods.taobao_id %>
       </td>
       <td>
-        <%= goods.brand_id %>
+        <%= goods.brand.wangwang %>
       </td>
       <td>
         <%= link_to(t("buttons.update"), edit_good_path(goods) ) %>

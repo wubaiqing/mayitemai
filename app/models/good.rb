@@ -17,6 +17,8 @@ class Good
   field :brand_id, type: Integer
   field :state, type: Integer, default: 1
 
+  belongs_to :brand
+
   index sort: 1
   index brand_id: 1
   index taobao_id: 1
@@ -33,6 +35,16 @@ class Good
       Rails.logger.error("Taobao Repositories fetch Error: #{e}")
       return false
     end
+  end
+
+  def self.find_by_wangwang(wangwang)
+    ids = Brand.where(wangwang: /#{wangwang}/).pluck(:id)
+    where(:brand_id.in => ids)
+  end
+
+
+  def self.find_by_taobao_id(taobao_id)
+    where(taobao_id: taobao_id)
   end
 
 end
