@@ -48,6 +48,9 @@ gem 'will_paginate', '3.0.7'
 # 用户
 gem 'devise'
 
+# 用户
+gem 'puma'
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
