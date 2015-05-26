@@ -4,6 +4,7 @@ class Brand
   include Mongoid::BaseModel
 
   validates :name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort, presence: true
+  validates :wangwang, uniqueness: true
 
   field :name
   field :wangwang

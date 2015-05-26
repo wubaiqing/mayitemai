@@ -6,6 +6,7 @@ class Good
   include Mongoid::BaseModel
 
   validates :taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, presence: true
+  validates :taobao_id, uniqueness: true
 
   field :taobao_id, type: Integer
   field :taobao_url
@@ -25,8 +26,14 @@ class Good
 
   # 根据淘宝ID获取淘宝信息
   def self.fetch_taobao_repositories(taobao_id)
+
+    uniqueness = self.find_by_taobao_id(taobao_id)
+    if !uniqueness.blank?
+      return {'status': '0'}.to_json
+    end
+
+
     url = "http://admin.jtzdm.com/index.php?r=goods/getgoods&taobaoId=#{taobao_id}"
-    puts url
     begin
       json = Timeout::timeout(10) do
         open(url).read

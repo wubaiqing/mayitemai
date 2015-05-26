@@ -25,6 +25,10 @@ $(document).on 'page:change',  ->
     # 请求成功
     $.getJSON '/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
 
+      if (jsonData.status is '0')
+        return $('#fetch-taobao-repositories-hint').html '商品已存在';
+
+
       if jsonData is false || jsonData is null
         return $('#fetch-taobao-repositories-hint').html('数据返回空，或网络请求错误，请重试...');
 

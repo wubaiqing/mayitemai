@@ -54,9 +54,12 @@ class GoodsController < ApplicationController
   end
 
   def fetch_taobao_repositories
-    taobao_id = params[:taobao_id] || '38834041029'
+    taobao_id = params[:taobao_id] || ''
 
-    item = Good.fetch_taobao_repositories(taobao_id)
+    item = ''
+    if !taobao_id.blank?
+      item = Good.fetch_taobao_repositories(taobao_id)
+    end
 
     # 七牛图片地址
     render json: item
