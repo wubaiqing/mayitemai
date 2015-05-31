@@ -30,7 +30,7 @@ class Brand
   end
 
   def self.find_by_publish
-    where(state: 1)
+    where(state: 1).desc(:id)
   end
 
 

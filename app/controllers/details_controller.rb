@@ -5,7 +5,7 @@ class DetailsController < ApplicationController
   # GET /details/1
   # GET /details/1.json
   def show
-    @goods = Good.find_by_wangwang(@brand.wangwang)
+    @goods = Good.find_by_wangwang(@brand.wangwang).desc(:id)
   end
 
   # DELETE /details/1
