@@ -62,7 +62,7 @@
         <%= brand.id %>
       </td>
       <td>
-        <%= brand.name %>
+        <%= link_to brand.name, detail_path(brand), {target: "_blank"} %>
       </td>
       <td>
         <%= brand.wangwang %>
