@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>蚂蚁特卖 - 后台管理</title>
+    <meta name="keywords" content="淘宝，团购，商品团购，本地生活，团购大全，餐饮团购，化妆品团购，数码团购 " />
+    <meta name="description" content="中国最大的团购网站，淘宝海量丰富团购商品，每日精选优良团购商品，全国团购成交量第一，品质生活保证 " />
+    <link href="http://7xioz9.com2.z0.glb.qiniucdn.com/normalize.css" rel="stylesheet" />
+    <link href="http://7xioz9.com2.z0.glb.qiniucdn.com/4detail.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://7xioz9.com2.z0.glb.qiniucdn.com/jquery.lazyload.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function () {
+      $("img.item-pic").lazyload();
+    });
+    </script>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

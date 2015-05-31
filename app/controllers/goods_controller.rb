@@ -1,6 +1,8 @@
 class GoodsController < ApplicationController
   before_action :set_good, only: [:show, :edit, :update, :destroy]
 
+  before_filter :require_user
+
   # 管理
   def index
     @goods = Good.all.desc(:id).paginate(:page => params[:page], :per_page => 10)

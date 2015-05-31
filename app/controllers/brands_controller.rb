@@ -2,6 +2,8 @@ class BrandsController < ApplicationController
 
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
+  before_filter :require_user
+
   # 管理
   def index
     @brands = Brand.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
