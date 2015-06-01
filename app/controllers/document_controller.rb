@@ -8,6 +8,6 @@ class DocumentController < ApplicationController
   end
 
   def supplier
-    set_seo_meta('商家合作')
+    set_seo_meta('商务合作')
   end
 end
