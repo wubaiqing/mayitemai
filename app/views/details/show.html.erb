@@ -42,14 +42,13 @@
 <div class="clearfix">
   <div class="footer">
     <div class="layout">
-      <a class="icon" href="http://www.firefox.com.cn/?igfox" title="火狐官网"></a>
       <div class="site-info">
         <p class="links">
-          <a href="http://firefox.com.cn/?igfox" title="关于我们">关于我们</a>
+          <%= link_to '关于我们', {controller: "document", action: "about"}, target: "_blank" %>
           <span>|</span>
-          <a href="http://www.firefoxchina.cn/" title="商务合作">商务合作</a>
+          <%= link_to '联系我们', {controller: "document", action: "contact"}, target: "_blank" %>
           <span>|</span>
-          <a href="http://www.firefoxchina.cn/" title="联系我们">联系我们</a>
+          <%= link_to '商家合作', {controller: "document", action: "supplier"}, target: "_blank" %>
           <span>|</span>
           <a href="http://www.manyitou.com/" title="满意投">满意投</a>
           <span>|</span>
@@ -57,7 +56,7 @@
         </p>
         <p class="copyright"><b>版权所有 © 2015 蚂蚁特卖. 北京水木华哲网络科技有限公司</b>
         </p>
-        <p class="icp"><b>京ICP备11011334号 </b>
+        <p class="icp"><b>京 ICP备14028259号 </b>
         </p>
       </div>
     </div>
