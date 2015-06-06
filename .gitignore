@@ -16,3 +16,4 @@ config/initializers/qiniu_sdk.rb
 
 # Ignore all IDE
 /idea/*
+.DS_Store
