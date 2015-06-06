@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class Cpanel::PhotosController < ApplicationController
 
 
   before_filter :require_user

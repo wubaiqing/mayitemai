@@ -1,4 +1,4 @@
-class HomesController < ApplicationController
+class Cpanel::HomesController < ApplicationController
 
   before_filter :require_user
 

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-
   # 用户系统
-  devise_for :users, :path => 'accounts'
+  devise_for :users, :path => 'accounts', controllers: {
+    registrations: :account,
+    # sessions: :sessions
+  }
 
   # 关于我们
   get '/document/about', to: 'document#about'
@@ -14,10 +16,15 @@ Rails.application.routes.draw do
   get '/document/supplier', to: 'document#supplier'
 
   # 详情页
-  resources :details
+  resources :index, :details
+
+  root to: 'home#index'
 
 
-  namespace :admin do
+  namespace :cpanel do
+
+    # 后台首页
+    root to: 'homes#index'
 
     # 获取淘宝商品
     resources :goods do
@@ -35,12 +42,7 @@ Rails.application.routes.draw do
 
     resources :brands, :goods, :homes, :photos
 
-    root 'homes#index'
   end
 
-
-  resources :brands, :goods, :homes, :photos
-
-  root 'homes#index'
 
 end

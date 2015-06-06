@@ -1,4 +1,4 @@
-class GoodsController < ApplicationController
+class Cpanel::GoodsController < ApplicationController
   before_action :set_good, only: [:show, :edit, :update, :destroy]
 
   before_filter :require_user
@@ -39,7 +39,7 @@ class GoodsController < ApplicationController
     @brands = Brand.find_by_publish.all
 
     if @good.save
-      redirect_to goods_url
+      redirect_to cpanel_goods_url
     else
       render :new
     end
@@ -49,7 +49,7 @@ class GoodsController < ApplicationController
   def update
     @brands = Brand.find_by_publish.all
     if @good.update(good_params)
-      redirect_to goods_url
+      redirect_to cpanel_goods_url
     else
       render :new
     end

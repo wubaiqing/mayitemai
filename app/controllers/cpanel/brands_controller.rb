@@ -1,4 +1,4 @@
-class BrandsController < ApplicationController
+class Cpanel::BrandsController < ApplicationController
 
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 

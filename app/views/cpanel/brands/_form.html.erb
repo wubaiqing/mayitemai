@@ -3,7 +3,7 @@
     <a href="/">首页</a>
   </li>
   <li>
-    <a href="<%= brands_path %>">专题管理</a>
+    <a href="<%= cpanel_brands_path %>">专题管理</a>
   </li>
   <li class="active">
     创建专题
@@ -16,7 +16,7 @@
   为必添项
 </div>
 
-<%= form_for(@brand, html: {class: "form-horizontal"}) do |f| %>
+<%= form_for([:cpanel, @brand], html: {class: "form-horizontal"}) do |f| %>
 <table class="table table-striped table-bordered table-condensed table-hover">
     <% if @brand.errors.any? %>
       <div class="alert alert-danger" role="alert">

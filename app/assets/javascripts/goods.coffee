@@ -23,7 +23,7 @@ $(document).on 'page:change',  ->
     $('#fetch-taobao-repositories-hint').html('正在获取...');
 
     # 请求成功
-    $.getJSON '/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
+    $.getJSON '/cpanel/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
 
       if (jsonData.status is '0')
         return $('#fetch-taobao-repositories-hint').html '商品已存在';
