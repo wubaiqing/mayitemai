@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   # 用户系统
   devise_for :users, :path => 'accounts', controllers: {
     registrations: :account,
-    # sessions: :sessions
   }
 
   # 关于我们
@@ -25,6 +24,7 @@ Rails.application.routes.draw do
 
     # 后台首页
     root to: 'homes#index'
+
 
     # 获取淘宝商品
     resources :goods do
