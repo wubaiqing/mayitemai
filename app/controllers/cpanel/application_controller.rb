@@ -1,7 +1,11 @@
-class Cpanel::ApplicationController < ActionController::Base
+class Cpanel::ApplicationController < ApplicationController
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+
+  before_filter :require_user
+
+  layout "cpanel"
 
   def require_user
     if current_user.blank?
@@ -12,9 +16,4 @@ class Cpanel::ApplicationController < ActionController::Base
     end
   end
 
-  def set_seo_meta(title = '', meta_keywords = '', meta_description = '')
-    @page_title = "#{title}" if title.length > 0
-    @meta_keywords = meta_keywords
-    @meta_description = meta_description
-  end
 end

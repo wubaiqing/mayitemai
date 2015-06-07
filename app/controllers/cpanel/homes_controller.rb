@@ -1,6 +1,4 @@
-class Cpanel::HomesController < ApplicationController
-
-  before_filter :require_user
+class Cpanel::HomesController < Cpanel::ApplicationController
 
   before_action :set_home, only: [:show, :edit, :update, :destroy]
 

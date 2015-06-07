@@ -1,7 +1,5 @@
-class Cpanel::GoodsController < ApplicationController
+class Cpanel::GoodsController < Cpanel::ApplicationController
   before_action :set_good, only: [:show, :edit, :update, :destroy]
-
-  before_filter :require_user
 
   # 管理
   def index

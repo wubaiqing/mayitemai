@@ -1,8 +1,6 @@
-class Cpanel::BrandsController < ApplicationController
+class Cpanel::BrandsController < Cpanel::ApplicationController
 
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
-
-  before_filter :require_user
 
   # 管理
   def index

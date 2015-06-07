@@ -1,7 +1,4 @@
-class Cpanel::PhotosController < ApplicationController
-
-
-  before_filter :require_user
+class Cpanel::PhotosController < Cpanel::ApplicationController
 
   def create
 
