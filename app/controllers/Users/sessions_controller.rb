@@ -9,6 +9,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    puts '-------------'
     super do |resource|
       resource.group = params[:user][:group]
     end

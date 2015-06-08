@@ -10,9 +10,5 @@ class HomeController < ApplicationController
     @cates = Cate.index_sort.all
 
     render "index"
-
   end
-
-
-
 end

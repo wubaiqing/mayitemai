@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :cpanel do
-    resources :cates
-  end
-  resources :cpanel_cates
-  # 用户系统
-  devise_for :users, :path => 'accounts', controllers: {
-    registrations: :account,
-  }, :path_names => {
-    :sign_in => 'login',
-    :sign_out => 'logout'
-  }
-
   # 关于我们
   get '/document/about', to: 'document#about'
 
@@ -24,14 +12,14 @@ Rails.application.routes.draw do
   # 详情页
   resources :home, :details
 
+  # 网站首页
   root to: 'home#index'
 
-
+  # 后台
   namespace :cpanel do
 
-    # 后台首页
+    # 首页
     root to: 'homes#index'
-
 
     # 获取淘宝商品
     resources :goods do
@@ -47,9 +35,16 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :brands, :goods, :homes, :photos
+    resources :brands, :goods, :homes, :photos, :cates
 
   end
 
+  # 用户系统
+  devise_for :users, :path => 'accounts', controllers: {
+    registrations: :account,
+  }, :path_names => {
+    :sign_in => 'login',
+    :sign_out => 'logout'
+  }
 
 end
