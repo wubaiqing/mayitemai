@@ -21,11 +21,13 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
 
   # 修改
   def edit
+    @cates = Cate.find_by_publish.all
   end
 
   # 创建
   def create
     @brand = Brand.new(brand_params)
+    @cates = Cate.find_by_publish.all
 
     if @brand.save
       redirect_to cpanel_brands_url
@@ -47,7 +49,6 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
   private
   def set_brand
     @brand = Brand.find(params[:id])
-    @cates = Cate.find_by_publish.all
   end
 
   def brand_params
