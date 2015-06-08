@@ -26,7 +26,7 @@ class Cate
   end
 
   def self.index_sort
-    where(state: 1).desc(:sort).desc(:id)
+    where(state: 1).desc(:sort).asc(:id)
   end
 
 
