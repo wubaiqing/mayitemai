@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/document/supplier', to: 'document#supplier'
 
   # 详情页
-  resources :index, :details
+  resources :home, :details
 
   root to: 'home#index'
 

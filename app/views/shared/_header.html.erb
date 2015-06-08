@@ -1,33 +1,32 @@
- <header id="vip-common-header" class="header vip-common-header">
-      <div class="head-logo">
-        <div class="head-inner">
-          <div class="header-logo-dop">
-            <a target="_blank" href="#">
-              <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/logo.jpg" alt="">
-            </a>
-          </div>
-          <div class="header-vip">
-            <a href="#" target="_blank">
-              <img src="http://a.vpimg2.com/upload/dop/2014/09/24/79/HEADERVIP1_gxf.png" height="40">
-            </a>
-            <a href="#" target="_blank">
-              <img src="http://a.vpimg2.com/upload/dop/2014/09/24/152/HEADERVIP2_k3d.png" height="40">
-            </a>
-            <a href="http://help.vip.com/commitment.php" target="_blank">
-              <img src="http://a.vpimg4.com/upload/dop/2014/09/24/146/HEADERVIP3_wzf.png" height="40">
-            </a>
-          </div>
-        </div>
+<header id="vip-common-header" class="header vip-common-header">
+  <div class="head-logo">
+    <div class="head-inner">
+      <div class="header-logo-dop">
+        <a target="_blank" href="#">
+          <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/logo.jpg" alt="">
+        </a>
       </div>
-      <nav class="main-nav">
-        <div class="head-inner">
-          <ul class="main-nav-link">
-            <li><a href="" class="current" >首页</a></li>
-            <li><a href="" >美妆</a></li>
-            <li><a href="" >亲子</a></li>
-            <li><a href="">男士</a></li>
-            <li><a href="" >全球特卖</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
+      <div class="header-vip">
+        <a href="#" target="_blank">
+          <img src="http://a.vpimg2.com/upload/dop/2014/09/24/79/HEADERVIP1_gxf.png" height="40">
+        </a>
+        <a href="#" target="_blank">
+          <img src="http://a.vpimg2.com/upload/dop/2014/09/24/152/HEADERVIP2_k3d.png" height="40">
+        </a>
+        <a href="http://help.vip.com/commitment.php" target="_blank">
+          <img src="http://a.vpimg4.com/upload/dop/2014/09/24/146/HEADERVIP3_wzf.png" height="40">
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav class="main-nav">
+    <div class="head-inner">
+      <ul class="main-nav-link">
+        <li><a href="/" class="current" >首页</a></li>
+        <% @cates.each do |cate|%>
+        <li><a href="<%= home_path(cate)%>" ><%= cate.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</header>

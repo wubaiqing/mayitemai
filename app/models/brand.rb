@@ -36,4 +36,13 @@ class Brand
   end
 
 
+  def self.index_sort
+    where(state: 1).desc(:sort).desc(:id)
+  end
+
+  def self.find_by_cate_id(id)
+    where(cate_id: id)
+  end
+
+
 end

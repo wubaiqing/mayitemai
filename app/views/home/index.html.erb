@@ -6,7 +6,7 @@
           <img src="http://a.vpimg3.com/upload/dop/2015/01/23/153/home_floor_title_1.png">
         </div>
         <ul class="shop_onsale">
-          <% @brand.each do |brand| %>
+          <% @brands.each do |brand| %>
           <li class="s_mod">
             <div class="s_pic">
               <div class="s_discount">
@@ -36,7 +36,7 @@
         <div class="m-forecast" id="J_wrap_salePlan">
           <div class="forecast-cnt">
             <div class="clearfix" style="margin-top: 0px; display: block;">
-              <% @brand.each do |brand| %>
+              <% @brands.each do |brand| %>
               <span class="forecast-logo J_brandLogo" data-index="0">
                 <%= link_to(raw("<img src='#{brand.logo_picture}' class='forecast-logo-pic'>"), detail_path(brand))%>
               </span>
