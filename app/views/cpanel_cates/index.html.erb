@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cpanel Cates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cpanel_cates.each do |cpanel_cate| %>
+      <tr>
+        <td><%= link_to 'Show', cpanel_cate %></td>
+        <td><%= link_to 'Edit', edit_cpanel_cate_path(cpanel_cate) %></td>
+        <td><%= link_to 'Destroy', cpanel_cate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cpanel cate', new_cpanel_cate_path %>

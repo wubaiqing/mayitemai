@@ -1,0 +1,17 @@
+<%= form_for(@cpanel_cate) do |f| %>
+  <% if @cpanel_cate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cpanel_cate.errors.count, "error") %> prohibited this cpanel_cate from being saved:</h2>
+
+      <ul>
+      <% @cpanel_cate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

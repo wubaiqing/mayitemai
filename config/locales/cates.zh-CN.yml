@@ -1,0 +1,5 @@
+zh-CN:
+  cates:
+    name: "分类名称"
+    sort: "排序值"
+    state: "上线"

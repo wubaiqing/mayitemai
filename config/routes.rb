@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :cpanel do
+    resources :cates
+  end
+  resources :cpanel_cates
   # 用户系统
   devise_for :users, :path => 'accounts', controllers: {
     registrations: :account,

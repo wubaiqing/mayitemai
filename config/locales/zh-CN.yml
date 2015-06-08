@@ -10,6 +10,7 @@ zh-CN:
   mongoid:
     attributes:
       brand:
+        cate_id: "分类"
         name: "专题名称"
         wangwang: "店铺旺旺"
         logo_picture: "品牌Logo"
@@ -47,6 +48,8 @@ zh-CN:
     brands: "专题管理"
     new_good: "添加商品"
     goods: "商品管理"
+    new_cate: "添加分类"
+    cates: "分类管理"
 
 
 

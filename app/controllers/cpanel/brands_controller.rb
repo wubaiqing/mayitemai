@@ -16,6 +16,7 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
   # 新建
   def new
     @brand = Brand.new
+    @cates = Cate.find_by_publish.all
   end
 
   # 修改
@@ -27,7 +28,7 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
     @brand = Brand.new(brand_params)
 
     if @brand.save
-      redirect_to brands_url
+      redirect_to cpanel_brands_url
     else
       render :new
     end
@@ -35,8 +36,9 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
 
   # 更新
   def update
+    @cates = Cate.find_by_publish.all
     if @brand.update(brand_params)
-      redirect_to brands_url
+      redirect_to cpanel_brands_url
     else
       render :new
     end
@@ -45,9 +47,10 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
   private
   def set_brand
     @brand = Brand.find(params[:id])
+    @cates = Cate.find_by_publish.all
   end
 
   def brand_params
-    params[:brand].permit(:name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort)
+    params[:brand].permit(:cate_id, :name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort)
   end
 end
