@@ -13,7 +13,7 @@
                 <p class="s_name" title="<%= brand.name %>"><%= brand.name %></p>
                 <p class="s_off"><span class="salebg2"><%= brand.sale %></span>折起</p>
               </div>
-              <a class="J_to_list" href="#" target="_blank">
+              <a class="J_to_list" href="<%= detail_path(brand)%>" target="_blank">
                 <img src="<%= brand.desc_picture %>" alt="<%= brand.name %>">
               </a>
             </div>
