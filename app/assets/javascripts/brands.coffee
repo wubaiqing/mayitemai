@@ -6,7 +6,7 @@ $(document).on 'page:change',  ->
 
   # Logo图片
   $("#logo-picture-upload").fileUpload
-    url : "/photos"
+    url : "/cpanel/photos"
     type : "POST"
     beforeSend : ->
       $('#logo-picture-hint').html '上传中...'
@@ -16,7 +16,7 @@ $(document).on 'page:change',  ->
 
   # 首页图片
   $("#desc-picture-upload").fileUpload
-    url : "/photos"
+    url : "/cpanel/photos"
     type : "POST"
     beforeSend : ->
       $('#desc-picture-hint').html '上传中...'
@@ -26,7 +26,7 @@ $(document).on 'page:change',  ->
 
   # 专题顶部图片
   $("#banner-picture-upload").fileUpload
-    url : "/photos"
+    url : "/cpanel/photos"
     type : "POST"
     beforeSend : ->
       $('#banner-picture-hint').html '上传中...'

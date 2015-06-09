@@ -40,7 +40,7 @@ $(document).on 'page:change',  ->
 
   # 商品图片
   $("#goods-picture-upload").fileUpload
-    url : "/photos"
+    url : "/cpanel/photos"
     type : "POST"
     beforeSend : ->
       $('#goods-picture-hint').html '上传中...'
