@@ -40,11 +40,6 @@ Rails.application.routes.draw do
   end
 
   # 用户系统
-  devise_for :users, :path => 'accounts', controllers: {
-    registrations: :account,
-  }, :path_names => {
-    :sign_in => 'login',
-    :sign_out => 'logout'
-  }
+  devise_for :users
 
 end

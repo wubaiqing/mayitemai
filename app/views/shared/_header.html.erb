@@ -23,7 +23,7 @@
     <div class="head-inner">
       <ul class="main-nav-link">
         <li><a href="/" class="current" >首页</a></li>
-        <% @cates.each do |cate|%>
+        <% @cates.each do |cate| %>
         <li><a href="<%= home_path(cate)%>" ><%= cate.name %></a></li>
         <% end %>
       </ul>
