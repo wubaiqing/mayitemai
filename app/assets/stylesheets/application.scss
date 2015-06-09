@@ -1,7 +1,12 @@
 @import "bootstrap-variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
-@import "nprogress";
+
+
+html.turbolinks-progress-bar::before {
+  background-color: #faebcc !important;
+  height: 3px !important;
+}
 
 .navbar-inverse {
   // background-color: #EB5424;
