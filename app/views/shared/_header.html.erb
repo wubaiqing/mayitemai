@@ -23,9 +23,9 @@
     <div class="head-inner">
       <ul class="main-nav-link">
         <li><a href="/" class="<%= 'current' if params[:id].eql? nil%>" >首页</a></li>
-        <% @cates.each do |cate| %>
-          <li><a href="<%= home_path(cate)%>" class="<%= 'current' if params[:id].to_s.eql? cate.id.to_s %>"><%= cate.name %></a></li>
-        <% end %>
+          <% @cates.each do |cate| %>
+            <li><a href="<%= home_path(cate)%>" class="<%= 'current' if params[:id].to_s.eql? cate.id.to_s %>"><%= cate.name %></a></li>
+          <% end %>
       </ul>
     </div>
   </nav>
