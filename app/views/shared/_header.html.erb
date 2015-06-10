@@ -24,7 +24,7 @@
       <ul class="main-nav-link">
         <li><a href="/" class="current" >首页</a></li>
         <% @cates.each do |cate| %>
-          <% cache("_header-cate-{#cate}") do %>
+          <% cache(cate) do %>
             <li><a href="<%= home_path(cate)%>" ><%= cate.name %></a></li>
           <% end %>
         <% end %>
