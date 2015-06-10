@@ -54,8 +54,8 @@ class Brand
   end
 
   # 得到集合
-  def self.brands_collectio
-    Rails.cache.fetch("brand:brands_collectio:#{CacheVersion.brand_node_updated_at}", expires_in: 12.hours) do
+  def self.brand_collection
+    Rails.cache.fetch("brand:brands_collectio:#{CacheVersion.brand_node_updated_at}") do
       self.index_sort.all
     end
   end

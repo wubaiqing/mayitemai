@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-
-    @brands = Brand.brands_collectio
+    @brands = Brand.brand_collection
     @cates = Cate.index_sort.all
   end
 
