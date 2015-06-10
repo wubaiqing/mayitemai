@@ -7,20 +7,21 @@
         </div>
         <ul class="shop_onsale">
           <% @brands.each do |brand| %>
-          <li class="s_mod">
-            <div class="s_pic">
-              <div class="s_discount">
-                <p class="s_name" title="<%= brand.name %>"><%= brand.name %></p>
-                <p class="s_off"><span class="salebg2"><%= brand.sale %></span>折起</p>
-              </div>
-              <a class="J_to_list" href="<%= detail_path(brand)%>" target="_blank">
-                <img src="<%= brand.desc_picture %>" alt="<%= brand.name %>">
-              </a>
-            </div>
-          </li>
+              <li class="s_mod">
+                <div class="s_pic">
+                  <div class="s_discount">
+                    <p class="s_name" title="<%= brand.name %>"><%= brand.name %></p>
+                    <p class="s_off"><span class="salebg2"><%= brand.sale %></span>折起</p>
+                  </div>
+                  <a class="J_to_list" href="<%= detail_path(brand)%>" target="_blank">
+                    <img src="<%= brand.desc_picture %>" alt="<%= brand.name %>">
+                  </a>
+                </div>
+              </li>
           <% end %>
         </ul>
       </div>
+
       <div class="lay330 s_bg_right">
         <div class="pic_focus_wrapper big_pic_focus">
           <div class="pic_focus J_wrap_adRotary" style="display: block;">

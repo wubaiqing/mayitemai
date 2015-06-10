@@ -44,14 +44,18 @@ class Good
     end
   end
 
+  # 根据旺旺名称查询
   def self.find_by_wangwang(wangwang)
     ids = Brand.where(wangwang: /#{wangwang}/).pluck(:id)
     where(:brand_id.in => ids)
   end
 
 
+  # 根据淘宝ID查询
   def self.find_by_taobao_id(taobao_id)
     where(taobao_id: taobao_id)
   end
+
+
 
 end

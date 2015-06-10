@@ -26,22 +26,38 @@ class Brand
     blocked: 0
   }
 
+  after_save :update_cache_version
+
   # 旺旺搜索
   def self.find_by_wangwang(wangwang)
     where(wangwang: /#{wangwang}/)
   end
 
+  # 根据发部状态查询
   def self.find_by_publish
     where(state: 1).desc(:id)
   end
 
-
+  # 首页查询
   def self.index_sort
     where(state: 1).desc(:sort).desc(:id)
   end
 
+  # 根据分类ID查询
   def self.find_by_cate_id(id)
     where(cate_id: id)
+  end
+
+  # 记录节点变更时间，用于清除缓存
+  def update_cache_version
+    CacheVersion.brand_node_updated_at = Time.now
+  end
+
+  # 得到集合
+  def self.brands_collectio
+    Rails.cache.fetch("brand:brands_collectio:#{CacheVersion.brand_node_updated_at}", expires_in: 12.hours) do
+      self.index_sort.all
+    end
   end
 
 
