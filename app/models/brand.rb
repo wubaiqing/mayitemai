@@ -28,6 +28,11 @@ class Brand
 
   after_save :update_cache_version
 
+  # 记录节点变更时间，用于清除缓存
+  def update_cache_version
+    CacheVersion.brand_node_updated_at = Time.now
+  end
+
   # 旺旺搜索
   def self.find_by_wangwang(wangwang)
     where(wangwang: /#{wangwang}/)
@@ -48,14 +53,10 @@ class Brand
     where(cate_id: id)
   end
 
-  # 记录节点变更时间，用于清除缓存
-  def update_cache_version
-    CacheVersion.brand_node_updated_at = Time.now
-  end
 
   # 得到集合
-  def self.brand_collection
-    Rails.cache.fetch("brand:brands_collectio:#{CacheVersion.brand_node_updated_at}") do
+  def self.brands_collection
+    Rails.cache.fetch("brand:brands_collection:#{CacheVersion.brand_node_updated_at}") do
       self.index_sort.all
     end
   end
