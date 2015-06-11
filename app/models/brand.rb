@@ -61,5 +61,11 @@ class Brand
     end
   end
 
+  def self.find_by_id(id)
+    Rails.cache.fetch("brand:brands_collection:#{id}:#{CacheVersion.brand_node_updated_at}") do
+      self.find(id)
+    end
+  end
+
 
 end

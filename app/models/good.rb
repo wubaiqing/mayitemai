@@ -24,6 +24,14 @@ class Good
   index brand_id: 1
   index taobao_id: 1
 
+  after_save :update_cache_version
+
+  # 记录节点变更时间，用于清除缓存
+  def update_cache_version
+    CacheVersion.good_node_updated_at = Time.now
+  end
+
+
   # 根据淘宝ID获取淘宝信息
   def self.fetch_taobao_repositories(taobao_id)
 
@@ -44,6 +52,7 @@ class Good
     end
   end
 
+
   # 根据旺旺名称查询
   def self.find_by_wangwang(wangwang)
     ids = Brand.where(wangwang: /#{wangwang}/).pluck(:id)
@@ -55,6 +64,15 @@ class Good
   def self.find_by_taobao_id(taobao_id)
     where(taobao_id: taobao_id)
   end
+
+
+   # 得到集合
+  def self.good_collection(id, wangwang)
+    Rails.cache.fetch("good:good_collection:#{id}:#{CacheVersion.good_node_updated_at}") do
+      self.find_by_wangwang(wangwang).desc(:sort).desc(:id).all
+    end
+  end
+
 
 
 
