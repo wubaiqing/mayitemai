@@ -15,7 +15,7 @@
                     <p class="s_off"><span class="salebg2"><%= brand.sale %></span>折起</p>
                   </div>
                   <a class="J_to_list" href="<%= detail_path(brand)%>" target="_blank">
-                    <img src="<%= brand.desc_picture %>" alt="<%= brand.name %>">
+                    <img class="lazy" data-original="<%= brand.desc_picture %>" src="http://7xioz9.com2.z0.glb.qiniucdn.com/lazyLoading.jpg" alt="<%= brand.name %>">
                   </a>
                 </div>
               </li>
@@ -30,7 +30,7 @@
             <div class="J_wrap_adRotary_cell" style="">
               <div class="loop_clone_prev" >
                 <a href="#" target="_blank">
-                  <img alt="" class="" src="http://a.vpimg2.com/upload/cmc/2015/06/01/18/bcbcdb77f0dc48188685c00585bbb740.jpg">
+                  <img class="lazy" src="http://a.vpimg2.com/upload/cmc/2015/06/01/18/bcbcdb77f0dc48188685c00585bbb740.jpg">
                 </a>
               </div>
             </div>
@@ -42,7 +42,7 @@
               <% @brands.each do |brand| %>
                 <% cache("brand-forecast-#{brand.id}") do %>
                   <span class="forecast-logo J_brandLogo" data-index="0">
-                    <%= link_to(raw("<img src='#{brand.logo_picture}' class='forecast-logo-pic'>"), detail_path(brand))%>
+                    <%= link_to(raw("<img src='#{brand.logo_picture}' class='lazy' class='forecast-logo-pic'>"), detail_path(brand))%>
                   </span>
                 <% end %>
               <% end %>
