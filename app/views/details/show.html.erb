@@ -1,10 +1,12 @@
-<div class="banner-wrap">
-  <div class="banner-inner">
-    <img src="<%= @brand.banner_picture %>" height="260">
+<% cache("brand-branner-#{@brand.id}") do %>
+  <div class="banner-wrap">
+    <div class="banner-inner">
+      <img src="<%= @brand.banner_picture %>" height="260">
+    </div>
+    <div class="w940 banner">
+    </div>
   </div>
-  <div class="w940 banner">
-  </div>
-</div>
+<% end %>
 <div class="w940">
   <div class="l-floor">
     <div class="l-f-title">
@@ -14,27 +16,29 @@
   <div class="ju-itemlist">
     <ul class="clearfix">
       <% @goods.each do |good| %>
-      <li class="item-small-v3">
-        <a class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
-          <img class="item-pic" src="" data-original="<%= good.picture_url %>" />
-          <h4>
-          <span class="desc">
-            <%= good.title %>
-          </span>
-          </h4>
-          <div class="item-prices">
-            <div class="item-info">
-              <div class="price"> <i>¥</i>  <em class="J_actPrice"><%= good.price %></em>
-              </div>
-              <div class="dock">
-                <div class="dock-price"> <del class="orig-price">¥<%= good.original_price %></del>
+        <% cache("goods-list-#{@brand.id}-#{good.id}") do %>
+        <li class="item-small-v3">
+          <a class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
+            <img class="item-pic" src="" data-original="<%= good.picture_url %>" />
+            <h4>
+            <span class="desc">
+              <%= good.title %>
+            </span>
+            </h4>
+            <div class="item-prices">
+              <div class="item-info">
+                <div class="price"> <i>¥</i>  <em class="J_actPrice"><%= good.price %></em>
+                </div>
+                <div class="dock">
+                  <div class="dock-price"> <del class="orig-price">¥<%= good.original_price %></del>
+                  </div>
                 </div>
               </div>
+              <div class="item-link"> <span class="abbr">抢!</span></div>
             </div>
-            <div class="item-link"> <span class="abbr">抢!</span></div>
-          </div>
-        </a>
-      </li>
+          </a>
+        </li>
+        <% end %>
       <% end %>
     </ul>
   </div>
