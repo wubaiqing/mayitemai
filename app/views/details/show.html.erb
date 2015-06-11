@@ -1,11 +1,11 @@
 <% cache("brand-branner-#{@brand.id}") do %>
-  <div class="banner-wrap">
-    <div class="banner-inner">
-      <img src="<%= @brand.banner_picture %>" height="260">
-    </div>
-    <div class="w940 banner">
-    </div>
+<div class="banner-wrap">
+  <div class="banner-inner">
+    <img src="<%= @brand.banner_picture %>" height="260">
   </div>
+  <div class="w940 banner">
+  </div>
+</div>
 <% end %>
 <div class="w940">
   <div class="l-floor">
@@ -16,53 +16,32 @@
   <div class="ju-itemlist">
     <ul class="clearfix">
       <% @goods.each do |good| %>
-        <% cache("goods-list-#{@brand.id}-#{good.id}") do %>
-        <li class="item-small-v3">
-          <a class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
-            <img class="item-pic" src="" data-original="<%= good.picture_url %>" />
-            <h4>
-            <span class="desc">
-              <%= good.title %>
-            </span>
-            </h4>
-            <div class="item-prices">
-              <div class="item-info">
-                <div class="price"> <i>¥</i>  <em class="J_actPrice"><%= good.price %></em>
-                </div>
-                <div class="dock">
-                  <div class="dock-price"> <del class="orig-price">¥<%= good.original_price %></del>
-                  </div>
+      <% cache("goods-list-#{@brand.id}-#{good.id}") do %>
+      <li class="item-small-v3">
+        <a class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
+          <img class="item-pic" src="" data-original="<%= good.picture_url %>" />
+          <h4>
+          <span class="desc">
+            <%= good.title %>
+          </span>
+          </h4>
+          <div class="item-prices">
+            <div class="item-info">
+              <div class="price"> <i>¥</i>  <em class="J_actPrice"><%= good.price %></em>
+              </div>
+              <div class="dock">
+                <div class="dock-price"> <del class="orig-price">¥<%= good.original_price %></del>
                 </div>
               </div>
-              <div class="item-link"> <span class="abbr">抢!</span></div>
             </div>
-          </a>
-        </li>
-        <% end %>
+            <div class="item-link"> <span class="abbr">抢!</span></div>
+          </div>
+        </a>
+      </li>
+      <% end %>
       <% end %>
     </ul>
   </div>
 </div>
 <div class="clearfix">
-  <div class="footer">
-    <div class="layout">
-      <div class="site-info">
-        <p class="links">
-          <%= link_to '关于我们', {controller: "document", action: "about"}, target: "_blank" %>
-          <span>|</span>
-          <%= link_to '联系我们', {controller: "document", action: "contact"}, target: "_blank" %>
-          <span>|</span>
-          <%= link_to '商务合作', {controller: "document", action: "supplier"}, target: "_blank" %>
-          <span>|</span>
-          <a href="http://www.manyitou.com/" title="满意投" target="_blank">满意投</a>
-          <span>|</span>
-          <a href="http://www.woniujie.cn" title="微分销" target="_blank">微分销</a>
-        </p>
-        <p class="copyright"><b>版权所有 © 2015 蚂蚁特卖. 北京水木华哲网络科技有限公司</b>
-        </p>
-        <p class="icp"><b>京 ICP备14028259号 </b>
-        </p>
-      </div>
-    </div>
-  </div>
 </div>
