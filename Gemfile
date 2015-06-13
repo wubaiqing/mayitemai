@@ -55,6 +55,10 @@ gem 'devise'
 # 用户
 gem 'puma'
 
+# 监控
+gem 'newrelic_rpm'
+gem 'newrelic_moped'
+gem 'newrelic-grape'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
