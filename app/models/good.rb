@@ -20,7 +20,7 @@ class Good
 
   belongs_to :brand
 
-  index sort: 1
+  index state: 1
   index brand_id: 1
   index taobao_id: 1
 
