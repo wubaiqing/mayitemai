@@ -58,6 +58,7 @@ gem 'puma'
 # 监控
 gem 'newrelic_rpm'
 gem 'newrelic_moped'
+gem 'rack-mini-profiler', require: false
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
