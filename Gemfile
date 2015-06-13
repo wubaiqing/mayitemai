@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '~> 3.3.4'
 
 # cache
 gem 'actionpack-action_caching', '1.1.1'
+gem 'dalli'
 
 # 七牛云存储
 gem 'qiniu', '~> 6.2.1'
