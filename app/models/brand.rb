@@ -26,6 +26,7 @@ class Brand
     blocked: 0
   }
 
+  # 保存后更新缓存时间
   after_save :update_cache_version
 
   # 记录节点变更时间，用于清除缓存
@@ -43,11 +44,6 @@ class Brand
     where(state: 1).desc(:id)
   end
 
-  # 首页查询
-  def self.index_sort
-    where(state: 1).desc(:sort).desc(:id)
-  end
-
   # 根据分类ID查询
   def self.find_by_cate_id(id)
     where(cate_id: id)
@@ -57,7 +53,7 @@ class Brand
   # 得到集合
   def self.brands_collection
     Rails.cache.fetch("brand:brands_collection:#{CacheVersion.brand_node_updated_at}") do
-      self.index_sort.all
+      self.where(state: 1).desc(:sort).desc(:id).all
     end
   end
 
