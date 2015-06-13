@@ -77,6 +77,17 @@ group :development, :test do
   gem 'capistrano', '2.9.0', require: false
   gem 'rvm-capistrano', require: false
   gem 'capistrano-sidekiq'
+  gem 'rspec-rails', '~> 3.1'
+  gem 'factory_girl_rails', '1.4.0'
+  gem 'database_cleaner'
+  gem 'capybara', '~> 2.3.0'
+  gem 'api_taster', '0.6.0'
+  gem 'letter_opener'
+  gem 'mongoid_colored_logger'
+  gem 'colorize'
+
+  gem 'jasmine-rails', '~> 0.10.2'
+  gem 'derailed_benchmarks', github: "schneems/derailed_benchmarks"
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
