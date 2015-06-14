@@ -26,7 +26,7 @@ require 'capistrano/puma/nginx'   # if you want to upload a nginx site template
 require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
-# require 'capistrano/bundler'
+require 'capistrano/bundler'
 # require 'capistrano/rails/assets'
 # require 'capistrano/rails/migrations'
 # require 'capistrano/passenger'
