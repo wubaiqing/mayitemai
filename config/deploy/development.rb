@@ -5,9 +5,6 @@
 
 require 'puma/capistrano'
 
-set :application, "mayitemai"
-set :puma_config_file, "config/puma.rb"
-
 server '192.168.8.8', user: 'vagrant', roles: %w{app db web}, my_property: :my_value
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}

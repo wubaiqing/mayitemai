@@ -1,9 +1,6 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-
-require 'capistrano/puma'
-
 set :application, 'mayitemai'
 set :repo_url, 'https://github.com/wubaiqing/mayitemai.git'
 
