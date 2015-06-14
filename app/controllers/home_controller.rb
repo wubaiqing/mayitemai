@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 
 
   def show
-    @brands = Brand.find_by_cate_id(params[:id]).index_sort.all
+    @brands = Brand.find_by_cate_id(params[:id]).all
     @cates = Cate.cate_collections
     render "index"
   end
