@@ -76,6 +76,7 @@ group :development, :test do
 
   gem 'capistrano', '~> 3.4.0'
   gem 'capistrano-rails', '~> 1.1'
+  gem 'capistrano3-puma'
   gem 'rspec-rails', '~> 3.1'
   gem 'factory_girl_rails', '1.4.0'
   gem 'database_cleaner'

@@ -1,6 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
+
 require 'capistrano/puma'
 
 set :application, 'mayitemai'
@@ -35,6 +36,8 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
+set :puma_role, :web
+set :puma_config_file, "config/puma.rb"
 
 
 namespace :deploy do
