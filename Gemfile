@@ -74,9 +74,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
-  gem 'capistrano', '2.9.0', require: false
-  gem 'rvm-capistrano', require: false
-  gem 'capistrano-sidekiq'
+  gem 'capistrano', '~> 3.4.0'
   gem 'rspec-rails', '~> 3.1'
   gem 'factory_girl_rails', '1.4.0'
   gem 'database_cleaner'
