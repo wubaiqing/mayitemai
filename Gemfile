@@ -88,7 +88,7 @@ group :development, :test do
   gem 'colorize'
   gem 'jasmine-rails'
 
-  gem 'derailed_benchmarks', github: "schneems/derailed_benchmarks"
+  gem 'derailed'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
