@@ -13,7 +13,6 @@ config/initializers/qiniu_sdk.rb
 /log/*
 !/log/.keep
 /tmp
-Gemfile.lock
 
 # Ignore all IDE
 /idea/*
