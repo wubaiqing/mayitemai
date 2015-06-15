@@ -39,13 +39,13 @@ class Good
     if !uniqueness.blank?
       return {'status': '0'}.to_json
     end
-
-
-    url = "http://admin.jtzdm.com/index.php?r=goods/getgoods&taobaoId=#{taobao_id}"
+    
     begin
-      json = Timeout::timeout(10) do
-        open(url).read
-      end
+      hash = OpenTaobao.get(
+        :method => "taobao.tbk.items.detail.get",
+        :fields => "num_iid,seller_id,nick,title,price,volume,pic_url,item_url,shop_url",
+        :num_iids => taobao_id
+      )
     rescue => e
       Rails.logger.error("Taobao Repositories fetch Error: #{e}")
       return false
