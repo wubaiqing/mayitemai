@@ -114,6 +114,8 @@ GEM
     factory_girl_rails (1.4.0)
       factory_girl (~> 2.3.0)
       railties (>= 3.0.0)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     get_process_mem (0.2.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
@@ -172,6 +174,7 @@ GEM
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
     multi_json (1.11.1)
+    multipart-post (2.0.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -182,6 +185,9 @@ GEM
     newrelic_rpm (3.12.0.288)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    open_taobao (0.2.2)
+      faraday
+      multi_json
     optionable (0.2.0)
     origin (2.1.1)
     orm_adapter (0.5.0)
@@ -333,6 +339,7 @@ DEPENDENCIES
   mongoid_rails_migrations (= 1.0.0)
   newrelic_moped
   newrelic_rpm
+  open_taobao
   puma
   qiniu (~> 6.2.1)
   rack (= 1.6.1)

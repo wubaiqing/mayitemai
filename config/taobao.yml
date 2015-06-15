@@ -1,0 +1,15 @@
+development:
+  app_key:    '21458915'
+  secret_key: 'de46e97329930b7444bcb0eed6133d5c'
+  endpoint:   "http://gw.api.tbsandbox.com/router/rest"
+
+test:
+  app_key:    '21458915'
+  secret_key: 'de46e97329930b7444bcb0eed6133d5c'
+  endpoint:   "http://gw.api.tbsandbox.com/router/rest"
+
+production:
+  app_key:    '21458915'
+  secret_key: 'de46e97329930b7444bcb0eed6133d5c'
+  endpoint:   "http://gw.api.taobao.com/router/rest"
+

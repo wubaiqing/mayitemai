@@ -61,6 +61,12 @@ gem 'newrelic_rpm'
 gem 'newrelic_moped'
 gem 'rack-mini-profiler', require: false
 
+# 淘宝API
+gem 'open_taobao'
+
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
