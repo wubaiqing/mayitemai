@@ -8,7 +8,6 @@ server 'mayitemai.com', user: 'deploy', roles: %w{app db web}, my_property: :my_
 # server 'db.example.com', user: 'deploy', roles: %w{db}
 
 
-set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
 set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
