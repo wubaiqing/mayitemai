@@ -36,6 +36,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', '
 set :puma_role, :web
 set :puma_config_file, "config/puma.rb"
 
+before "deploy:assets:precompile", "deploy:bundle_install"
 
 namespace :deploy do
 
