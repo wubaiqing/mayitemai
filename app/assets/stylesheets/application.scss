@@ -8,30 +8,35 @@ html.turbolinks-progress-bar::before {
   height: 3px !important;
 }
 
-.navbar-inverse {
-  // background-color: #EB5424;
-
+.menu-top {
+  cursor: default;
+  font-size: 30px;
+  color:#ffffff;
+  text-decoration:none;
 }
 
-// Place all the styles related to the homes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-/*
- * Base structure
- */
-
-/* Move down content because we have a fixed navbar that is 50px tall */
-body {
-  padding-top: 50px;
+.header {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #dfdfdf;
+  background-color: #f98235;
+  height: 80px;
+  border-right: 1px solid #eee;
+  a {
+    line-height: 80px;
+    color: #fff;
+    text-decoration: none;
+    background-color: none;
+  }
 }
-
 
 /*
  * Global add-ons
  */
 
 .sub-header {
-  padding-bottom: 10px;
   border-bottom: 1px solid #eee;
 }
 
@@ -53,8 +58,13 @@ body {
 }
 @media (min-width: 768px) {
   .sidebar {
+    a {
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
     position: fixed;
-    top: 51px;
+    top: 80px;
     bottom: 0;
     left: 0;
     z-index: 1000;
@@ -62,7 +72,7 @@ body {
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
+    background-color: #f98235;
     border-right: 1px solid #eee;
   }
 }
@@ -76,12 +86,15 @@ body {
 .nav-sidebar > li > a {
   padding-right: 20px;
   padding-left: 20px;
+  background-color: none;
+}
+.nav-sidebar > li > a:hover {
+  background-color: #f98235;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+  background-color: #fa9b5d;
 }
 
 
