@@ -37,6 +37,13 @@ $(document).on 'page:change',  ->
       $('#good_taobao_url').val current.item_url
       $('#good_title').val current.title
       $('#good_original_price').val current.price
+
+      if current.discount_price.substr(-2, 1) is 0
+        discount_price = parseInt current.discount_price
+      else
+        discount_price = current.discount_price
+
+
       $('#good_price').val parseInt(current.discount_price)
       $('#good_picture_url').val current.pic_url + '_400x400.jpg'
 
