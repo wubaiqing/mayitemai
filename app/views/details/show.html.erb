@@ -1,4 +1,4 @@
-<% cache("brand-branner-#{@brand.id}") do %>
+<% cache(["brand-detail" , brand_id: @brand.id, brand_update_version: CacheVersion.brand_node_updated_at, brand_goods_update_version: CacheVersion.good_node_updated_at]) do %>
 <div class="banner-wrap">
   <div class="banner-inner">
     <img src="<%= @brand.banner_picture %>" height="260">
@@ -6,7 +6,6 @@
   <div class="w940 banner">
   </div>
 </div>
-<% end %>
 <div class="w940">
   <div class="l-floor">
     <div class="l-f-title">
@@ -16,7 +15,6 @@
   <div class="ju-itemlist">
     <ul class="clearfix">
       <% @goods.each do |good| %>
-      <% cache("goods-list-#{@brand.id}-#{good.id}") do %>
       <li class="item-small-v3">
         <a class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
           <img class="item-pic" src="" data-original="<%= good.picture_url %>" />
@@ -39,9 +37,8 @@
         </a>
       </li>
       <% end %>
-      <% end %>
     </ul>
   </div>
 </div>
-<div class="clearfix">
-</div>
+<div class="clearfix"></div>
+<% end %>
