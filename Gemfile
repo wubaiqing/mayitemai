@@ -65,7 +65,7 @@ gem 'rack-mini-profiler', require: false
 gem 'open_taobao'
 
 # Font Awesome
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.3.0'
 
 
 

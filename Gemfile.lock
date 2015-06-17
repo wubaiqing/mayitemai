@@ -116,6 +116,8 @@ GEM
       railties (>= 3.0.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     get_process_mem (0.2.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
@@ -327,6 +329,7 @@ DEPENDENCIES
   derailed
   devise
   factory_girl_rails (= 1.4.0)
+  font-awesome-rails
   jasmine-rails
   jbuilder (~> 2.0)
   jquery-fileupload-rails
