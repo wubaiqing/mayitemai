@@ -64,6 +64,9 @@ gem 'rack-mini-profiler', require: false
 # 淘宝API
 gem 'open_taobao'
 
+# Font Awesome
+gem "font-awesome-rails"
+
 
 
 
