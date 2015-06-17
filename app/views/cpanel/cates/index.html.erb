@@ -8,8 +8,8 @@
 </ul>
 
 
-<%= form_for :cate, method: :get do |f| %>
-  <table class="table table-striped table-bordered table-hover">
+<%= form_for :cate, method: :get, html: {class: "well"} do |f| %>
+  <table class="table table-striped table-bordered">
     <tbody>
       <tr>
         <td width="15%"><%= t('cates.name') %>:</td>
@@ -21,10 +21,7 @@
       </tr>
     </tbody>
   </table>
-
-  <div class="form-actions">
-    <button class="btn btn-default" id="searchCustomer" type="submit" name="yt0">搜索</button>
-  </div>
+  <button class="btn btn-default" id="searchCustomer" type="submit" name="yt0">搜索</button>
 <% end %>
 
 
