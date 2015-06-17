@@ -1,6 +1,8 @@
 @import "bootstrap-variables";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
 html.turbolinks-progress-bar::before {
@@ -36,7 +38,7 @@ html.turbolinks-progress-bar::before {
  * Global add-ons
  */
 
-.sub-header {
+ .sub-header {
   border-bottom: 1px solid #eee;
 }
 
@@ -44,7 +46,7 @@ html.turbolinks-progress-bar::before {
  * Top navigation
  * Hide default border to remove 1px line.
  */
-.navbar-fixed-top {
+ .navbar-fixed-top {
   border: 0;
 }
 
@@ -52,8 +54,8 @@ html.turbolinks-progress-bar::before {
  * Sidebar
  */
 
-/* Hide for mobile, show later */
-.sidebar {
+ /* Hide for mobile, show later */
+ .sidebar {
   display: none;
 }
 @media (min-width: 768px) {
@@ -102,7 +104,7 @@ html.turbolinks-progress-bar::before {
  * Main content
  */
 
-.main {
+ .main {
   padding: 20px;
 }
 @media (min-width: 768px) {
@@ -120,7 +122,7 @@ html.turbolinks-progress-bar::before {
  * Placeholder dashboard ideas
  */
 
-.placeholders {
+ .placeholders {
   margin-bottom: 30px;
   text-align: center;
 }
@@ -211,9 +213,27 @@ span.required {
   position: relative;
   height: auto;
   -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
 }
 
+
+// 提示
+.tipsy { font-size: 10px; position: absolute; padding: 5px; z-index: 100000; }
+.tipsy-inner { background-color: #000; color: #FFF; max-width: 200px; padding: 5px 8px 4px 8px; text-align: center; }
+.tipsy-inner { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+.tipsy-arrow { position: absolute; width: 0; height: 0; line-height: 0; border: 5px dashed #000; }
+.tipsy-arrow-n { border-bottom-color: #000; }
+.tipsy-arrow-s { border-top-color: #000; }
+.tipsy-arrow-e { border-left-color: #000; }
+.tipsy-arrow-w { border-right-color: #000; }
+.tipsy-n .tipsy-arrow { top: 0px; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
+.tipsy-nw .tipsy-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
+.tipsy-ne .tipsy-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
+.tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+.tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+.tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
+.tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
+.tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }

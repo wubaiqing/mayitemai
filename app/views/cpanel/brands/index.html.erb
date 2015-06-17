@@ -56,7 +56,7 @@
         <%= brand.id %>
       </td>
       <td>
-        <%= link_to brand.name, detail_path(brand), {target: "_blank"} %>
+        <%= link_to brand.name, edit_cpanel_brand_path(brand) %>
       </td>
       <td>
         <%= brand.wangwang %>
@@ -72,7 +72,10 @@
         <% end %>
       </td>
       <td>
-        <%= link_to(t("buttons.update"), edit_cpanel_brand_path(brand) ) %>
+        <%= content_tag("span", raw("&nbsp;")) %>
+        <%= link_to(icon('edit'), edit_cpanel_brand_path(brand), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
+        <%= content_tag("span", raw("&nbsp;")) %>
+        <%= link_to(icon('eye'), detail_path(brand), {target: "_blank", "data-toggle": "tooltip", "original-title": "查看"} ) %>
       </td>
     </tr>
     <% end %>
