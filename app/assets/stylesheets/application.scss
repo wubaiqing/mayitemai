@@ -158,7 +158,9 @@ span.required {
 .login-container {
   with: 960px;
   margin: 0 auto;
-
+  p {
+    color: #979898;
+  }
 }
 
 .form-signin {
