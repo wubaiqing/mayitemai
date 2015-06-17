@@ -5,13 +5,13 @@
 </div>
 <div class="col-sm-3 col-md-2 sidebar">
   <%= render_list :class => "nav nav-sidebar" do |li|
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-home") + " " + t("menus.home"), cpanel_homes_path)
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-pencil") + " " + t("menus.new_brand"), new_cpanel_brand_path)
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-list-alt") + " " + t("menus.brands"), cpanel_brands_path)
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-shopping-cart") + " " + t("menus.new_good"), new_cpanel_good_path)
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-th") + " " + t("menus.goods"), cpanel_goods_path)
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-plus-sign") + " " + t("menus.new_cate"), new_cpanel_cate_path)
-   li << link_to(content_tag("span", "", class: "glyphicon glyphicon-duplicate") + " " + t("menus.cates"), cpanel_cates_path)
+   li << link_to(content_tag("span", icon('home')) + " " + t("menus.home"), cpanel_homes_path)
+   li << link_to(content_tag("span", icon('cubes')) + " " + t("menus.brands"), cpanel_brands_path)
+   li << link_to(content_tag("span", raw("&nbsp;&nbsp;&nbsp;&nbsp;") + icon('angle-right')) + " " + t("menus.new_brand"), new_cpanel_brand_path)
+   li << link_to(content_tag("span", icon('shopping-cart')) + " " + t("menus.goods"), cpanel_goods_path)
+   li << link_to(content_tag("span", raw("&nbsp;&nbsp;&nbsp;&nbsp;") + icon('angle-right')) + " " + t("menus.new_good"), new_cpanel_good_path)
+   li << link_to(content_tag("span", icon('code-fork')) + " " + t("menus.cates"), cpanel_cates_path)
+   li << link_to(content_tag("span", raw("&nbsp;&nbsp;&nbsp;&nbsp;") + icon('angle-right')) + " " + t("menus.new_cate"), new_cpanel_cate_path)
    end %>
 </div>
 

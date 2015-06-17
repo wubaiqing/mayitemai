@@ -58,7 +58,7 @@
         <%= goods.id %>
       </td>
       <td>
-        <%= goods.title %>
+        <%= link_to goods.title, edit_cpanel_good_path(goods) %>
       </td>
       <td>
         <%= goods.taobao_id %>
@@ -67,7 +67,9 @@
         <%= goods.brand.wangwang %>
       </td>
       <td>
-        <%= link_to(t("buttons.update"), edit_cpanel_good_path(goods) ) %>
+        <%= link_to(icon('eye'), goods.taobao_url, {target: "_blank"} ) %>
+        <%= content_tag("span", raw("&nbsp;")) %>
+        <%= link_to(icon('edit'), edit_cpanel_good_path(goods) ) %>
       </td>
     </tr>
     <% end %>

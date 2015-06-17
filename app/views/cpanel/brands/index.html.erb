@@ -56,7 +56,7 @@
         <%= brand.id %>
       </td>
       <td>
-        <%= link_to brand.name, detail_path(brand), {target: "_blank"} %>
+        <%= link_to brand.name, edit_cpanel_brand_path(brand) %>
       </td>
       <td>
         <%= brand.wangwang %>
@@ -72,7 +72,9 @@
         <% end %>
       </td>
       <td>
-        <%= link_to(t("buttons.update"), edit_cpanel_brand_path(brand) ) %>
+        <%= link_to(icon('eye'), detail_path(brand), {target: "_blank"} ) %>
+        <%= content_tag("span", raw("&nbsp;")) %>
+        <%= link_to(icon('edit'), edit_cpanel_brand_path(brand) ) %>
       </td>
     </tr>
     <% end %>
