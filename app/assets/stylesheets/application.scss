@@ -155,17 +155,48 @@ span.required {
   display: none;
 }
 
+.login-container {
+  with: 960px;
+  margin: 0 auto;
+
+}
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
   margin: 0 auto;
+  .login-header {
+    margin-bottom: 50px;
+    a {
+      cursor: default;
+      font-size: 30px;
+      color:#f98235;
+      text-decoration:none;
+    }
+  }
+  .form-control {
+    border-color:#F9C779;
+  }
+  input[type="submit"] {
+    background-color: #f98235;
+    border-color: #f98235;
+  }
+  label {
+    color: #F9c779;
+    font-weight: normal;
+  }
+}
+
+.text-center {
+  text-align: center;
 }
 
 
+
 .form-signin {
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+  margin: 8% auto 0% auto;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -182,18 +213,5 @@ span.required {
           box-sizing: border-box;
   padding: 10px;
   font-size: 16px;
-}
-.form-signin .form-control:focus {
-  z-index: 2;
-}
-.form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
 }
 
