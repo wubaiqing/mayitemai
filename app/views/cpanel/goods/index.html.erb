@@ -67,9 +67,10 @@
         <%= goods.brand.wangwang %>
       </td>
       <td>
-        <%= link_to(icon('eye'), goods.taobao_url, {target: "_blank"} ) %>
         <%= content_tag("span", raw("&nbsp;")) %>
-        <%= link_to(icon('edit'), edit_cpanel_good_path(goods) ) %>
+        <%= link_to(icon('edit'), edit_cpanel_good_path(goods), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
+        <%= content_tag("span", raw("&nbsp;")) %>
+        <%= link_to(icon('eye'), goods.taobao_url, {target: "_blank", "data-toggle": "tooltip", "original-title": "查看"}) %>
       </td>
     </tr>
     <% end %>

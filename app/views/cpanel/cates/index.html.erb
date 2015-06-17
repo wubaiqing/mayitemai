@@ -60,7 +60,8 @@
         <% end %>
       </td>
       <td>
-        <%= link_to(icon('edit'), edit_cpanel_cate_path(cate) ) %>
+        <%= content_tag("span", raw("&nbsp;")) %>
+        <%= link_to(icon('edit'), edit_cpanel_cate_path(cate), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
       </td>
     </tr>
     <% end %>
