@@ -14,6 +14,8 @@ config/initializers/qiniu_sdk.rb
 !/log/.keep
 /tmp
 
+env
+
 # Ignore all IDE
 /idea/*
 .DS_Store

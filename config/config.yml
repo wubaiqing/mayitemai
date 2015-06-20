@@ -2,6 +2,10 @@ defaults: &defaults
   app_name: "蚂蚁特卖 - 管理"
   domain: "127.0.0.1:3000"
   upload_url: "http://7xioz9.com2.z0.glb.qiniucdn.com"
+  qiniu_access_key: "FIA40q6pHelvO1SR4TkUhS0ZU7DtXod4Rxvt9RsM"
+  qiniu_secret_key: "O0KyzM6g50Mbksjy5vzZCGszdnyvT9TplLkEihvi"
+  taobao_app_key: "21458915"
+  taobao_secret_key: "de46e97329930b7444bcb0eed6133d5c"
 
 development:
   <<: *defaults
