@@ -16,7 +16,6 @@ class HomeController < ApplicationController
     render action: :index
   end
 
-
   private
 
   # 查询分类，设置meta

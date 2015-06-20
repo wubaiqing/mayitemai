@@ -11,7 +11,6 @@ class DetailsController < ApplicationController
     @goods = Good.good_collection(@brand.id, @brand.wangwang)
   end
 
-
   private
 
   # 查询专题，设置meta
