@@ -1,5 +1,9 @@
+# coding: utf-8
+
+# 图片管理
 class Cpanel::PhotosController < Cpanel::ApplicationController
 
+  # 上传图片
   def create
 
     # 临时路径
@@ -33,4 +37,5 @@ class Cpanel::PhotosController < Cpanel::ApplicationController
     render text: Setting.upload_url + "/" + qiniu_file_name
 
   end
+
 end

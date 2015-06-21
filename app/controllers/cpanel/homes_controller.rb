@@ -1,5 +1,6 @@
-class Cpanel::HomesController < Cpanel::ApplicationController
+# coding: utf-8
 
-  before_action :set_home, only: [:show, :edit, :update, :destroy]
+# 首页管理
+class Cpanel::HomesController < Cpanel::ApplicationController
 
 end
