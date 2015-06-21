@@ -1,3 +1,6 @@
+# coding: utf-8
+
+# 分类管理
 class Cpanel::CatesController < Cpanel::ApplicationController
 
   before_action :get_cate, only: [:edit, :update]

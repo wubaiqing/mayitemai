@@ -1,3 +1,6 @@
+# coding: utf-8
+
+# 专题管理
 class Cpanel::BrandsController < Cpanel::ApplicationController
 
   before_action :get_brand, only: [:edit, :update]

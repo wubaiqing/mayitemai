@@ -1,3 +1,6 @@
+# coding: utf-8
+
+# 商品管理
 class Cpanel::GoodsController < Cpanel::ApplicationController
 
   before_action :get_good, only: [:edit, :update]

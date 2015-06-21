@@ -1,3 +1,6 @@
+# coding: utf-8
+
+# 主控制器
 class Cpanel::ApplicationController < ApplicationController
 
   # CSRF
