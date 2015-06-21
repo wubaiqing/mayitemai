@@ -8,7 +8,6 @@ $(document).on 'page:change',  ->
   # 商品图片上传事件
   $("#goods_picture_add_image").click ->
     Mayi.uploadPircture "#goods-picture-upload", "#goods-picture-hint", "#good_picture_url"
-    $("#goods-picture-upload").click()
 
 
   # 商品图片预览
