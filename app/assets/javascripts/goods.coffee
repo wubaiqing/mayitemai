@@ -37,7 +37,7 @@ $(document).on 'page:change',  ->
     $.getJSON '/cpanel/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
       data = jsonData.tbk_items_detail_get_response
 
-      if (jsonData.status is '0')
+      if (jsonData.errorCode is 10001)
         return $('#fetch-taobao-repositories-hint').html '商品已存在';
 
       if data.total_results is 0
