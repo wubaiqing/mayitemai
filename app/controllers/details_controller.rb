@@ -3,13 +3,13 @@
 # 专题
 class DetailsController < ApplicationController
 
-  # 设置mata，获取专题信息
   before_action :get_brand, only: [:show]
 
   # 详情页
   def show
     @goods = Good.good_collection(@brand.id, @brand.wangwang)
   end
+
 
   private
 

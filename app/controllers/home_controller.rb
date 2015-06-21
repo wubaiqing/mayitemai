@@ -3,6 +3,7 @@
 # 首页
 class HomeController < ApplicationController
 
+  # 设置Mata，获取专题信息
   before_action :get_cate, only: [:index, :show]
 
   # 首页
@@ -15,6 +16,7 @@ class HomeController < ApplicationController
     @brands = Brand.find_by_cate_id(params[:id]).all
     render action: :index
   end
+
 
   private
 

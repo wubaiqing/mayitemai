@@ -1,20 +1,28 @@
+#= require mayi
+
 #= require jquery
 #= require jquery_ujs
 #= require jquery.turbolinks.min
-#= require turbolinks
-#= require bootstrap-sprockets
 #= require jquery.html5-fileupload
-#= require nprogress
+
 #= require tips
+#= require turbolinks
+
 #= require brands
 #= require goods
 
+
+# 开启Turbolinks
 Turbolinks.enableProgressBar();
 
+
 $(document).on 'page:change',  ->
+
+  # 按钮提示
   $('a[data-toggle="tooltip"]').tipsy
     gravity: 's'
 
+  # 左侧导航点击事件
   $('ul.nav-sidebar > li').click ->
     $(this).addClass 'active'
 
