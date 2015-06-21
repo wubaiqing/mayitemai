@@ -16,7 +16,7 @@
     <ul class="clearfix">
       <% @goods.each do |good| %>
       <li class="item-small-v3">
-        <a class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
+        <a biz-itemid="<%= good.taobao_id %>" isconvert=1 class="link-box status-avil" href="<%= good.taobao_url %>" target="_blank">
           <img class="item-pic" src="" data-original="<%= good.picture_url %>" />
           <h4>
           <span class="desc">
