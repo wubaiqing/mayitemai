@@ -33,6 +33,7 @@ $(document).on 'page:change',  ->
 
   # 上传图片
   uploadPircture = (id, hint, result)->
+    # jQuery上传插件
     $(id).fileUpload
       url : "/cpanel/photos"
       type : "POST"
