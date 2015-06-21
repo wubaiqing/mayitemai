@@ -5,6 +5,17 @@
 
 $(document).on 'page:change',  ->
 
+  # 商品图片上传事件
+  $("#goods_picture_add_image").click ->
+    Mayi.uploadPircture "#goods-picture-upload", "#goods-picture-hint", "#good_picture_url"
+    $("#goods-picture-upload").click()
+
+
+  # 商品图片预览
+  $('#goods_picture_review').click ->
+    Mayi.reviewPircture "#good_picture_url"
+
+
   # 获取淘宝商品
   $('#fetch_taobao_repositories').click ->
 
@@ -46,23 +57,3 @@ $(document).on 'page:change',  ->
 
       $('#good_price').val parseInt(current.discount_price)
       $('#good_picture_url').val current.pic_url + '_400x400.jpg'
-
-  # 商品图片
-  $("#goods-picture-upload").fileUpload
-    url : "/cpanel/photos"
-    type : "POST"
-    beforeSend : ->
-      $('#goods-picture-hint').html '上传中...'
-    success : (result) ->
-      $('#good_picture_url').val result
-      $('#goods-picture-hint').html null;
-
-  # 商品图片上传事件
-  $("#goods_picture_add_image").click ->
-    $("#goods-picture-upload").click()
-
-  # 商品图片预览
-  $('#goods_picture_review').click ->
-    url = $('#good_picture_url').val()
-    if url isnt ''
-      window.open url
