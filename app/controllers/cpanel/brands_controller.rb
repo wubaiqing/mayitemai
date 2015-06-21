@@ -60,7 +60,7 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
     @brand = Brand.find(params[:id])
   end
 
-  # 限制输入
+  # 添加限制
   def brand_params
     params[:brand].permit(:cate_id, :name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort)
   end

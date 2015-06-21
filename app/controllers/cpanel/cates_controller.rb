@@ -51,7 +51,7 @@ class Cpanel::CatesController < Cpanel::ApplicationController
       @cate = Cate.find(params[:id])
     end
 
-    # 限制输入
+    # 添加限制
     def cate_params
       params[:cate].permit(:name, :sort, :state)
     end

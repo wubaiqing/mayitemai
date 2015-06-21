@@ -1,19 +1,25 @@
 class Cpanel::GoodsController < Cpanel::ApplicationController
-  before_action :set_good, only: [:show, :edit, :update, :destroy]
+
+  before_action :get_good, only: [:edit, :update]
 
   # 管理
   def index
+
+    # 翻页
     @goods = Good.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
 
+    # 搜索条件
     taobao_id = params[:taobao_id] || ''
     wangwang = params[:wangwang] || ''
 
     if !taobao_id.blank?
+      # 淘宝ID搜索
       @goods = Good.find_by_taobao_id(taobao_id)
        .desc(:id).paginate(:page => params[:page], :per_page => 10)
     end
 
     if !wangwang.blank?
+      # 旺旺搜索
       @goods = Good.find_by_wangwang(wangwang)
        .desc(:id).paginate(:page => params[:page], :per_page => 10)
     end
@@ -53,25 +59,29 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
     end
   end
 
+  # 根据淘宝ID获取商品详情
   def fetch_taobao_repositories
+
+    # 搜索条件
     taobao_id = params[:taobao_id] || ''
 
     item = ''
     if !taobao_id.blank?
+      # 淘宝ID搜索商品
       item = Good.fetch_taobao_repositories(taobao_id)
     end
 
-    # 七牛图片地址
+    # 淘宝单品
     render json: item
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_good
+    # 根据ID查询专题
+    def get_good
       @good = Good.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+    # 添加限制
     def good_params
       params[:good].permit(:taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id)
     end
