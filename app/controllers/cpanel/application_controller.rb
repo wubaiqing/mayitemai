@@ -13,6 +13,7 @@ class Cpanel::ApplicationController < ApplicationController
   layout "cpanel"
 
   def require_user
+    # 当前用户是否登陆
     if current_user.blank?
       respond_to do |format|
         format.html { authenticate_user! }
@@ -20,5 +21,4 @@ class Cpanel::ApplicationController < ApplicationController
       end
     end
   end
-
 end

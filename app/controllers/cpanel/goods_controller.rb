@@ -78,7 +78,9 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
     render json: item
   end
 
+
   private
+
     # 根据ID查询专题
     def get_good
       @good = Good.find(params[:id])

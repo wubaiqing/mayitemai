@@ -1,6 +1,6 @@
 # coding: utf-8
 
-# 应用控制器
+# 主控制器
 class ApplicationController < ActionController::Base
 
   # CSRF

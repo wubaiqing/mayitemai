@@ -37,5 +37,4 @@ class Cpanel::PhotosController < Cpanel::ApplicationController
     render text: Setting.upload_url + "/" + qiniu_file_name
 
   end
-
 end
