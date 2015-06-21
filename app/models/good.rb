@@ -26,6 +26,12 @@ class Good
 
   after_save :update_cache_version
 
+
+  # 没有数据
+  ERROR_STATE = {
+    DATA_EXISTS: 10001
+  }
+
   # 记录节点变更时间，用于清除缓存
   def update_cache_version
     CacheVersion.good_node_updated_at = Time.now
@@ -37,9 +43,9 @@ class Good
 
     uniqueness = self.find_by_taobao_id(taobao_id)
     if !uniqueness.blank?
-      return {'status': '0'}.to_json
+      return {'errorCode': ERROR_STATE[:DATA_EXISTS]}.to_json
     end
-    
+
     begin
       hash = OpenTaobao.get(
         :method => "taobao.tbk.items.detail.get",
