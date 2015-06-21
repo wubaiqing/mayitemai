@@ -1,10 +1,12 @@
 class Cpanel::ApplicationController < ApplicationController
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
+
+  # CSRF
   protect_from_forgery with: :exception
 
+  # 验证登录
   before_filter :require_user
 
+  # 模板
   layout "cpanel"
 
   def require_user
