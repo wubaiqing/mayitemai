@@ -30,29 +30,31 @@ $(document).on 'page:change',  ->
       return alert '请填写淘宝ID'
 
     # 提示
-    $('#fetch-taobao-repositories-hint').html('正在获取...');
+    $('#fetch-taobao-repositories-hint').html '正在获取...'
 
     # 请求成功
     $.getJSON '/cpanel/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
       data = jsonData.tbk_items_detail_get_response
 
       if (jsonData.errorCode is 10001)
-        return $('#fetch-taobao-repositories-hint').html '商品已存在';
+        return $('#fetch-taobao-repositories-hint').html '商品在数据库中存在'
 
       if data.total_results is 0
-        return $('#fetch-taobao-repositories-hint').html('数据返回空，或网络请求错误，请重试...');
+        return $('#fetch-taobao-repositories-hint').html '请求淘宝API时，数据返回为空'
 
+      # 当前数据
       current = data.tbk_items.tbk_item['0']
-      $('#fetch-taobao-repositories-hint').html(null);
+
+      $('#fetch-taobao-repositories-hint').html null
       $('#good_taobao_url').val current.item_url
       $('#good_title').val current.title
       $('#good_original_price').val current.price
 
+      # 价格校验
       if current.discount_price.substr(-2, 1) is 0
         discount_price = parseInt current.discount_price
       else
         discount_price = current.discount_price
-
 
       $('#good_price').val parseInt(current.discount_price)
       $('#good_picture_url').val current.pic_url + '_400x400.jpg'
