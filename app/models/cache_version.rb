@@ -1,6 +1,6 @@
 # coding: utf-8
 
-# 缓存
+# 缓存版本
 class CacheVersion
 
   # 条件 - 设置缓存名称
@@ -19,6 +19,7 @@ class CacheVersion
     end
   end
 
+  # 生成缓存key
   def self.mk_key(key)
     "cache_version:#{key}"
   end
