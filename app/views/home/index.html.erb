@@ -7,7 +7,7 @@
         </div>
         <ul class="shop_onsale">
           <% @brands.each do |brand| %>
-            <% cache("brand-list-#{brand.id}") do %>
+            <% cache(["brand-list", brand_id: brand.id, brand_update_version: CacheVersion.brand_node_updated_at]) do %>
               <li class="s_mod">
                 <div class="s_pic">
                   <div class="s_discount">
@@ -38,7 +38,7 @@
           <div class="forecast-cnt">
             <div class="clearfix" style="margin-top: 0px; display: block;">
               <% @brands.each do |brand| %>
-                <% cache("brand-forecast-#{brand.id}") do %>
+                <% cache(["brand-forecast", brand_id: brand.id, brand_update_version: CacheVersion.brand_node_updated_at]) do %>
                   <span class="forecast-logo J_brandLogo" data-index="0">
                     <%= link_to(raw("<img src='#{brand.logo_picture}' class='lazy' class='forecast-logo-pic'>"), detail_path(brand))%>
                   </span>
