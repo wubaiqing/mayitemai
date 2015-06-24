@@ -63,10 +63,13 @@ class Good
   end
 
   # 根据淘宝ID获取淘宝信息
-  def self.fetch_taobao_repositories(taobao_id)
-    uniqueness = self.find_by_taobao_id(taobao_id)
-    if !uniqueness.blank?
-      return {'errorCode': ERROR_STATE[:DATA_EXISTS]}.to_json
+  def self.fetch_taobao_repositories(taobao_id, uniqueness = true)
+
+    if uniqueness.eql?(true)
+      uniqueness = self.find_by_taobao_id(taobao_id)
+      if !uniqueness.blank?
+        return {'errorCode': ERROR_STATE[:DATA_EXISTS]}.to_json
+      end
     end
 
     begin
