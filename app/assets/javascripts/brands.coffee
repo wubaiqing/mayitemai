@@ -13,7 +13,7 @@ $(document).on 'page:change',  ->
 
   # 上传图片 - 专题页顶部
   $("#banner_picture_add_image").click ->
-    Mayi.uploadPircture "#banner-picture-upload", "#banner-picture-hint", "#brand_desc_picture"
+    Mayi.uploadPircture "#banner-picture-upload", "#banner-picture-hint", "#brand_banner_picture"
 
 
   # 图片预览 - 品牌预览
