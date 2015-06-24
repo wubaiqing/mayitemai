@@ -10,6 +10,9 @@ class DetailsController < ApplicationController
     @goods = Good.good_collection(@brand.id, @brand.wangwang)
   end
 
+  def index
+    
+  end
 
   private
 
