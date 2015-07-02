@@ -5,6 +5,7 @@ class Cpanel::GoodsCatesController < Cpanel::ApplicationController
   # GET /goods_cates
   # GET /goods_cates.json
   def index
+    @brands = Brand.all
     @goods_cates = GoodsCate.all
   end
 
@@ -27,28 +28,20 @@ class Cpanel::GoodsCatesController < Cpanel::ApplicationController
   def create
     @goods_cate = GoodsCate.new(goods_cate_params)
 
-    respond_to do |format|
-      if @goods_cate.save
-        format.html { redirect_to @goods_cate, notice: 'Goods cate was successfully created.' }
-        format.json { render :show, status: :created, location: @goods_cate }
-      else
-        format.html { render :new }
-        format.json { render json: @goods_cate.errors, status: :unprocessable_entity }
-      end
+    if @goods_cate.save
+      redirect_to cpanel_goods_cates_url
+    else
+      render :new
     end
   end
 
   # PATCH/PUT /goods_cates/1
   # PATCH/PUT /goods_cates/1.json
   def update
-    respond_to do |format|
-      if @goods_cate.update(goods_cate_params)
-        format.html { redirect_to @goods_cate, notice: 'Goods cate was successfully updated.' }
-        format.json { render :show, status: :ok, location: @goods_cate }
-      else
-        format.html { render :edit }
-        format.json { render json: @goods_cate.errors, status: :unprocessable_entity }
-      end
+    if @goods_cate.update(goods_cate_params)
+      redirect_to cpanel_goods_cates_url
+    else
+      render :new
     end
   end
 
@@ -70,6 +63,6 @@ class Cpanel::GoodsCatesController < Cpanel::ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def goods_cate_params
-      params[:goods_cate]
+      params[:goods_cate].permit(:name, :sort, :state)
     end
 end

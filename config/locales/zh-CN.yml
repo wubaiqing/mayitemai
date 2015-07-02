@@ -48,8 +48,10 @@ zh-CN:
     brands: "专题管理"
     new_good: "添加商品"
     goods: "商品管理"
-    new_cate: "添加分类"
-    cates: "分类管理"
+    new_cate: "添加专题分类"
+    cates: "专题分类管理"
+    new_goods_cate: "添加商品分类"
+    goods_cates: "商品分类管理"
 
 
 
