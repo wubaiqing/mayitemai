@@ -35,7 +35,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :brands, :goods, :homes, :photos, :cates
+    resources :brands, :goods, :homes, :photos, :cates, :goods_cates
 
   end
 

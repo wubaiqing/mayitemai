@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Goods Cates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @goods_cates.each do |goods_cate| %>
+      <tr>
+        <td><%= link_to 'Show', goods_cate %></td>
+        <td><%= link_to 'Edit', edit_goods_cate_path(goods_cate) %></td>
+        <td><%= link_to 'Destroy', goods_cate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
