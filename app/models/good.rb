@@ -8,7 +8,7 @@ class Good
   include Mongoid::BaseModel
 
   # 必填
-  validates :taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, presence: true
+  validates :taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id, presence: true
 
   # 唯一
   validates :taobao_id, uniqueness: true
@@ -36,6 +36,9 @@ class Good
 
   # 专题ID
   field :brand_id, type: Integer
+
+  # 专题ID
+  field :cate_id, type: Integer
 
   # 状态
   field :state, type: Integer, default: 1
@@ -74,8 +77,8 @@ class Good
 
     begin
       hash = OpenTaobao.get(
-        :method => "taobao.tbk.items.detail.get",
-        :fields => "num_iid,seller_id,nick,title,price,volume,pic_url,item_url,shop_url",
+        :method => "taobao.tbk.items.convert",
+        :fields => "click_url",
         :num_iids => taobao_id
       )
     rescue => e

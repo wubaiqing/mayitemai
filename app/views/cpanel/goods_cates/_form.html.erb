@@ -29,6 +29,20 @@
     <% end %>
 
     <tr>
+    <td width="15%">
+      <label class="required">
+        <%= t('goods.brand_id') %>
+        <span class="required">*</span>
+      </label>
+    </td>
+    <td colspan="3">
+      <div class="col-sm-4">
+        <%= f.collection_select :brand_id, @brands, :id, :name, {prompt: true}, {class: "form-control"} %>
+      </div>
+    </td>
+  </tr>
+
+    <tr>
       <td width="15%">
         <label class="required">
           <%= t('cates.name') %>

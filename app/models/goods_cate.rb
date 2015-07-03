@@ -4,13 +4,13 @@ class GoodsCate
   include Mongoid::BaseModel
 
    # 必填
-  validates :name, :state, :sort, presence: true
-
-  # 唯一
-  # validates :name, uniqueness: true
+  validates :brand_id, :name, :state, :sort, presence: true
 
   # 名称
   field :name
+
+  # 专题ID
+  field :brand_id, type: Integer, default: 0
 
   # 排序
   field :sort, type: Integer, default: 0
@@ -33,5 +33,11 @@ class GoodsCate
   def update_cache_version
     CacheVersion.cate_node_updated_at = Time.now
   end
+
+  # 查询分类状态
+  def self.find_by_publish
+    where(state: 1).desc(:id)
+  end
+
 
 end

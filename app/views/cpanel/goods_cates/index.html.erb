@@ -32,6 +32,9 @@
         ID
       </th>
       <th>
+        <%= t('brands.cate_name') %>
+      </th>
+      <th>
         <%= t('cates.name') %>
       </th>
       <th>
@@ -50,7 +53,11 @@
         <%= cate.id %>
       </td>
       <td>
-        <%= link_to cate.name, edit_cpanel_cate_path(cate) %>
+        <%= Brand::find_by_cate_id(cate.brand_id).first.name %>
+
+      </td>
+      <td>
+        <%= link_to cate.name, edit_cpanel_goods_cate_path(cate) %>
       </td>
       <td>
         <% if cate.state == Brand::STATE[:normal]%>
@@ -68,3 +75,4 @@
   </tbody>
 </table>
 
+<%= will_paginate @goods_cates %>

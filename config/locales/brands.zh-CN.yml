@@ -1,5 +1,6 @@
 zh-CN:
   brands:
+    cate_name: "所属专题"
     cate_id: "分类"
     name: "专题名称"
     wangwang: "店铺旺旺"

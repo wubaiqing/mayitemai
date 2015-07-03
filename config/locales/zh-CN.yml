@@ -44,14 +44,14 @@ zh-CN:
 
   menus:
     home: "首页"
-    new_brand: "添加专题"
     brands: "专题管理"
-    new_good: "添加商品"
+    new_brand: "添加专题"
     goods: "商品管理"
-    new_cate: "添加专题分类"
-    cates: "专题分类管理"
-    new_goods_cate: "添加商品分类"
-    goods_cates: "商品分类管理"
+    new_good: "添加商品"
+    cates: "专题分类"
+    new_cate: "添加分类"
+    goods_cates: "子分类"
+    new_goods_cate: "添加分类"
 
 
 
