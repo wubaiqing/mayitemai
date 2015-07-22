@@ -15,6 +15,14 @@ $(document).on 'page:change',  ->
     Mayi.reviewPircture "#good_picture_url"
 
 
+  # 切换所属分类专题的二级联动
+  $('#good_brand_id').on "change", ->
+    _value = $(this).val()
+    $.getJSON '/cpanel/goods/fetch_brand_cate', {brand_id: _value}, (jsonData)->
+      console.log jsonData
+
+
+
   # 获取淘宝商品
   $('#fetch_taobao_repositories').click ->
 

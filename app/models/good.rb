@@ -37,7 +37,7 @@ class Good
   # 专题ID
   field :brand_id, type: Integer
 
-  # 专题ID
+  # 分类ID
   field :cate_id, type: Integer
 
   # 状态

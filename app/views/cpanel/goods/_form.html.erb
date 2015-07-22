@@ -158,6 +158,22 @@
     </td>
   </tr>
 
+  <tr>
+    <td width="15%">
+      <label class="required">
+        <%= t('goods.cate_id') %>
+        <span class="required">*</span>
+      </label>
+    </td>
+    <td colspan="3">
+      <div class="col-sm-4">
+        <select id="brand_cate" class="form-control">
+          <option value="-1">请选择所属专题</option>
+        </select>
+      </div>
+    </td>
+  </tr>
+
 </table>
 <div class="form-actions">
   <%= f.submit nil, class: "btn btn-primary" %>

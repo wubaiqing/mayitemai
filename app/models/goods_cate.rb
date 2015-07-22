@@ -39,5 +39,21 @@ class GoodsCate
     where(state: 1).desc(:id)
   end
 
+  def self.fetch_brand_cates_repositories(brand_id)
+    begin
+      GoodsCate.find_by_brand_id(brand_id)
+
+    rescue => e
+      Rails.logger.error("Brand Cates Repositories fetch Error: #{e}")
+      return false;
+    end
+  end
+
+
+  def self.find_by_brand_id(brand_id)
+    # where(brand_id: brand_id).where(state: 1).desc(:sort).desc(:id)
+    where(brand_id: brand_id).where(state: 1)
+  end
+
 
 end

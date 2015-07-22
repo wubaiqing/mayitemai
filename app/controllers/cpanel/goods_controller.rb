@@ -62,6 +62,22 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
     end
   end
 
+  # 根据专题ID获取专题下所有的分类
+  def fetch_brand_cates_repositories
+
+    # 搜索条件
+    brand_id = params[:brand_id] || ''
+
+    item = ''
+    if !brand_id.blank?
+      # 淘宝ID搜索商品
+      item = GoodsCate.fetch_brand_cates_repositories(taobao_id)
+    end
+
+    # 淘宝单品
+    render json: item
+  end
+
   # 根据淘宝ID获取商品详情
   def fetch_taobao_repositories
 
