@@ -155,6 +155,7 @@
       <div class="col-sm-4">
         <%= f.collection_select :brand_id, @brands, :id, :name, {prompt: true}, {class: "form-control"} %>
       </div>
+      <div id="brand_hint"></div>
     </td>
   </tr>
 
@@ -167,9 +168,7 @@
     </td>
     <td colspan="3">
       <div class="col-sm-4">
-        <select id="brand_cate" class="form-control">
-          <option value="-1">请选择所属专题</option>
-        </select>
+        <%= f.collection_select :cate_id, @goods_cate, :id, :name, {prompt: true}, {class: "form-control"} %>
       </div>
     </td>
   </tr>

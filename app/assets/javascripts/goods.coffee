@@ -18,8 +18,22 @@ $(document).on 'page:change',  ->
   # 切换所属分类专题的二级联动
   $('#good_brand_id').on "change", ->
     _value = $(this).val()
-    $.getJSON '/cpanel/goods/fetch_brand_cate', {brand_id: _value}, (jsonData)->
-      console.log jsonData
+    $.getJSON '/cpanel/goods/fetch_brand_cates_repositories', {brand_id: _value}, (jsonData)->
+
+      if jsonData.length == 0
+        $('#brand_hint').html '暂无分类'
+        options = '<option value="-1">请选择</option>'
+      else
+        $('#brand_hint').html ''
+
+      $(jsonData).each (index, data)->
+        options += '<option>' + data.name + '</option>'
+
+      $('#good_cate_id').html options
+
+
+
+
 
 
 

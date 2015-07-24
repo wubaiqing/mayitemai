@@ -33,6 +33,7 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
   def new
     @good = Good.new
     @brands = Brand.find_by_publish.all
+    @goods_cate = GoodsCate.where(:id => -1).all
   end
 
   # 编辑
@@ -68,10 +69,11 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
     # 搜索条件
     brand_id = params[:brand_id] || ''
 
+
     item = ''
     if !brand_id.blank?
       # 淘宝ID搜索商品
-      item = GoodsCate.fetch_brand_cates_repositories(taobao_id)
+      item = GoodsCate.fetch_brand_cates_repositories(brand_id)
     end
 
     # 淘宝单品

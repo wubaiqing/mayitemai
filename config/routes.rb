@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resources :goods do
       collection do
         get 'fetch_taobao_repositories'
+        get 'fetch_brand_cates_repositories'
       end
     end
 
