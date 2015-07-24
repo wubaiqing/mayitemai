@@ -33,7 +33,7 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
   def new
     @good = Good.new
     @brands = Brand.find_by_publish.all
-    @goods_cate = GoodsCate.where(:id => -1).all
+    @goods_cate = GoodsCate.find_by_brand_id(-1).all
   end
 
   # 编辑
@@ -45,7 +45,7 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
   def create
     @good = Good.new(good_params)
     @brands = Brand.find_by_publish.all
-    @goods_cate = GoodsCate.where(:id => -1).all
+    @goods_cate = GoodsCate.find_by_brand_id(@good.brand_id).all
 
     if @good.save
       redirect_to cpanel_goods_url
@@ -107,6 +107,6 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
 
     # 添加限制
     def good_params
-      params[:good].permit(:taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id)
+      params[:good].permit(:taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id)
     end
 end
