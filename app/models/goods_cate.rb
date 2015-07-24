@@ -39,6 +39,7 @@ class GoodsCate
     where(state: 1).desc(:id)
   end
 
+  # 获取分类地址
   def self.fetch_brand_cates_repositories(brand_id)
     begin
       GoodsCate.find_by_brand_id(brand_id)
@@ -49,10 +50,9 @@ class GoodsCate
     end
   end
 
-
+  # 排序
   def self.find_by_brand_id(brand_id)
-    # where(brand_id: brand_id).where(state: 1).desc(:sort).desc(:id)
-    where(brand_id: brand_id).where(state: 1)
+    where(brand_id: brand_id).where(state: 1).desc(:sort).desc(:id)
   end
 
 

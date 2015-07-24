@@ -45,6 +45,7 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
   def create
     @good = Good.new(good_params)
     @brands = Brand.find_by_publish.all
+    @goods_cate = GoodsCate.where(:id => -1).all
 
     if @good.save
       redirect_to cpanel_goods_url
