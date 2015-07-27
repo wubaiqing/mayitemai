@@ -28,6 +28,7 @@ zh-CN:
         picture_url: "宝贝图片"
         sort: "排序值"
         brand_id: "所属专题"
+        cate_id: "商品分类"
 
   helpers:
     submit:

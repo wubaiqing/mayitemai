@@ -32,10 +32,10 @@
         ID
       </th>
       <th>
-        <%= t('brands.cate_name') %>
+        <%= t('cates.name') %>
       </th>
       <th>
-        <%= t('cates.name') %>
+        <%= t('brands.cate_name') %>
       </th>
       <th>
         <%= t('cates.state') %>
@@ -53,11 +53,10 @@
         <%= cate.id %>
       </td>
       <td>
-        <%= Brand::find_by_cate_id(cate.brand_id).first.name %>
-
+        <%= link_to cate.name, edit_cpanel_goods_cate_path(cate) %>
       </td>
       <td>
-        <%= link_to cate.name, edit_cpanel_goods_cate_path(cate) %>
+        <%= Brand::find_by_cate_id(cate.brand_id).first.name %>
       </td>
       <td>
         <% if cate.state == Brand::STATE[:normal]%>
