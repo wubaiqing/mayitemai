@@ -22,7 +22,7 @@ html.turbolinks-progress-bar::before {
   bottom: 0;
   left: 0;
   border-bottom: 1px solid #dfdfdf;
-  background-color: #f98235;
+  background-color: #3366cc;
   height: 80px;
   border-right: 1px solid #eee;
   a {
@@ -73,7 +73,7 @@ html.turbolinks-progress-bar::before {
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f98235;
+    background-color: #3366cc;
     border-right: 1px solid #eee;
   }
 }
@@ -90,12 +90,12 @@ html.turbolinks-progress-bar::before {
   background-color: none;
 }
 .nav-sidebar > li > a:hover {
-  background-color: #f98235;
+  background-color: #4b8edf;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
 .nav-sidebar > .active > a:focus {
-  background-color: #fa9b5d;
+  background-color: #5994db;
 }
 
 
