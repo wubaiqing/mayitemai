@@ -22,7 +22,7 @@ $(document).on 'page:change',  ->
 
       if jsonData.length == 0
         $('#brand_hint').html '暂无分类'
-        options = '<option value="-1">请选择</option>'
+        options = '<option value="">请选择</option>'
       else
         $('#brand_hint').html ''
 
@@ -30,10 +30,6 @@ $(document).on 'page:change',  ->
         options += '<option>' + data.name + '</option>'
 
       $('#good_cate_id').html options
-
-
-
-
 
 
 

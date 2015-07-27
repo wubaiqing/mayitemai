@@ -10,13 +10,14 @@ html.turbolinks-progress-bar::before {
 }
 
 .menu-top {
+  font-family: "微软雅黑";
+  font-size: 22px;
   cursor: default;
-  font-size: 30px;
-  color:#ffffff;
   text-decoration:none;
 }
 
 .header {
+  text-align: center;
   position: fixed;
   top: 0px;
   bottom: 0;
@@ -27,7 +28,7 @@ html.turbolinks-progress-bar::before {
   border-right: 1px solid #eee;
   a {
     line-height: 80px;
-    color: #fff;
+    color:#e0e8f6;
     text-decoration: none;
     background-color: none;
   }
