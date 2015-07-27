@@ -60,6 +60,10 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
     @brands = Brand.find_by_publish.all
     @goods_cate = GoodsCate.find_by_brand_id(@good.brand_id).all
 
+    if @goods_cate.length < 1
+      @goods_cate = GoodsCate.find_by_brand_id(-1).all
+    end
+
     if @good.update(good_params)
       redirect_to cpanel_goods_url
     else

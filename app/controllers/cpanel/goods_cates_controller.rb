@@ -13,7 +13,7 @@ class Cpanel::GoodsCatesController < Cpanel::ApplicationController
 
   # 新建
   def new
-    @brands = Brand.all
+    @brands = Brand.find_by_publish.all
     @goods_cate = GoodsCate.new
   end
 
