@@ -8,6 +8,7 @@ class DetailsController < ApplicationController
   # 详情页
   def show
     @goods = Good.good_collection(@brand.id, @brand.wangwang)
+    @goods_cate= GoodsCate.find_by_brand_id(@brand.id)
   end
 
   def index

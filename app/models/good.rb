@@ -101,8 +101,10 @@ class Good
    # 得到集合
   def self.good_collection(id, wangwang)
     Rails.cache.fetch("good:good_collection:#{id}:#{CacheVersion.good_node_updated_at}") do
-      self.find_by_wangwang(wangwang).desc(:sort).desc(:id).all
+      self.where(brand_id: id).desc(:sort).desc(:id).all
     end
   end
+
+
 
 end
