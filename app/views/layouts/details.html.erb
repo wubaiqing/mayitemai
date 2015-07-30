@@ -11,6 +11,10 @@
     <script type="text/javascript">
       $(document).ready(function () {
         $("img.item-pic").lazyload();
+        $(".anchor").click(function () {
+            $('.fixed-nav > li.selected').removeAttr('class');
+            $(this).parent().addClass('selected');
+        });
       });
       (function(win,doc){
         var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
