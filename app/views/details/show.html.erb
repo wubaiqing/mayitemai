@@ -83,12 +83,21 @@
         <div class="clearfix"></div>
       </div>
       <% end %>
+        <ul class="fixed-nav" data-spm="15" style="display: block; top: 280px; position: fixed;">
+          <% @goods_cate.each_with_index do |good_cate, index| %>
+          <li class="<%= "selected" if index == 0 %>">
+            <a class="anchor" href="#floor1"><%= good_cate.name %></a>
+          </li>
+          <% end %>
+          <li class="toHome">
+            <a href="<%= home_path() %>">
+              <p>蚂蚁特卖首页</p>
+              <s></s>
+            </a>
+          </li>
+        </ul>
   <% end %>
   <!-- End 每一个楼层 -->
-
-
-
-
 
 </div>
 <div class="clearfix"></div>
