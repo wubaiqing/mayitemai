@@ -46,8 +46,8 @@
       </div>
   <% else %>
       <div>
-        <% @goods_cate.each do |good_cate| %>
-        <div class="l-floor">
+        <% @goods_cate.each_with_index do |good_cate, goods_index| %>
+        <div class="l-floor" id="floor<%= goods_index %>">
           <div class="l-f-title">
             <div class="l-f-tbox"><%= good_cate.name %></div>
           </div>
@@ -86,7 +86,7 @@
         <ul class="fixed-nav" data-spm="15" style="display: block; top: 280px; position: fixed;">
           <% @goods_cate.each_with_index do |good_cate, index| %>
           <li class="<%= "selected" if index == 0 %>">
-            <a class="anchor" href="#floor1"><%= good_cate.name %></a>
+            <a class="anchor" href="#floor<%= index %>"><%= good_cate.name %></a>
           </li>
           <% end %>
           <li class="toHome">
