@@ -20,3 +20,4 @@ env
 /idea/*
 .DS_Store
 mayitemai.sublime-project
+.idea/
