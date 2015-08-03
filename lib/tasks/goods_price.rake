@@ -4,6 +4,7 @@ namespace :goods do
     goods = Good.all
     goods.each do |good|
       taobaoItem = Good.fetch_taobao_repositories(good.taobao_id, false)
+      
       if taobaoItem.eql?(true)
         puts taobaoItem["tbk_items_detail_get_response"]
         # good.price = 100
