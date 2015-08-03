@@ -3,10 +3,12 @@ namespace :update_goods_prices do
 	task :nothing => :environment do
 		goods = Good.where(state: 1).desc(:id).all
 
-		goods.each_with_index do |good, index|
-			puts index % 42
+		taobao_ids = {}
+		goods.each do |good|
+			b = taobao_ids[good.taobao_id % 99]
+			b.push good.taobao_id
 		end
-	
+		puts taobao_ids
 
 
 	end
