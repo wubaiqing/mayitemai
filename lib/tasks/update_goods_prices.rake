@@ -41,8 +41,9 @@ namespace :update_goods_prices do
       end
       
       model.price = price
+      model.cate_id = 0
       model.save
-      puts "商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}"
+      puts "商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{model.errors.messages}"
 
     end
 
