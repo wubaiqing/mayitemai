@@ -74,7 +74,7 @@ class Brand
 
   # 条件 - 分类ID
   def self.find_by_cate_id(id)
-    where(cate_id: id)
+    where(id: id)
   end
 
   # 集合 - 发布状态+排序值排序+ID排序

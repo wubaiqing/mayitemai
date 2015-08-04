@@ -56,7 +56,9 @@
         <%= link_to cate.name, edit_cpanel_goods_cate_path(cate) %>
       </td>
       <td>
-        <%= Brand::find_by_cate_id(cate.brand_id).first.name %>
+        <%=
+          Brand.find_by_cate_id(cate.brand_id).first.name
+         %>
       </td>
       <td>
         <% if cate.state == Brand::STATE[:normal]%>
