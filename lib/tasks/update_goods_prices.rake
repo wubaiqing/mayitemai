@@ -39,11 +39,12 @@ namespace :update_goods_prices do
 
       # 当前价格和老价格比较
       if oldPrice == price
+        logger.info("商品跳过修改价格。ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}")
         next
       end
 
       model.price = price
-      model.save
+      model.save false
       logger.info("商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{model.errors.messages}")
 
     end
