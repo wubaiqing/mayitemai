@@ -1,6 +1,6 @@
-namespace :update_goods_prices do
+namespace :goods do
   desc "批量修改商品价格"
-  task :nothing => :environment do
+  task :price => :environment do
 
     # 获取所有在线的商品
     goods = Good.where(state: 1).desc(:id).all
