@@ -12,7 +12,7 @@ namespace :update_goods_prices do
     logger.level = Logger::INFO
     # 循环所有商品
     goods.each do |good|
-      if good.taobao_id == nil
+      if good.taobao_id.nil?
         next
       end
 
@@ -22,7 +22,7 @@ namespace :update_goods_prices do
       end
 
       item = items["tbk_items_detail_get_response"]["tbk_items"]["tbk_item"].to_a
-      if item[0] == nil
+      if item[0].nil?
         next
       end
 
@@ -43,7 +43,6 @@ namespace :update_goods_prices do
       end
 
       model.price = price
-      model.cate_id = 0
       model.save
       logger.info("商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{model.errors.messages}")
 
