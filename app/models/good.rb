@@ -38,7 +38,7 @@ class Good
   field :brand_id, type: Integer
 
   # 分类ID
-  field :cate_id, type: Integer
+  field :cate_id, type: Integer, default: 0
 
   # 状态
   field :state, type: Integer, default: 1

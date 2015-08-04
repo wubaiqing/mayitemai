@@ -1,6 +1,7 @@
 namespace :update_goods_prices do
   desc "批量修改商品价格"
   task :nothing => :environment do
+
     # 获取所有在线的商品
     goods = Good.where(state: 1).desc(:id).all
 
@@ -24,23 +25,24 @@ namespace :update_goods_prices do
       end
 
       model = Good.find good.id
-      oldPrice = model.price
+      oldPrice = model.price.to_f
 
       # 修改价格
       discount_price = item[0]["discount_price"].to_s
       if discount_price[-2] == "0"
         price = discount_price.to_i
       else
-        price = discount_price
+        price = discount_price.to_f
       end
 
-      model.price = price
-      affect = model.update()
-      if affect == true
-        puts "商品ID:#{good.id}的价格修改为：#{price}，原始价格：#{oldPrice}"
-      else
-        puts "商品ID:#{good.id}价格未修改"
+      # 当前价格和老价格比较
+      if oldPrice == price
+        next
       end
+      
+      model.price = price
+      model.save
+      puts model.errors.messages
 
     end
 
