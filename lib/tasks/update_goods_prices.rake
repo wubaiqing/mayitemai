@@ -42,7 +42,7 @@ namespace :update_goods_prices do
       
       model.price = price
       model.save
-      puts model.errors.messages
+      puts "商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}"
 
     end
 
