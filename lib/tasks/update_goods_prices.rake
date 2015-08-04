@@ -8,6 +8,8 @@ namespace :update_goods_prices do
     # 获取所有的淘宝ID
     taobao_ids = []
 
+    logger = Logger.new('./log/task.log', 'daily')
+    logger.level = Logger::INFO
     # 循环所有商品
     goods.each do |good|
       if good.taobao_id == nil
@@ -39,11 +41,11 @@ namespace :update_goods_prices do
       if oldPrice == price
         next
       end
-      
+
       model.price = price
       model.cate_id = 0
       model.save
-      puts "商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{model.errors.messages}"
+      logger.info("商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{model.errors.messages}")
 
     end
 
