@@ -1,6 +1,6 @@
 namespace :goods do
   desc "Fix goods price"
-  task price: [:environment] do
+  task price: :environment do
 
     # 获取所有在线的商品
     goods = Good.all
