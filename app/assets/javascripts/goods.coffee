@@ -26,11 +26,17 @@ $(document).on 'page:change',  ->
       else
         $('#brand_hint').html ''
 
-      $(jsonData).each (index, data)->
+      $(jsonData).each(index, data)->
         options += '<option>' + data.name + '</option>'
 
       $('#good_cate_id').html options
 
+
+  # 淘宝链接查看
+  $('#look_url').click ->
+    curl = $('#good_taobao_url').val()
+    return false if curl is ''
+    window.open curl
 
 
   # 获取淘宝商品
