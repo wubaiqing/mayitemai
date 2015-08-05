@@ -114,6 +114,6 @@ class Cpanel::GoodsController < Cpanel::ApplicationController
 
     # 添加限制
     def good_params
-      params[:good].permit(:taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id)
+      params[:good].permit(:taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id, :state)
     end
 end
