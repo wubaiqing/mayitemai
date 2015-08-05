@@ -65,6 +65,6 @@ class Cpanel::BrandsController < Cpanel::ApplicationController
 
   # 添加限制
   def brand_params
-    params[:brand].permit(:cate_id, :name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort)
+    params[:brand].permit(:cate_id, :name, :wangwang, :logo_picture, :desc_picture, :banner_picture, :sale, :sort, :state)
   end
 end
