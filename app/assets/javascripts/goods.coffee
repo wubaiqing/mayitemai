@@ -26,7 +26,7 @@ $(document).on 'page:change',  ->
       else
         $('#brand_hint').html ''
 
-      $(jsonData).each(index, data)->
+      $(jsonData).each (index, data)->
         options += '<option>' + data.name + '</option>'
 
       $('#good_cate_id').html options
