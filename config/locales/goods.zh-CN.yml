@@ -9,3 +9,4 @@ zh-CN:
     sort: "排序值"
     brand_id: "所属专题"
     cate_id: "商品分类"
+    state: "显示"
