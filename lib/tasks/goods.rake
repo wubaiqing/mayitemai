@@ -1,15 +1,14 @@
 namespace :goods do
   desc "Fix goods price"
-  task price: :environment do
+  task price: [:environment] do
 
     # 获取所有在线的商品
     goods = Good.where(state: 1).desc(:id).all
-    puts goods.length
-
+    $stdout.puts goods.length
 
     # 每天记录日志
-    logger = Logger.new('./log/task.log', 'daily')
-    logger.level = Logger::INFO
+    # logger = Logger.new('./log/task.log', 'daily')
+    # logger.level = Logger::INFO
 
     # goods.each do |good|
     #
