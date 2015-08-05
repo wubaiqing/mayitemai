@@ -41,6 +41,7 @@ zh-CN:
     update: "修改"
     delete: "删除"
     fetch:  "获取"
+    review: "预览"
     look:   "查看"
 
   menus:
