@@ -27,28 +27,27 @@ namespace :goods do
         next
       end
 
-      model = Good.find good.id
-      oldPrice = model.price.to_f
-
       # 修改价格
       discount_price = item[0]["discount_price"].to_s
       if discount_price[-2] == "0"
+        oldPrice = good.price.to_i
         price = discount_price.to_i
       else
+        oldPrice = good.price.to_f
         price = discount_price.to_f
       end
 
       # 当前价格和老价格比较
       if oldPrice == price
-        logger.info("跳过修改价格。ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}")
+        logger.info("跳过修改价格。ID：#{good.id}，之前价格#{oldPrice}，现在价格#{price}")
         next
       end
 
-      model.price = price
-      model.save
-      logger.info("商品ID：#{model.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{model.errors.messages}")
+      good.update_attribute(:price, price)
+      logger.info("商品ID：#{good.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{good.errors.messages}")
 
     end
 
   end
 end
+
