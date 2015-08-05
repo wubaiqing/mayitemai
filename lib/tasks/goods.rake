@@ -3,7 +3,7 @@ namespace :goods do
   task price: [:environment] do
 
     # 获取所有在线的商品
-    goods = Good.where(state: 1).desc(:id).all
+    goods = Good.all
     $stdout.puts goods.length
 
     # 每天记录日志
