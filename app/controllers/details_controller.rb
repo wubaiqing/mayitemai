@@ -7,8 +7,11 @@ class DetailsController < ApplicationController
 
   # 详情页
   def show
+    @cates = Cate.cate_collections
     @goods = Good.good_collection(@brand.id, @brand.wangwang)
     @goods_cate= GoodsCate.find_by_brand_id(@brand.id)
+    params[:id] = nil
+
   end
 
   def index
