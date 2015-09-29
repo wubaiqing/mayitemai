@@ -127,9 +127,9 @@ class Hao
         "price" => 20123123,
         "site" => "20123123",
         "site_url" => "20123123",
-        "tagid" => 1,
+        "tagid" => 4,
         "tag" => "fuzhuang",
-        "post" => 4,
+        "post" => 0,
       }
     ]
 
