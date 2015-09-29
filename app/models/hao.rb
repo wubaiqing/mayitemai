@@ -128,8 +128,8 @@ class Hao
         "site" => "20123123",
         "site_url" => "20123123",
         "tagid" => 1,
-        "tag" => "xiexue",
-        "post" => 1,
+        "tag" => "fuzhuang",
+        "post" => 4,
       }
     ]
 
