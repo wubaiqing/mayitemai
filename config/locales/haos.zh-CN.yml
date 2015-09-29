@@ -1,0 +1,15 @@
+zh-CN:
+  haos:
+    taobao_id: "宝贝ID"
+    taobao_url: "宝贝链接"
+    title: "宝贝标题"
+    price: "宝贝活动价"
+    picture_url: "宝贝图片"
+    site: "商铺名称"
+    site_url: "商铺链接"
+    tag: "类型"
+    id: "分类"
+    post: "包邮"
+    cheap: "优惠券金额"
+    state: "显示"
+

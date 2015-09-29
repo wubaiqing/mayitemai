@@ -18,6 +18,11 @@ class HomeController < ApplicationController
   end
 
 
+  def hao
+    
+  end
+
+
   private
 
   # 查询分类，设置meta

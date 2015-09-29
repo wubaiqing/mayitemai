@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Haos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @haos.each do |hao| %>
+      <tr>
+        <td><%= link_to 'Show', hao %></td>
+        <td><%= link_to 'Edit', edit_hao_path(hao) %></td>
+        <td><%= link_to 'Destroy', hao, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hao', new_hao_path %>

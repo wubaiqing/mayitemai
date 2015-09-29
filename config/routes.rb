@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :haos
   # 关于我们
   get '/document/about', to: 'document#about'
 
@@ -36,7 +37,7 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :brands, :goods, :homes, :photos, :cates, :goods_cates
+    resources :brands, :goods, :homes, :photos, :cates, :goods_cates, :haos
 
   end
 

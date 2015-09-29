@@ -1,0 +1,169 @@
+<ul class="breadcrumb">
+  <li>
+    <a href="<%= cpanel_homes_path %>">首页</a>
+  </li>
+  <li>
+    <a href="<%= cpanel_goods_path %>">商品管理</a>
+  </li>
+  <li class="active">
+    创建商品
+  </li>
+</ul>
+
+<div class="alert alert-warning">
+  提示：标注
+  <span class="required">*</span>
+  为必添项
+</div>
+
+<%= form_for([:cpanel, @hao], html: {class: "form-horizontal"}) do |f| %>
+  <table class="table table-striped table-bordered table-condensed table-hover">
+    <% if @hao.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% @hao.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('haos.taobao_id') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :taobao_id, class: "form-control" %>
+        </div>
+        <div class="col-sm-1">
+          <%= link_to(t("buttons.fetch"), "javascript:void(0);", id: "fetch_taobao_repositories")%>
+        </div>
+        <div class="col-sm-4" id="fetch-taobao-repositories-hint">
+
+
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('haos.taobao_url') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :taobao_url, class: "form-control" %>
+        </div>
+        <div class="col-sm-1">
+          <%= link_to(t("buttons.look"), "javascript:void(0);", id: "look_url")%>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('goods.title') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('goods.price') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :price, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('goods.picture_url') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :picture_url, class: "form-control" %>
+        </div>
+        <div class="col-sm-2">
+          <div class="d-hidden">
+            <input type="file" id="goods-picture-upload">
+          </div>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "goods_picture_add_image") %>
+          <%= link_to(t("buttons.review"), "javascript:void(0);", id: "goods_picture_review")%>
+        </div>
+        <div class="col-sm-2" id="goods-picture-hint">
+
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('goods.brand_id') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.collection_select :brand_id, [], :id, :name, {prompt: true}, {class: "form-control"} %>
+        </div>
+        <div id="brand_hint"></div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('goods.cate_id') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.collection_select :cate_id, [], :id, :name, {prompt: true}, {class: "form-control"} %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('goods.state') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.check_box :state %>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+  <div class="form-actions">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
+<% end %>
+
