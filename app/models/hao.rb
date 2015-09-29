@@ -105,7 +105,7 @@ class Hao
     end
   end
 
-  def self.findData(id)
+  def self.findData(tag)
     json = [
       {
         "long_title" => "hahaha",
@@ -115,8 +115,8 @@ class Hao
         "price" => 20123123,
         "site" => "20123123",
         "site_url" => "20123123",
-        "tagid" => "20123123",
-        "tag" => "20123123",
+        "tagid" => 1,
+        "tag" => "xiexue",
         "post" => 1,
       },
       {
@@ -127,13 +127,24 @@ class Hao
         "price" => 20123123,
         "site" => "20123123",
         "site_url" => "20123123",
-        "tagid" => "20123123",
-        "tag" => "20123123",
+        "tagid" => 1,
+        "tag" => "xiexue",
         "post" => 1,
       }
     ]
 
-    return json
+    if tag.blank? || tag === 'all' 
+      return json
+    end
+
+    tagJson = []
+    json.each do |j|
+      if j["tag"] == tag
+        tagJson.push j
+      end
+    end
+
+    return tagJson
 
   end
 
