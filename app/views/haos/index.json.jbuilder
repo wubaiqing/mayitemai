@@ -1,3 +1,4 @@
+puts json.inspect
 json.array!(@haos) do |hao, h|
   json.long_title hao["long_title"]
   json.identify hao["identify"]

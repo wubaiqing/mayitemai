@@ -106,6 +106,7 @@ class Hao
   end
 
   def self.findData(tagid, type)
+
     json = [
       {
         "long_title" => "红蜻蜓秋季新款商务正装皮鞋",
@@ -519,7 +520,7 @@ class Hao
       }
     ]
 
-    if tagid === 'all' && type === nil
+    if type === 'all' && tagid.to_i === 0
       return json
     end
 
@@ -552,7 +553,6 @@ class Hao
         end
         return tagJson
       end
-
     end
 
 

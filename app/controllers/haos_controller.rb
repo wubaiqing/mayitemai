@@ -3,8 +3,8 @@ class HaosController < ApplicationController
   # GET /haos
   # GET /haos.json
   def index
-    tagid = params[:tagid] || 'all'
-    type = params[:type] || nil
+    tagid = params[:tagid] || 0
+    type = params[:type] || 'all'
     @haos = Hao.findData(tagid, type)
   end
 
