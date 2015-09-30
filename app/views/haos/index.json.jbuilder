@@ -1,7 +1,7 @@
 json.array!(@haos) do |hao, h|
   json.long_title hao["long_title"]
   json.identify hao["identify"]
-  json.url hao["long_title"]
+  json.url hao["url"]
   json.img_url hao["img_url"]
   json.price hao["price"]
   json.site hao["site"]
