@@ -428,7 +428,7 @@ class Hao
         "price" => "368.5",
         "cheap" => "",
         "site" => "骆驼服饰旗舰店",
-        "site_url" => "luotuo.tmall.com",
+        "site_url" => "https://luotuo.tmall.com",
         "tagid" => 1,
         "tag" => "男鞋",
         "post" => 1
@@ -512,7 +512,7 @@ class Hao
         "price" => "99",
         "cheap" => "",
         "site" => "牧童官方旗舰店",
-        "site_url" => "herd.tmall.com",
+        "site_url" => "https://herd.tmall.com",
         "tagid" => 3,
         "tag" => "童鞋",
         "post" => 0
