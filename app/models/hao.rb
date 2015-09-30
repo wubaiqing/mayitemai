@@ -105,7 +105,7 @@ class Hao
     end
   end
 
-  def self.findData(tag)
+  def self.findData(tagid, type)
     json = [
       {
         "long_title" => "红蜻蜓秋季新款商务正装皮鞋",
@@ -128,7 +128,7 @@ class Hao
         "site" => "法兰琳卡旗舰店",
         "site_url" => "https://franic.tmall.com",
         "tagid" => 9,
-        "tag" => "美妆",
+        "tag" => "护肤",
         "post" => 1,
       },
       {
@@ -140,7 +140,7 @@ class Hao
         "site" => "拉芳旗舰店",
         "site_url" => "https://lafang.tmall.com",
         "tagid" => 16,
-        "tag" => "美妆",
+        "tag" => "个护",
         "post" => 1,
       },
       {
@@ -206,7 +206,7 @@ class Hao
         "site" => "京润珍珠旗舰店",
         "site_url" => "https://gnpearl.tmall.com",
         "tagid" => 9,
-        "tag" => "美妆",
+        "tag" => "护肤",
         "post" => 1
       },
       {
@@ -388,7 +388,7 @@ class Hao
         "site" => "水星家纺旗舰店",
         "site_url" => "https://shuixing.tmall.com/",
         "tagid" => 14,
-        "tag" => "家纺",
+        "tag" => "家居",
         "post" => 0
       },
       {
@@ -519,19 +519,44 @@ class Hao
       }
     ]
 
-    if tag.blank? || tag === 'all' 
+    if tagid === 'all' && type === nil
       return json
     end
 
 
     tagJson = []
-    json.each do |j|
-      if j["tag"] == tag
-        tagJson.push j
+
+    if tagid.to_i > 0
+      json.each do |j|
+        if j["tagid"] == tagid.to_i
+          tagJson.push j
+        end
       end
+      return tagJson
+    else
+      map = {
+        "xiexue" => [1, 2, 3],
+        "fuzhuang" => [4, 5, 6, 7],
+        "meizhuang" => [8, 9],
+        "shipin" => [10 ,11],
+        "muying" => [12, 13],
+        "jiaju" => [14, 15, 16],
+        "xiangbao" => [17 ,18, 19]
+      }
+
+      if !map[type].equal?(nil)
+        json.each do |j|
+          if map[type].include?(j["tagid"])
+            tagJson.push j
+          end
+        end
+        return tagJson
+      end
+
     end
 
-    return tagJson
+
+
 
   end
 
