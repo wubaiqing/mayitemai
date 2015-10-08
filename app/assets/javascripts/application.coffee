@@ -10,6 +10,7 @@
 
 #= require brands
 #= require goods
+#= require haos
 
 
 # 开启Turbolinks

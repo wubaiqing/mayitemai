@@ -5,6 +5,7 @@
 
 $(document).on 'page:change',  ->
 
+
   # 商品图片上传事件
   $("#goods_picture_add_image").click ->
     Mayi.uploadPircture "#goods-picture-upload", "#goods-picture-hint", "#good_picture_url"
@@ -40,17 +41,17 @@ $(document).on 'page:change',  ->
 
 
   # 获取淘宝商品
-  $('#fetch_taobao_repositories').click ->
+  $('#hao123_fetch_taobao_repositories').click ->
 
     # 淘宝ID
-    taobao_id = $('#good_taobao_id').val()
+    taobao_id = $('#hao_taobao_id').val()
 
     # ID为空
     if taobao_id == ''
-      $('#good_taobao_url').val null
-      $('#good_title').val null
-      $('#good_original_price').val null
-      $('#good_picture_url').val null
+      $('#hao_taobao_id').val null
+      $('#hao_title').val null
+      $('#hao_original_price').val null
+      $('#hao_picture_url').val null
       return alert '请填写淘宝ID'
 
     # 提示
@@ -70,9 +71,8 @@ $(document).on 'page:change',  ->
       current = data.tbk_items.tbk_item['0']
 
       $('#fetch-taobao-repositories-hint').html null
-      $('#good_taobao_url').val current.item_url
-      $('#good_title').val current.title
-      $('#good_original_price').val current.price
+      $('#hao_taobao_url').val current.item_url
+      $('#hao_title').val current.title
 
       # 价格校验
       if current.discount_price.substr(-2, 1) is 0
@@ -80,6 +80,6 @@ $(document).on 'page:change',  ->
       else
         discount_price = current.discount_price
 
-      $('#good_price').val parseInt(current.discount_price)
-      $('#good_picture_url').val current.pic_url + '_400x400.jpg'
+      $('#hao_price').val parseInt(current.discount_price)
+      $('#hao_picture_url').val current.pic_url + '_400x400.jpg'
 

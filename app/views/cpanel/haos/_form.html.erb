@@ -3,7 +3,7 @@
     <a href="<%= cpanel_homes_path %>">首页</a>
   </li>
   <li>
-    <a href="<%= cpanel_goods_path %>">商品管理</a>
+    <a href="<%= cpanel_haos_path %>">hao123 商品管理</a>
   </li>
   <li class="active">
     创建商品
@@ -40,7 +40,7 @@
           <%= f.text_field :taobao_id, class: "form-control" %>
         </div>
         <div class="col-sm-1">
-          <%= link_to(t("buttons.fetch"), "javascript:void(0);", id: "fetch_taobao_repositories")%>
+          <%= link_to(t("buttons.fetch"), "javascript:void(0);", id: "hao123_fetch_taobao_repositories")%>
         </div>
         <div class="col-sm-4" id="fetch-taobao-repositories-hint">
 
@@ -121,13 +121,13 @@
     <tr>
       <td width="15%">
         <label class="required">
-          <%= t('goods.brand_id') %>
+          <%= t('haos.tagid') %>
           <span class="required">*</span>
         </label>
       </td>
       <td colspan="3">
         <div class="col-sm-4">
-          <%= f.collection_select :brand_id, [], :id, :name, {prompt: true}, {class: "form-control"} %>
+          <%= f.select_tag("hao_tagid", options_for_select({ "Visa" => "1", "Mastercard" => "2"}), {class: "form-control"}) %>
         </div>
         <div id="brand_hint"></div>
       </td>
@@ -136,13 +136,41 @@
     <tr>
       <td width="15%">
         <label class="required">
-          <%= t('goods.cate_id') %>
+          <%= t('haos.site') %>
           <span class="required">*</span>
         </label>
       </td>
       <td colspan="3">
         <div class="col-sm-4">
-          <%= f.collection_select :cate_id, [], :id, :name, {prompt: true}, {class: "form-control"} %>
+          <%= f.text_field :site, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('haos.site_url') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.text_field :site_url, class: "form-control" %>
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td width="15%">
+        <label class="required">
+          <%= t('haos.post') %>
+          <span class="required">*</span>
+        </label>
+      </td>
+      <td colspan="3">
+        <div class="col-sm-4">
+          <%= f.check_box :post %>
         </div>
       </td>
     </tr>

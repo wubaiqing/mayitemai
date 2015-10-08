@@ -8,7 +8,7 @@ class Hao
   include Mongoid::BaseModel
 
   # 必填
-  validates :taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id, presence: true
+  validates :taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id, :site, :site_url, :tagid, :post, presence: true
 
   # 唯一
   validates :taobao_id, uniqueness: true
@@ -22,26 +22,29 @@ class Hao
   # 标题
   field :title
 
-  # 原价
-  field :original_price
-
   # 现价
   field :price
 
   # 图片URL
   field :picture_url
 
-  # 排序
-  field :sort, type: Integer, default: 0
+  # site
+  field :site
 
-  # 专题ID
-  field :brand_id, type: Integer
+  # site_url
+  field :site_url
+
+  # tagid
+  field :tagid
 
   # 分类ID
   field :cate_id, type: Integer, default: 0
 
   # 状态
   field :state, type: Integer, default: 1
+
+  # 包邮
+  field :post , type: Integer, default: 1
 
   # 关联
   belongs_to :brand

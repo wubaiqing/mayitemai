@@ -12,4 +12,8 @@ zh-CN:
     post: "包邮"
     cheap: "优惠券金额"
     state: "显示"
+    post: "包邮"
+    site: "店铺名称"
+    site_url: "店铺地址"
+    tagid: "分类"
 
