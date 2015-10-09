@@ -7,6 +7,9 @@ json.array!(@haos) do |hao, h|
   json.price hao["price"]
   json.site hao["site"]
   json.site_url hao["site_url"]
+  json.wapurl ""
+  json.cheap ""
+  json.site_url hao["site_url"]
   json.tagid hao["tagid"]
   json.tag hao["tag"]
   json.post hao["post"]
