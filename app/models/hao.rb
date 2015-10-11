@@ -122,10 +122,9 @@ class Hao
     
   end
 
-
   def self.findData(tagid, type)
 
-    json = Hao.all
+    json = Hao.where(state: 1).all
 
     if type === 'all' && tagid.to_i === 0
       return json
