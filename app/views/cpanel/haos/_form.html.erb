@@ -3,7 +3,7 @@
     <a href="<%= cpanel_homes_path %>">首页</a>
   </li>
   <li>
-    <a href="<%= cpanel_haos_path %>">hao123 商品管理</a>
+    <a href="<%= cpanel_haos_path %>">Hao123 商品管理</a>
   </li>
   <li class="active">
     创建商品
@@ -107,12 +107,12 @@
         </div>
         <div class="col-sm-2">
           <div class="d-hidden">
-            <input type="file" id="goods-picture-upload">
+            <input type="file" id="haos-picture-upload">
           </div>
-          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "goods_picture_add_image") %>
-          <%= link_to(t("buttons.review"), "javascript:void(0);", id: "goods_picture_review")%>
+          <%= link_to(t("buttons.upload"), "javascript:void(0);", id: "haos_picture_add_image") %>
+          <%= link_to(t("buttons.review"), "javascript:void(0);", id: "haos_picture_review")%>
         </div>
-        <div class="col-sm-2" id="goods-picture-hint">
+        <div class="col-sm-2" id="haos-picture-hint">
 
         </div>
       </td>
@@ -127,7 +127,7 @@
       </td>
       <td colspan="3">
         <div class="col-sm-4">
-          <%= f.select_tag("hao_tagid", options_for_select({ "Visa" => "1", "Mastercard" => "2"}), {class: "form-control"}) %>
+          <%= select_tag "hao[tagid]", options_for_select(@tagids, @hao.tagid), {class: "form-control"} %>
         </div>
         <div id="brand_hint"></div>
       </td>
@@ -157,6 +157,9 @@
       <td colspan="3">
         <div class="col-sm-4">
           <%= f.text_field :site_url, class: "form-control" %>
+        </div>
+        <div class="col-sm-1">
+          <a id="look_site_url" href="javascript:void(0);">查看</a>
         </div>
       </td>
     </tr>

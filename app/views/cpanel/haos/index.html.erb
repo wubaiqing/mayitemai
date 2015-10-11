@@ -3,7 +3,7 @@
     <a href="<%= cpanel_homes_path %>">首页</a>
   </li>
   <li class="active">
-    好123商品管理
+    Hao123 商品管理
   </li>
 </ul>
 
@@ -38,7 +38,7 @@
         <%= t('goods.taobao_id') %>
       </th>
       <th>
-        <%= t('brands.wangwang') %>
+        <%= t('haos.price') %>
       </th>
       <th>
         <%= t('buttons.action') %>
@@ -53,17 +53,17 @@
         <%= goods.id %>
       </td>
       <td>
-        <%= link_to goods.title, edit_cpanel_good_path(goods) %>
+        <%= link_to goods.title, edit_cpanel_hao_path(goods) %>
       </td>
       <td>
         <%= goods.taobao_id %>
       </td>
       <td>
-        <%= goods.brand.wangwang %>
+        <%= goods.price %>
       </td>
       <td>
         <%= content_tag("span", raw("&nbsp;")) %>
-        <%= link_to(icon('edit'), edit_cpanel_good_path(goods), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
+        <%= link_to(icon('edit'), edit_cpanel_hao_path(goods), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
         <%= content_tag("span", raw("&nbsp;")) %>
         <%= link_to(icon('eye'), goods.taobao_url, {target: "_blank", "data-toggle": "tooltip", "original-title": "查看"}) %>
       </td>

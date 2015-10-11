@@ -8,7 +8,7 @@ class Hao
   include Mongoid::BaseModel
 
   # 必填
-  validates :taobao_id, :taobao_url, :title, :original_price, :price, :picture_url, :sort, :brand_id, :cate_id, :site, :site_url, :tagid, :post, presence: true
+  validates :taobao_id, :taobao_url, :title, :price, :picture_url, :tagid, :site, :site_url, :tagid, :post, presence: true
 
   # 唯一
   validates :taobao_id, uniqueness: true
@@ -90,23 +90,11 @@ class Hao
     end
   end
 
-  # 根据旺旺名称查询
-  def self.find_by_wangwang(wangwang)
-    ids = Brand.where(wangwang: /#{wangwang}/).pluck(:id)
-    where(:brand_id.in => ids)
-  end
-
   # 根据淘宝ID查询
   def self.find_by_taobao_id(taobao_id)
     where(taobao_id: taobao_id)
   end
 
-  # 得到集合
-  def self.good_collection(id, wangwang)
-    Rails.cache.fetch("good:good_collection:#{id}:#{CacheVersion.good_node_updated_at}") do
-      self.where(brand_id: id).where(state: 1).desc(:sort).desc(:id).all
-    end
-  end
 
   def self.findData(tagid, type)
 

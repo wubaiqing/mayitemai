@@ -7,35 +7,25 @@ $(document).on 'page:change',  ->
 
 
   # 商品图片上传事件
-  $("#goods_picture_add_image").click ->
-    Mayi.uploadPircture "#goods-picture-upload", "#goods-picture-hint", "#good_picture_url"
+  $("#haos_picture_add_image").click ->
+    Mayi.uploadPircture "#haos-picture-upload", "#haos-picture-hint", "#hao_picture_url"
 
 
   # 商品图片预览
-  $('#goods_picture_review').click ->
-    Mayi.reviewPircture "#good_picture_url"
-
-
-  # 切换所属分类专题的二级联动
-  $('#good_brand_id').on "change", ->
-    _value = $(this).val()
-    $.getJSON '/cpanel/goods/fetch_brand_cates_repositories', {brand_id: _value}, (jsonData)->
-
-      if jsonData.length == 0
-        $('#brand_hint').html '暂无分类'
-        options = '<option value="">请选择</option>'
-      else
-        $('#brand_hint').html ''
-
-      $(jsonData).each (index, data)->
-        options += '<option>' + data.name + '</option>'
-
-      $('#good_cate_id').html options
+  $('#haos_picture_review').click ->
+    Mayi.reviewPircture "#hao_picture_url"
 
 
   # 淘宝链接查看
   $('#look_url').click ->
-    curl = $('#good_taobao_url').val()
+    curl = $('#hao_taobao_url').val()
+    return false if curl is ''
+    window.open curl
+
+
+  # 淘宝链接查看
+  $('#look_site_url').click ->
+    curl = $('#hao_site_url').val()
     return false if curl is ''
     window.open curl
 
@@ -82,4 +72,7 @@ $(document).on 'page:change',  ->
 
       $('#hao_price').val parseInt(current.discount_price)
       $('#hao_picture_url').val current.pic_url + '_400x400.jpg'
+
+      $('#hao_site').val current.nick
+      $('#hao_site_url').val current.shop_url
 

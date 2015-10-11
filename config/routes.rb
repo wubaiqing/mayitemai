@@ -30,6 +30,13 @@ Rails.application.routes.draw do
       end
     end
 
+    # 获取淘宝商品
+    resources :haos do
+      collection do
+        get 'test'
+      end
+    end
+
     # 协议搜索
     resources :brands do
       collection do
