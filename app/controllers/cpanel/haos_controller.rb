@@ -10,10 +10,10 @@ class Cpanel::HaosController < Cpanel::ApplicationController
   # 管理
   def index
 
-    @query = Hao.all
+    @query = Hao.where(state: 1).all
 
     # 翻页
-    @haos = @query.desc(:id).paginate(:page => params[:page], :per_page => 10)
+    @haos = Hao.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
 
     # 搜索条件
     taobao_id = params[:taobao_id] || ''
