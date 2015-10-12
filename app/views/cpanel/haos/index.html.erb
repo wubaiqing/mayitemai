@@ -9,6 +9,9 @@
 
 <%= form_for :brand, method: :get, html: {class: "well"} do |f| %>
 
+  <div class="alert alert-info" role="alert">
+    在售商品数量：<%= @query.length %>个
+  </div>
   <table class="table table-striped table-bordered">
     <tbody>
       <tr>
