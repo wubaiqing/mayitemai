@@ -4,7 +4,7 @@ json.array!(@haos) do |hao, h|
   json.identify hao["taobao_id"]
   json.url hao["taobao_url"]
   json.img_url hao["picture_url"]
-  json.price hao["original_price"]
+  json.price hao["original_price"].to_f
   json.site hao["site"]
   json.site_url hao["site_url"]
   json.wapurl ""
@@ -13,5 +13,5 @@ json.array!(@haos) do |hao, h|
   json.tagid hao["tagid"]
   json.tag Hao.findTag(hao["tagid"])
   json.post hao["post"]
-  json.price_new hao["price"]
+  json.price_new hao["price"].to_f
 end
