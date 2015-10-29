@@ -91,7 +91,7 @@ class Cpanel::HaosController < Cpanel::ApplicationController
 
     # 添加限制
     def hao_params
-      params[:hao].permit(:taobao_id, :taobao_url, :title, :price, :picture_url, :tagid, :site, :site_url, :post, :state)
+      params[:hao].permit(:taobao_id, :taobao_url, :title, :price, :original_price, :picture_url, :tagid, :site, :site_url, :post, :state)
     end
 end
 

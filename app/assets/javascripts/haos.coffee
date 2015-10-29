@@ -65,14 +65,21 @@ $(document).on 'page:change',  ->
       $('#hao_title').val current.title
 
       # 价格校验
-      if current.discount_price.substr(-2, 1) is 0
+      if current.discount_price.substr(-2, 1) is '0'
         discount_price = parseInt current.discount_price
       else
         discount_price = current.discount_price
 
-      $('#hao_price').val parseInt(current.discount_price)
-      $('#hao_picture_url').val current.pic_url + '_400x400.jpg'
+      # 价格校验
+      if current.price.substr(-2, 1) is '0'
+        price = parseInt current.price
+      else
+        price = current.price
 
+      $('#hao_original_price').val price
+      $('#hao_price').val discount_price
+
+      $('#hao_picture_url').val current.pic_url + '_400x400.jpg'
       $('#hao_site').val current.nick
       $('#hao_site_url').val current.shop_url
 
