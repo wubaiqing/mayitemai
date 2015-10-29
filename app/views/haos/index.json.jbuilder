@@ -13,4 +13,5 @@ json.array!(@haos) do |hao, h|
   json.tagid hao["tagid"]
   json.tag Hao.findTag(hao["tagid"])
   json.post hao["post"]
+  json.price_new '0'.to_i
 end
