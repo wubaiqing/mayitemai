@@ -61,7 +61,8 @@ namespace :goods do
       #   next
       # end
 
-      good.update_attributes(:price => price, :original_price => original_price)
+      good.update_attribute(:price, price)
+      good.update_attribute(:original_price , original_price)
       logger.info("商品ID：#{good.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{good.errors.messages}")
 
     end
