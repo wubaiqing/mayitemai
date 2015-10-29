@@ -37,13 +37,31 @@ namespace :goods do
         price = discount_price.to_f
       end
 
+      # 修改价格
+      discount_price = item[0]["discount_price"].to_s
+      if discount_price[-2] == "0"
+        oldPrice = good.price.to_i
+        price = discount_price.to_i
+      else
+        oldPrice = good.price.to_f
+        price = discount_price.to_f
+      end
+
+      # 修改价格
+      original_price = item[0]["price"].to_s
+      if original_price[-2] == "0"
+        original_price = original_price.to_i
+      else
+        original_price = original_price.to_f
+      end
+
       # 当前价格和老价格比较
       if oldPrice == price
         logger.info("跳过修改价格。ID：#{good.id}，之前价格#{oldPrice}，现在价格#{price}")
         next
       end
 
-      good.update_attribute(:price, price)
+      good.update_attributes(:price => price, :original_price => original_price)
       logger.info("商品ID：#{good.id}，之前价格#{oldPrice}，现在价格#{price}，错误提示#{good.errors.messages}")
 
     end
