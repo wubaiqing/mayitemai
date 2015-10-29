@@ -39,7 +39,6 @@ class Cpanel::HaosController < Cpanel::ApplicationController
   # 创建
   def create
     @hao = Hao.new(hao_params)
-
     if @hao.save
       redirect_to cpanel_haos_url
     else
