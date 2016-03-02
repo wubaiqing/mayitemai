@@ -49,7 +49,7 @@ $(document).on 'page:change',  ->
 
     # 请求成功
     $.getJSON '/cpanel/goods/fetch_taobao_repositories', {taobao_id: $.trim(taobao_id)}, (jsonData)->
-      data = jsonData.tbk_items_detail_get_response
+      data = jsonData.tbk_item_info_get_response.results.n_tbk_item
 
       if (jsonData.errorCode is 10001)
         return $('#fetch-taobao-repositories-hint').html '商品在数据库中存在'
@@ -58,28 +58,28 @@ $(document).on 'page:change',  ->
         return $('#fetch-taobao-repositories-hint').html '请求淘宝API时，数据返回为空'
 
       # 当前数据
-      current = data.tbk_items.tbk_item['0']
+      current = data['0']
 
       $('#fetch-taobao-repositories-hint').html null
       $('#hao_taobao_url').val current.item_url
       $('#hao_title').val current.title
 
       # 价格校验
-      if current.discount_price.substr(-2, 1) is '0'
-        discount_price = parseInt current.discount_price
+      if current.zk_final_price.substr(-2, 1) is '0'
+        discount_price = parseInt current.zk_final_price
       else
-        discount_price = current.discount_price
+        discount_price = current.zk_final_price
 
       # 价格校验
-      if current.price.substr(-2, 1) is '0'
-        price = parseInt current.price
+      if current.reserve_price.substr(-2, 1) is '0'
+        price = parseInt current.reserve_price
       else
-        price = current.price
+        price = current.reserve_price
 
       $('#hao_original_price').val price
       $('#hao_price').val discount_price
 
-      $('#hao_picture_url').val current.pic_url + '_400x400.jpg'
+      $('#hao_picture_url').val current.pict_url + '_400x400.jpg'
       $('#hao_site').val current.nick
       $('#hao_site_url').val current.shop_url
 
