@@ -78,7 +78,7 @@ class Good
     begin
       hash = OpenTaobao.get(
         :method => "taobao.tbk.item.info.get",
-        :fields => "num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url",
+        :fields => "num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,nick",
         :num_iids => taobao_id
       )
     rescue => e
