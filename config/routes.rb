@@ -49,9 +49,9 @@ Rails.application.routes.draw do
   end
 
   # 用户系统
-  devise_for :users
-  # devise_for :users, path: "account", controllers: {
-  #   registrations: :account
-  # }
+  # devise_for :users
+  devise_for :users, path: "account", controllers: {
+    registrations: :account
+  }
 
 end
