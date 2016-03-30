@@ -62,6 +62,8 @@ zh-CN:
     new_brand: "添加专题"
     goods: "商品管理"
     new_good: "添加商品"
+    articles: "文章管理"
+    new_article: "添加商品"
     cates: "专题分类"
     new_cate: "添加分类"
     goods_cates: "商品分类"
