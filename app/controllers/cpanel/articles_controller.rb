@@ -9,31 +9,13 @@ class Cpanel::ArticlesController < Cpanel::ApplicationController
   def index
 
     # 翻页
-    @goods = Good.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
-
-    # 搜索条件
-    taobao_id = params[:taobao_id] || ''
-    wangwang = params[:wangwang] || ''
-
-    if !taobao_id.blank?
-      # 淘宝ID搜索
-      @goods = Good.find_by_taobao_id(taobao_id)
-       .desc(:id).paginate(:page => params[:page], :per_page => 10)
-    end
-
-    if !wangwang.blank?
-      # 旺旺搜索
-      @goods = Good.find_by_wangwang(wangwang)
-       .desc(:id).paginate(:page => params[:page], :per_page => 10)
-    end
+    @articles = Article.all.desc(:id).paginate(:page => params[:page], :per_page => 10)
 
   end
 
   # 新增
   def new
-    @good = Good.new
-    @brands = Brand.find_by_publish.all
-    @goods_cate = GoodsCate.find_by_brand_id(-1).all
+    @article = Article.new
   end
 
   # 编辑
