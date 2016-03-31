@@ -22,6 +22,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'iconv', '~> 1.0.4'
+gem "bower-rails", "~> 0.10.0"
 
 # mongoid
 gem 'mongoid', '4.0.2'

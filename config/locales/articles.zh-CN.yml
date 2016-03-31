@@ -1,0 +1,14 @@
+zh-CN:
+  brands:
+    cate_name: "所属专题"
+    cate_id: "分类"
+    name: "专题名称"
+    wangwang: "店铺旺旺"
+    logo_picture: "品牌Logo"
+    desc_picture: "首页图片"
+    banner_picture: "专题页头部图片"
+    sale: "折扣数"
+    sort: "排序值"
+    state: "上线"
+    normal: "上线"
+    blocked: "下线"
