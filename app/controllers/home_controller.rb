@@ -9,13 +9,9 @@ class HomeController < ApplicationController
   # 首页
   def index
 
-    @a = Hao.all
-    puts '-------------------'
-    puts @a.length
-    puts '-------------------'
-    render :json => @a
+    @a = Hao.haos_collection
     @articles = Article.articles_collection
-
+    
     @brands = Brand.brands_collection
   end
 

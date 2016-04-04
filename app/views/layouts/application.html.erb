@@ -2,16 +2,14 @@
 <html>
   <head>
     <title><%= @page_title %></title>
-    <link href="http://7xioz9.com2.z0.glb.qiniucdn.com/normalize.css" rel="stylesheet" />
-    <link href="http://7xioz9.com2.z0.glb.qiniucdn.com/20150624165750/87e9efde414233a40865731e5c.css" rel="stylesheet" />
-    <script type="text/javascript" src="http://7xioz9.com2.z0.glb.qiniucdn.com/jquery.min.js"></script>
-    <script type="text/javascript" src="http://7xioz9.com2.z0.glb.qiniucdn.com/lazyLoading.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function () {
-      $("img.lazy").lazyload();
-    });
-    </script>
 
+    <!-- 系统组件 -->
+    <link rel="stylesheet" type="text/css" href="http://7xioz9.com2.z0.glb.qiniucdn.com/h5normalize.css">
+    <link rel="stylesheet" type="text/css" href="http://7xioz9.com2.z0.glb.qiniucdn.com/h5idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="http://7xioz9.com2.z0.glb.qiniucdn.com/h5index.css">
+
+    <!-- 轮播图组件 -->
+    <script src="http://7xioz9.com2.z0.glb.qiniucdn.com/h5idangerous.swiper.min.js" type="text/javascript"></script>
   </head>
 
 
@@ -20,10 +18,326 @@
 
 
   <body>
-    <%= render 'shared/header' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-    <%= render 'shared/cnzz' %>
+    <!-- 主体内容区域 -->
+  <div class="container">
+
+    <!-- 开始 - 手机轮播图 -->
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+    <div class="swiper-slide">
+                <a href="#">
+                  <img src="./images/banner_1.png" />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="./images/banner_2.png" />
+                </a>
+              </div>
+          </div>
+        <div class="swiper-pagination">
+          <span class="swiper-pagination-bullet"></span>
+          <span class="swiper-pagination-bullet"></span>
+        </div>
+      <script>
+            var swiper = new Swiper('.swiper-container', {
+              loop: true,
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+            });
+        </script>
+      </div>
+      <!-- 结束 - 手机轮播图 -->
+
+<!-- 导航栏 -->
+<div class="nav-box">
+  <div class="nav-child-box">
+    <div class="nav-item">
+      <a href="#">
+        <img src="./images/channel classification_1.png" alt="今日特卖">
+        <span>今日特卖</span>
+       </a>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">
+        <img src="./images/channel classification_2.png" alt="面部护理">
+        <span>面部护理</span>
+      </a>
+    </div >
+
+    <div class="nav-item">
+      <a href="#">
+        <img src="./images/channel classification_3.png" alt="彩妆香气">
+        <span>彩妆香气</span>
+      </a>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">
+        <img src="./images/channel classification_4.png" alt="男士护肤">
+        <span>男士护肤</span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- 结束 - 导航栏 -->
+
+<!-- 商品区域 -->
+<div class="goods-box">
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>第三支0元 天使之吻水润口红</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>第三支0元</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;16</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;78</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>[买2盒送眉笔] 巧迪尚慧腮红</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>买2盒送眉笔</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;23</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;49</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>丸美弹力蛋白紧致补水三件套装</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>买就送弹力中样套</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;418</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;882</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>香奈儿蔚蓝同味男士古龙香水</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>限量抄底 买1送2</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;39</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;298</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+
+</div>
+<!-- 结束 - 商品区域 -->
+<div class="article-box">
+  <div class="article">
+    <a href="#" class="article-item">
+      <div class="article-image">
+          <img src="./images/goods_1.png">
+      </div>
+      <div class="article-body">
+        <div class="article-title">
+          <h1>不做 "痘花妹!7款去痘产品亲测有效</h1>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<!-- 商品区域 -->
+<div class="goods-box">
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>伊蒂之屋 鲜嫩樱唇炫色唇彩</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>买一赠三</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;58</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;59</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>香奈儿蔚蓝同味男士古龙香水</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>限量抄底 买1送2</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;39</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;298</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+  
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>清洁泥大师 去黑头油垢面膜</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>前500送89元收缩液</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;49</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;108</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <a href="#" class="item">
+    <div class="goods-image">
+      <img src="./images/goods_1.png">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2>第三支0元 天使之吻水润口红</h2>
+        </div>
+        <div class="goods-sub-title">
+          <h4>第三支0元</h4>
+        </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;16</span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;78</span>
+        </div>
+        <div class="go">
+          <img src="./images/immediately grab.png" alt="马上抢">
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+<!-- 结束 - 商品区域 -->
+<div class="article-box">
+  <div class="article">
+    <a href="#" class="article-item">
+      <div class="article-image">
+        <img src="./images/goods_1.png">
+      </div>
+      <div class="article-body">
+        <div class="article-title">
+          <h1>不做 "痘花妹!7款去痘产品亲测有效</h1>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+  <!-- 结束 - 主体内容区域 -->
+
+
   </body>
 </html>
 
