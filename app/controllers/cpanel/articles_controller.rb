@@ -53,6 +53,6 @@ class Cpanel::ArticlesController < Cpanel::ApplicationController
 
     # 添加限制
     def article_params
-      params[:article].permit(:title, :content)
+      params[:article].permit(:title, :content, :state)
     end
 end

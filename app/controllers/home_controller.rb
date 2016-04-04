@@ -8,20 +8,16 @@ class HomeController < ApplicationController
 
   # 首页
   def index
+
+    @a = Hao.all
+    puts '-------------------'
+    puts @a.length
+    puts '-------------------'
+    render :json => @a
+    @articles = Article.articles_collection
+
     @brands = Brand.brands_collection
   end
-
-  # 详情页
-  def show
-    @brands = Brand.find_by_cate_id(params[:id]).all
-    render action: :index
-  end
-
-
-  def hao
-    
-  end
-
 
   private
 
