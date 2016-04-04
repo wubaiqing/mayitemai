@@ -49,13 +49,9 @@
         <%= link_to article.title, edit_cpanel_article_path(article) %>
       </td>
       <td>
-        <%= article.taobao_id %>
-      </td>
-      <td>
         <%= content_tag("span", raw("&nbsp;")) %>
-        <%= link_to(icon('edit'), edit_cpanel_good_path(article), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
+        <%= link_to(icon('edit'), edit_cpanel_article_path(article), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
         <%= content_tag("span", raw("&nbsp;")) %>
-        <%= link_to(icon('eye'), cpanel_article_path, {target: "_blank", "data-toggle": "tooltip", "original-title": "查看"}) %>
       </td>
     </tr>
     <% end %>

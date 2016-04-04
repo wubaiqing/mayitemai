@@ -44,6 +44,13 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :photos do
+      collection do
+        get 'ueditor'
+        post 'ueditor'
+      end
+    end
+
     resources :brands, :goods, :homes, :photos, :cates, :goods_cates, :haos, :articles
 
   end

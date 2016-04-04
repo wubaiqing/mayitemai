@@ -3,7 +3,7 @@
 # 商品管理
 class Cpanel::ArticlesController < Cpanel::ApplicationController
 
-  before_action :get_good, only: [:edit, :update]
+  before_action :get_article, only: [:edit, :update]
 
   # 管理
   def index
@@ -21,17 +21,14 @@ class Cpanel::ArticlesController < Cpanel::ApplicationController
   # 编辑
   def edit
     @brands = Brand.find_by_publish.all
-    @goods_cate = GoodsCate.find_by_brand_id(@good.brand_id).all
   end
 
   # 创建
   def create
-    @good = Good.new(good_params)
-    @brands = Brand.find_by_publish.all
-    @goods_cate = GoodsCate.find_by_brand_id(@good.brand_id).all
+    @article = Article.new(article_params)
 
-    if @good.save
-      redirect_to cpanel_goods_url
+    if @article.save
+      redirect_to cpanel_articles_url
     else
       render :new
     end
@@ -39,15 +36,9 @@ class Cpanel::ArticlesController < Cpanel::ApplicationController
 
   # 修改
   def update
-    @brands = Brand.find_by_publish.all
-    @goods_cate = GoodsCate.find_by_brand_id(@good.brand_id).all
 
-    if @goods_cate.length < 1
-      @goods_cate = GoodsCate.find_by_brand_id(-1).all
-    end
-
-    if @good.update(good_params)
-      redirect_to cpanel_goods_url
+    if @article.update(article_params)
+      redirect_to cpanel_articles_url
     else
       render :new
     end
@@ -57,7 +48,7 @@ class Cpanel::ArticlesController < Cpanel::ApplicationController
 
     # 根据ID查询专题
     def get_article
-      @good = Good.find(params[:id])
+      @article = Article.find(params[:id])
     end
 
     # 添加限制

@@ -78,8 +78,8 @@
 <% end %>
 
     <script type="text/javascript">
-
       UE.getEditor('article_content', {
+        serverUrl: "/cpanel/photos/ueditor",
         toolbars: [
           [
             'bold',
@@ -95,7 +95,8 @@
             'justifycenter', //居中对齐
             'justifyjustify', //两端对齐
           ]
-        ]
+        ],
+        initialFrameHeight: 400
       });
 
     </script>
