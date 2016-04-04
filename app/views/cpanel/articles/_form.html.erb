@@ -1,3 +1,4 @@
+
 <ul class="breadcrumb">
   <li>
     <a href="<%= cpanel_homes_path %>">首页</a>
@@ -49,9 +50,9 @@
           <span class="required">*</span>
         </label>
       </td>
-      <td colspan="3">
-        <div class="col-sm-4">
-          <%= f.text_area :content, class: "form-control" %>
+      <td colspan="8">
+        <div class="col-sm-8">
+          <%= f.text_area :content %>
         </div>
       </td>
     </tr>
@@ -75,3 +76,26 @@
     <%= f.submit nil, class: "btn btn-primary" %>
   </div>
 <% end %>
+
+    <script type="text/javascript">
+
+      UE.getEditor('article_content', {
+        toolbars: [
+          [
+            'bold',
+            'fontfamily', //字体
+            'forecolor', //字体颜色
+            'backcolor', //背景色
+            'simpleupload',
+            'map',
+            'link',
+            'background', //背景
+            'justifyleft', //居左对齐
+            'justifyright', //居右对齐
+            'justifycenter', //居中对齐
+            'justifyjustify', //两端对齐
+          ]
+        ]
+      });
+
+    </script>

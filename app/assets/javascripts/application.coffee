@@ -12,6 +12,8 @@
 #= require goods
 #= require haos
 
+#= require ueditor/ueditor.config
+#= require ueditor/ueditor.all.min
 
 # 开启Turbolinks
 Turbolinks.enableProgressBar();
@@ -26,4 +28,5 @@ $(document).on 'page:change',  ->
   # 左侧导航点击事件
   $('ul.nav-sidebar > li').click ->
     $(this).addClass 'active'
+
 
