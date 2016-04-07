@@ -8,11 +8,8 @@ class HomeController < ApplicationController
 
   # 首页
   def index
-
-    @a = Hao.haos_collection
+    @haos = Hao.haos_collection
     @articles = Article.articles_collection
-    
-    @brands = Brand.brands_collection
   end
 
   private

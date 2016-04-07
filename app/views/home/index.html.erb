@@ -1,55 +1,49 @@
-<div class="s_bg_top">
-  <div class="s_bg_bottom">
-    <div class="wrap clearfix">
-      <div class="lay642 J_scrollspy">
-        <div class="shop_title">
-          <img src="http://a.vpimg3.com/upload/dop/2015/01/23/153/home_floor_title_1.png">
-        </div>
-        <ul class="shop_onsale">
-          <% @brands.each do |brand| %>
-            <% cache(["brand-list", brand_id: brand.id, brand_update_version: CacheVersion.brand_node_updated_at]) do %>
-              <li class="s_mod">
-                <div class="s_pic">
-                  <div class="s_discount">
-                    <p class="s_name" title="<%= brand.name %>"><%= brand.name %></p>
-                    <p class="s_off"><span class="salebg2"><%= brand.sale %></span>折起</p>
-                  </div>
-                  <a class="J_to_list" href="<%= detail_path(brand)%>" target="_blank">
-                    <img class="lazy" data-original="<%= brand.desc_picture %>" src="http://7xioz9.com2.z0.glb.qiniucdn.com/lazyLoading.jpg" alt="<%= brand.name %>">
-                  </a>
-                </div>
-              </li>
-            <% end %>
-          <% end %>
-        </ul>
-      </div>
+<style>
+.goods-image img {
+  margin-top: 15px;
 
-      <div class="lay330 s_bg_right">
-        <div class="pic_focus_wrapper big_pic_focus">
-          <div class="pic_focus J_wrap_adRotary" style="display: block;">
-            <div class="J_wrap_adRotary_cell" style="">
-              <div class="loop_clone_prev" >
-                <a href="http://s.click.taobao.com/oGL3t1y" target="_blank">
-                  <img class="lazy" src="http://7xioz9.com2.z0.glb.qiniucdn.com/右侧.jpg">
-                </a>
-              </div>
-            </div>
-          </div>
+}
+
+</style>
+<!-- 商品区域 -->
+<div class="goods-box">
+  <% @haos.each do |hao| %>
+  <a href="<%= hao.taobao_url %>" class="item">
+    <div class="goods-image">
+      <img src="<%= hao.picture_url %>" width="211" height="211">
+    </div>
+    <div class="goods-body">
+      <div class="title-box">
+        <div class="goods-title">
+          <h2><%= hao.title %></h2>
         </div>
-        <div class="m-forecast" id="J_wrap_salePlan">
-          <div class="forecast-cnt">
-            <div class="clearfix" style="margin-top: 0px; display: block;">
-              <% @brands.each do |brand| %>
-                <% cache(["brand-forecast", brand_id: brand.id, brand_update_version: CacheVersion.brand_node_updated_at]) do %>
-                  <span class="forecast-logo J_brandLogo" data-index="0">
-                    <%= link_to(raw("<img src='#{brand.logo_picture}' class='lazy' class='forecast-logo-pic'>"), detail_path(brand))%>
-                  </span>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
+      </div>
+      <div class="price-box">
+        <div class="price">
+          <span>&yen;<%= hao.price %></span>
+        </div>
+        <div class="origin-price">
+          <span>&yen;<%= hao.original_price %></span>
+        </div>
+        <div class="go">
+          <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/immediately%20grab.png" alt="马上抢">
         </div>
       </div>
     </div>
+  </a>
+  <% end %>
+
+<div class="article-box">
+  <div class="article">
+    <a href="#" class="article-item">
+      <div class="article-image">
+          <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/goods_1.png">
+      </div>
+      <div class="article-body">
+        <div class="article-title">
+          <h1>不做 "痘花妹!7款去痘产品亲测有效</h1>
+        </div>
+      </div>
+    </a>
   </div>
 </div>

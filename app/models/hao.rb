@@ -73,9 +73,9 @@ class Hao
 
   # 集合 - 发布状态+排序值排序+ID排序
   def self.haos_collection
-    Rails.cache.fetch("haos:haos_collection:#{CacheVersion.hao_node_updated_at}") do
+    # Rails.cache.fetch("haos:haos_collection:#{CacheVersion.hao_node_updated_at}") do
       self.where(state: 1).desc(:id).all
-    end
+    # end
   end
 
   # 根据淘宝ID获取淘宝信息
