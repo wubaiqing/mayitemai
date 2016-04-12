@@ -8,7 +8,8 @@ class HomeController < ApplicationController
 
   # 首页
   def index
-    @haos = Hao.haos_collection
+    cate_id = params[:cat].to_i
+    @haos = Hao.haos_collection(cate_id)
     @articleAll = Article.all
     @article_index = 1.to_i
 

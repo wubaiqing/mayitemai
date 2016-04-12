@@ -38,7 +38,7 @@ class Hao
   field :site_url
 
   # tagid
-  field :tagid
+  field :tagid, type: Integer, default: 0
 
   # 分类ID
   field :cate_id, type: Integer, default: 0
@@ -72,10 +72,14 @@ class Hao
   end
 
   # 集合 - 发布状态+排序值排序+ID排序
-  def self.haos_collection
-    # Rails.cache.fetch("haos:haos_collection:#{CacheVersion.hao_node_updated_at}") do
-      self.where(state: 1).desc(:id).all
-    # end
+  def self.haos_collection(cate_id)
+    Rails.cache.fetch("hao:hao_collection:#{cate_id}:#{CacheVersion.good_node_updated_at}") do
+      if (cate_id.to_i > 0) then
+        self.where(state: 1).where(tagid: cate_id.to_i).desc(:id).all
+      else
+        self.where(state: 1).desc(:id).all
+      end
+    end
   end
 
   # 根据淘宝ID获取淘宝信息
@@ -108,25 +112,9 @@ class Hao
 
   def self.findTag(tagid)
     @tagids = [
-      "男鞋",
-      "女鞋",
-      "童鞋",
-      "男装",
-      "女装",
-      "童装",
-      "饰品",
-      "彩妆",
-      "护肤",
-      "食品",
-      "饮料",
-      "妈妈",
-      "宝宝",
-      "家居",
-      "配饰",
-      "个护",
-      "男包",
-      "女包",
-      "童包"
+      "面部护理",
+      "彩妆香气",
+      "男士护肤",
     ]
     return @tagids[tagid.to_i - 1]
     
