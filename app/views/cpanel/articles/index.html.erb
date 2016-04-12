@@ -46,7 +46,7 @@
         <%= article.id %>
       </td>
       <td>
-        <%= link_to article.title, edit_cpanel_article_path(article) %>
+        <%= link_to article.title, edit_cpanel_article_path(article), {"data-no-turbolink": true} %>
       </td>
       <td>
         <%= content_tag("span", raw("&nbsp;")) %>
