@@ -13,8 +13,6 @@
 #= require articles
 #= require haos
 
-#= require ueditor/ueditor.config
-#= require ueditor/ueditor.all.min
 
 # 开启Turbolinks
 Turbolinks.enableProgressBar();
