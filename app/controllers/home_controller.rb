@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   def index
     cate_id = params[:cat].to_i
     @haos = Hao.haos_collection(cate_id)
-    @articleAll = Article.all
+    @articleAll = Article.articles_collection
     @article_index = 1.to_i
 
   end
