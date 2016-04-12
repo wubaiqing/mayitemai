@@ -13,6 +13,11 @@ class HomeController < ApplicationController
 
   end
 
+  def show
+    id = params[:id]
+    puts @article = Article.find(id)
+  end
+
   private
 
   # 查询分类，设置meta

@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # 详情页
   resources :home, :details
 
+
   # 网站首页
   root to: 'home#index'
 

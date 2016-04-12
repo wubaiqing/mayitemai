@@ -1,3 +1,68 @@
+  <!-- 主体内容区域 -->
+  <div class="container">
+
+    <!-- 开始 - 手机轮播图 -->
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+    <div class="swiper-slide">
+                <a href="#">
+                  <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/banner_1.png" />
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a href="#">
+                  <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/banner_2.png" />
+                </a>
+              </div>
+          </div>
+        <div class="swiper-pagination">
+          <span class="swiper-pagination-bullet"></span>
+          <span class="swiper-pagination-bullet"></span>
+        </div>
+      <script>
+            var swiper = new Swiper('.swiper-container', {
+              loop: true,
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+            });
+        </script>
+      </div>
+      <!-- 结束 - 手机轮播图 -->
+
+<!-- 导航栏 -->
+<div class="nav-box">
+  <div class="nav-child-box">
+    <div class="nav-item">
+      <a href="#">
+        <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/channel%20classification_1.png" alt="今日特卖">
+        <span>今日特卖</span>
+       </a>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">
+        <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/channel%20classification_2.png" alt="面部护理">
+        <span>面部护理</span>
+      </a>
+    </div >
+
+    <div class="nav-item">
+      <a href="#">
+        <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/channel%20classification_3.png" alt="彩妆香气">
+        <span>彩妆香气</span>
+      </a>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">
+        <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/channel%20classification_4.png" alt="男士护肤">
+        <span>男士护肤</span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- 结束 - 导航栏 -->
+
 <style>
 .goods-image img {
   margin-top: 15px;
@@ -36,7 +101,7 @@
 
     <% @article = Article.all.desc(:id).paginate(:page => @article_index, :per_page => 1) %>
 
-    <a href="#" class="item">
+    <a href="<%= home_path(@article.at(0).id)%>" class="item">
       <div class="goods-image">
         <img src="<%= @article.at(0).picture_url %>" width="211" height="211">
       </div>
