@@ -1,12 +1,12 @@
 <style>
 .goods-image img {
   margin-top: 15px;
-
 }
 
 </style>
 <!-- 商品区域 -->
 <div class="goods-box">
+
   <% @haos.each_with_index do |hao, index| %>
   <a href="<%= hao.taobao_url %>" class="item">
     <div class="goods-image">
@@ -34,18 +34,21 @@
   
     <% if (index != 0 && (index % 1) == 0) %>
 
+    <% @article = Article.all.desc(:id).paginate(:page => @article_index, :per_page => 1) %>
+
     <a href="#" class="item">
       <div class="goods-image">
-        <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/goods_1.png" width="211" height="211">
+        <img src="<%= @article.at(0).picture_url %>" width="211" height="211">
       </div>
       <div class="goods-body">
         <div class="title-box">
           <div class="goods-title">
-            <h2>不做 "痘花妹!7款去痘产品亲测有效</h2>
+            <h2><%= @article.at(0).title %></h2>
           </div>
         </div>
       </div>
     </a>
+    <% @article_index+=1 %>
 
     <% end %>
 

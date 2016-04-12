@@ -9,7 +9,8 @@ class HomeController < ApplicationController
   # 首页
   def index
     @haos = Hao.haos_collection
-    @articles = Article.articles_collection
+    @article_index = 0.to_i
+
   end
 
   private
