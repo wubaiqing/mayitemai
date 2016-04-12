@@ -103,7 +103,7 @@
 <% end %>
 
     <script type="text/javascript">
-      $(document).ready(function () {
+    $(document).on('page:change', function () {
         UE.getEditor('article_content', {
           serverUrl: "/cpanel/photos/ueditor",
           toolbars: [
@@ -123,8 +123,8 @@
             ]
           ],
           initialFrameHeight: 400
-        });
-
       });
+
+    })
 
     </script>

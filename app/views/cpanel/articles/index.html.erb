@@ -50,7 +50,7 @@
       </td>
       <td>
         <%= content_tag("span", raw("&nbsp;")) %>
-        <%= link_to(icon('edit'), edit_cpanel_article_path(article), {"data-toggle": "tooltip", "original-title": "修改"} ) %>
+        <%= link_to(icon('edit'), edit_cpanel_article_path(article), {"data-toggle": "tooltip", "original-title": "修改", "data-no-turbolink": true} ) %>
         <%= content_tag("span", raw("&nbsp;")) %>
       </td>
     </tr>
