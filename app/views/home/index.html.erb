@@ -100,7 +100,7 @@
       <% if (index != 0 && (index % 1) == 0) then %>
 
       <% if @articleAll then %>
-        <% @article = @articleAll.desc(:id).paginate(:page => @article_index, :per_page => 1) %>
+        <% @article = @articleAll.paginate(:page => @article_index, :per_page => 1) %>
           <a href="<%= home_path(@article.at(0).id)%>" class="item">
             <div class="goods-image">
               <img src="<%= @article.at(0).picture_url %>" width="211" height="211">
