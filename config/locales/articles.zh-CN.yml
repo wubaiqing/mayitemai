@@ -7,6 +7,7 @@ zh-CN:
     logo_picture: "品牌Logo"
     desc_picture: "首页图片"
     banner_picture: "专题页头部图片"
+    picture_url: 
     sale: "折扣数"
     sort: "排序值"
     state: "上线"

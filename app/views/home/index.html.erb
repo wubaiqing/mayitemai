@@ -7,7 +7,7 @@
 </style>
 <!-- 商品区域 -->
 <div class="goods-box">
-  <% @haos.each do |hao| %>
+  <% @haos.each_with_index do |hao, index| %>
   <a href="<%= hao.taobao_url %>" class="item">
     <div class="goods-image">
       <img src="<%= hao.picture_url %>" width="211" height="211">
@@ -31,19 +31,22 @@
       </div>
     </div>
   </a>
-  <% end %>
+  
+    <% if (index != 0 && (index % 1) == 0) %>
 
-<div class="article-box">
-  <div class="article">
-    <a href="#" class="article-item">
-      <div class="article-image">
-          <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/goods_1.png">
+    <a href="#" class="item">
+      <div class="goods-image">
+        <img src="http://7xioz9.com2.z0.glb.qiniucdn.com/htimages/goods_1.png" width="211" height="211">
       </div>
-      <div class="article-body">
-        <div class="article-title">
-          <h1>不做 "痘花妹!7款去痘产品亲测有效</h1>
+      <div class="goods-body">
+        <div class="title-box">
+          <div class="goods-title">
+            <h2>不做 "痘花妹!7款去痘产品亲测有效</h2>
+          </div>
         </div>
       </div>
     </a>
-  </div>
-</div>
+
+    <% end %>
+
+  <% end %>

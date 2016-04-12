@@ -10,6 +10,7 @@
 
 #= require brands
 #= require goods
+#= require articles
 #= require haos
 
 #= require ueditor/ueditor.config

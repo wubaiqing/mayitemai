@@ -8,7 +8,7 @@ class Article
   include Mongoid::BaseModel
 
   # 必填
-  validates :title, :content, presence: true
+  validates :title, :content, :picture_url, presence: true
 
   # 标题
   field :title
@@ -18,6 +18,9 @@ class Article
 
   # 原价
   field :content
+
+  # 原价
+  field :picture_url
 
   # 索引
   index state: 1

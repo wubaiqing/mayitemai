@@ -21,6 +21,7 @@ Rails.application.configure do
   config.active_support.deprecation = :log
 
 
+
   config.cache_store = :mem_cache_store
 
   # Raise an error on page load if there are pending migrations.
