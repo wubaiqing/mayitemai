@@ -10,7 +10,7 @@ class HomeController < ApplicationController
   def index
     @haos = Hao.haos_collection
     @articleAll = Article.all
-    @article_index = 0.to_i
+    @article_index = 1.to_i
 
   end
 
